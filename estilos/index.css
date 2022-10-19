@@ -38,7 +38,7 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 }
 
 div.container {
-    max-width: 1200px;
+    max-width: 1151px;
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -104,7 +104,7 @@ div.ficha header span {
 
 div.ficha header {
     display: grid;
-    grid-template-columns: repeat(2, 50px) 1fr 50px;
+    grid-template-columns: repeat(2, 50px) 998px 50px;
     background-color: var(--cor-primaria);
     text-align: center;
     border: 1px solid var(--cinza5);
@@ -162,7 +162,7 @@ div.grade-de-total-parcial span.total {
 /* Body da ficha */
 div.ficha div.body {
     display: grid; 
-    grid-template-columns: repeat(2, 50px) 449px repeat(10, 45px) repeat(2, 50px) 50px;
+    grid-template-columns: repeat(2, 50px) 449px repeat(10, 45px) repeat(3, 50px);
     border: 1px solid var(--cinza5);
     border-bottom: none;
 }
@@ -286,6 +286,10 @@ div.input-container {
     display: grid;
     grid-template-columns: 45px;
     grid-template-rows: 24px;
+}
+
+div.input-container.total {
+    grid-template-columns: 50px;
 }
 
 div.input-container input {
