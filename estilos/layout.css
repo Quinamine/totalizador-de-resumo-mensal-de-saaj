@@ -1,0 +1,224 @@
+/* FORMATAÇÕES GERAIS */
+
+:root {
+    --fullblack: #000000;
+    --blackalpha5: rgba(0, 0, 0, .5);
+    --blackalpha8: rgba(0, 0, 0, .8);
+    --cor-primaria: #c0c5da;
+    --cor-de-texto: #333333;
+    --cinza4: #444444;
+    --cinza5: #555555;
+    --cinza8: #888888;
+    --cinza10: #aaaaaa;
+    --cinza12: #cccccc;
+    --cinza13: #dddddd;
+    --cinza14: #eeeeee;
+    --cinzaf0: #f0f0f0;
+    --cinzaf4: #f4f4f4;
+    --white: #ffffff;
+    --azul: #0060EE;
+    --azulminiopaco: #1558bc;
+    --azulescuro: #0f1c2e;
+    --azulclaro: #dce4f4;
+    --roxoclaro: rgb(116, 116, 235);
+    --red: #dd0000;
+    --redalpha: rgba(238, 0, 0, .8);
+    --orange: #faa032;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif, Arial, Helvetica !important;
+    font-size: 11px;
+    color: var(--cor-de-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+*::selection {
+    background-color: var(--cinza4);
+    color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--fullblack);
+}
+
+body p, span, label, ul, ol,
+h1, h2, h3, h4, h5, h6 {
+    cursor: context-menu;
+}
+
+body b, strong {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: var(--azulminiopaco)
+}
+
+
+button {
+    border: none;
+    outline: none;
+    color: var(--cor-de-texto);
+    font-family:  sans-serif, Arial, Helvetica  !important; /* Coerção para Firefox */
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a, button:active {
+    opacity: 0.7;
+}
+
+p, li, dt, dd, 
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+}
+
+input {
+    border: none;
+    outline: none;
+    color: var(--cor-de-texto);
+    font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    border-bottom: 1px solid var(--azul) !important;
+}
+
+input[readonly] {
+    font-weight: bold;
+    cursor: context-menu;
+    transition: background-color 400ms ease-out;
+}
+
+input[readonly].gray {
+    color: var(--cor-de-texto);
+    background-color: var(--cinza12) !important;
+}
+
+/* CABEÇALHO */
+
+body > header, 
+body > footer {
+    width: 100%;
+}
+
+body > header {
+    line-height: 2;
+    box-shadow: 0 0 10px var(--cinza13);
+}
+
+.linha-do-cabecalho, 
+.linha-do-rodape {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.linha-do-cabecalho {
+    display: flex;
+    align-items: center;
+}
+
+.linha-do-cabecalho .logo {
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: var(--fullblack);
+}
+
+.linha-do-cabecalho .logo > strong:nth-child(2) { 
+    display: none;
+    font-weight: initial;
+}
+
+/* SECÇÃO DE NAVEGAÇÃO */
+
+.menu, 
+.menu ul,
+.menu ul li.destacar-as-celulas-automaticas {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu li.destacar-as-celulas-automaticas:hover,
+.menu li.destacar-as-celulas-automaticas label {
+    cursor: pointer;
+}
+
+.menu li label {
+    padding: 4px 10px 4px 0;
+}
+
+.menu li input[type=checkbox] {
+    width: 12px;
+    height: 11px;
+    margin-top: 1px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+/* BOTÕES DO MENU E LINKS */
+
+.menu li button {
+    background-color: inherit;
+    font-size: 11px;
+    display: inline-block;
+    padding: 9px;
+}
+
+.menu li a {
+    padding: 10px;
+    color: inherit;
+}
+
+
+/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
+
+.menu li:first-child:hover,
+.menu li button:hover,
+.menu li a:hover {
+    background-color: var(--cinzaf0);
+}
+
+.menu ul li:first-child:active {
+    opacity: 0.7;
+}
+
+/* RODAPÉ */
+
+body > footer {
+    background-color: var(--azulclaro);
+    padding: 40px 0;
+    color: var(--cinza5);
+}
+
+body > footer p {
+    text-align: center;
+}

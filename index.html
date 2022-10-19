@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-MZ">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Totalizador de Resumo Mensal de SAAJ</title>
+        <meta name="robots" content="index, follow"/>
+        <meta name="description" content="Serviço online gratuito que auxilia na totalização do respectivo resumo a partir dos dados inseridos pelo usuário (Profissional de Saúde)." />
+
+        <!-- PARTILHA NAS REDES SOCIAIS -->
+        <meta property="og:url" content="https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"/>
+        <meta property="og:title" content="Totalizador de Resumo Mensal de SAAJ" />
+        <meta property="og:description" content="Serviço online gratuito que auxilia na totalização do respectivo resumo a partir dos dados inseridos pelo usuário (Profissional de Saúde)." />
+        <meta property="og:image" content="https://www.quinamine.github.io/aderito-felix-quinamine/imagens/#.jpg"/>
+       
+        <!-- DESIGN -->
+        <link rel="stylesheet" href="estilos/reset.css" />
+        <link rel="stylesheet" href="estilos/layout.css" />
+        <link rel="stylesheet" href="estilos/index.css" />
+
+        <!-- SCRIPTS -->
+        <script src="funcoes/index.js"></script>
+        <script src="funcoes/totalizador-rmsaaj.js"></script>
+         
+        <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Doseador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
+
+    </head>
+
+    <body ontouchstart="">
+        <header>
+            <div class="linha-do-cabecalho">
+        
+                <a href="totalizador-de-resumo-mensal-de-consultas-externas.html" class="logo">
+                    <strong>Totalizador de Resumo Mensal de SAAJ</strong>
+                </a>
+                                        
+                <section class="menu" role="navigation">
+                    <ul>
+                        <li class="destacar-as-celulas-automaticas" 
+                            title="Escurecer o fundo de Subtotais e Totais">
+                            <input type="checkbox" id="readonlyinputs-darker"/> 
+                            <label for="readonlyinputs-darker">Destacar as células automáticas</label>
+                        </li>
+
+                        <li title="Pesquisar por um número de linha entre 1 e 53 (Ctrl + B)">
+                            <button class="ir-para">Ir para linha...</button>
+                        </li>  
+                            
+                        <li title="Limpar dados da ficha">
+                            <button class="esvaziar-ficha">Esvaziar</button>
+                        </li>
+
+                        <li class="imprimir">
+                            <button onclick="window.print()" title="Imprimir a ficha (Ctrl + P)">
+                                Imprimir
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="hamburguer">
+                    <div class="camada"></div>
+                    <div class="camada"></div>
+                    <div class="camada"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <header>
+                   <div class="emblema-e-republica">
+                        <figure>
+                            <img src="imagens/emblema.png" alt="Emblema da República de Moçambique" srcset="" />
+                        </figure>
+                        <div class="republica">
+                            <span>República de Moçambique</span>
+                            <span>Ministério da Sáude</span>
+                        </div>
+                   </div>
+
+                    <div class="geo">
+                        <div>
+                            <label for="provincia">Província:</label>
+                            <input type="text" id="provincia"/>
+                        </div>
+                        <div>
+                            <label for="distrito">Distrito:</label>
+                            <input type="text" id="distrito"/>
+                        </div>
+                        <div>
+                            <label for="us">US:</label>
+                            <input type="text" id="us"/>
+                        </div>
+                        <div>
+                            <label for="mes">Mês</label>
+                            <input type="text" id="mes"/>
+                        </div>
+                    </div>
+
+                    <div class="visto">
+                        <label for="dc">O Director da US</label>
+                        <input type="text" id="dc" />
+                    </div>
+
+                    <h1>
+                        Resumo Mensal da Unidade Sanitária - Consulta do Serviço Amigo do Adolescente e Jovem
+                    </h1>
+                </header>
+
+                <div class="ficha">
+                    <header>
+                        <div>
+                            <span>Linha do Resumo Mensal</span>
+                        </div>
+                        <div>
+                            <span>Coluna no livro de registo</span>
+                        </div>
+                        <div class="coluna-central">
+                            <div class="linha-de-indicadores">
+                                <span>Indicadores/Caracteríscticas</span>
+                            </div>
+                            <div class="linha-de-sexo-e-faixas-etarias">
+                                <div class="grade-de-sexo m">
+                                    <span class="sexo">Masculino</span>
+                                    <span>&le; 10 A.</span>
+                                    <span>10-14 A.</span>
+                                    <span> 15-19 A.</span>
+                                    <span>20-24 A.</span>
+                                    <span>&ge; 25 A.</span>
+                                </div>
+                                <div class="grade-de-sexo f">
+                                    <span class="sexo">Feminino</span>
+                                    <span>&le; 10 A.</span>
+                                    <span>10-14 A.</span>
+                                    <span> 15-19 A.</span>
+                                    <span>20-24 A.</span>
+                                    <span>&ge; 25 A.</span>
+                                </div>
+                                <div class="grade-de-total-parcial">
+                                    <span class="total">TOTAL</span>
+                                    <span>Masculino</span>
+                                    <span>Feminino</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span>TOTAL <br/> MF</span>
+                        </div>
+                    </header>
+                    <div class="body">
+                        <div class="coluna-de-numeros-das-linhas">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                            <span>25</span>
+                            <span>26</span>
+                            <span>27</span>
+                            <span>28</span>
+                            <span>29</span>
+                            <span>30</span>
+                            <span>31</span>
+                            <span>32</span>
+                            <span>33</span>
+                            <span>34</span>
+                            <span>35</span>
+                            <span>36</span>
+                            <span>37</span>
+                            <span>38</span>
+                            <span>39</span>
+                            <span>40</span>
+                            <span>41</span>
+                            <span>42</span>
+                            <span>43</span>
+                            <span>44</span>
+                            <span>45</span>
+                            <span>46</span>
+                            <span>47</span>
+                            <span>48</span>
+                            <span>49</span>
+                            <span>50</span>
+                            <span>51</span>
+                            <span>52</span>
+                            <span>53</span>
+                            <span>54</span>
+                            <span>55</span>
+                            <span>56</span>
+                            <span>57</span>
+                            <span>58</span>
+                            <span>59</span>
+                            <span>60</span>
+                            <span>61</span>
+                            <span>62</span>
+                            <span>63</span>
+                        </div>
+                        <div class="coluna-de-livro-de-registo">
+                            <span></span>
+                            <span></span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24-29</span>
+                            <span>30</span>
+                            <span>54</span>
+                            <span>58</span>
+                            <span>35</span>
+                            <span>36</span>
+                            <span>37</span>
+                            <span>39</span>
+                            <span>40</span>
+                            <span>59</span>
+                            <span>60</span>
+                            <span>64</span>
+                            <span>61</span>
+                            <span>62</span>
+                            <span>63</span>
+                            <span>65</span>
+                            <span>66</span>
+                            <span>41</span>
+                            <span>42</span>
+                            <span>43</span>
+                            <span>44</span>
+                            <span>45</span>
+                            <span>46</span>
+                            <span>47</span>
+                            <span>48</span>
+                            <span>49</span>
+                            <span>50</span>
+                            <span>51</span>
+                            <span>52</span>
+                            <span>53</span>
+                            <span>67</span>
+                            <span>68</span>
+                            <span>71</span>
+                        </div>
+
+                        <div class="coluna-de-indicadores">
+                            <section class="consultas">
+                                <div class="titulo">
+                                    <span>Consultas</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Total de Primeiras Consultas</span>
+                                    <span>Total de Consultas Seguintes</span>
+                                </div>
+                            </section>
+                            <section class="encaminhamento">
+                                <div class="indicadores">       
+                                    <span>Nº de adolescentes e jovens que vieram espontaneamente</span>
+                                    <span>Nº de adolescentes encaminhados por Activistas</span>
+                                    <span>Nº de adolescentes encaminhados por Profissional de Saúde</span>
+                                    <span>Nº de adolescentes encaminhados por Professor na Escola</span>
+                                    <span>Nº de adolescentes encaminhados por outros</span>
+                                </div>
+                                <div class="situacao-escolar">
+                                    <div class="titulo">
+                                        <span>Situação Escolar</span>
+                                    </div>
+                                    <div class="indicadores">
+                                        <span>Dentro</span>
+                                        <span>Fora</span>
+                                    </div>  
+                                </div>
+                            </section>
+                            <section class="parceiros-presentes">
+                                <div class="titulo">
+                                    <span>Nº de Parceiros presentes no SAAJ</span>
+                                </div>
+                            </section>
+                            <section class="aconselhamento">
+                                <div class="titulo">
+                                    <span>Aconselhamento</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens aconselhados sobre Sexualidade</span>
+                                    <span>Nº de adolescentes e jovens que receberam aconselhamento em ITS/HIV-SIDA</span>
+                                    <span>Nº de adolescentes e jovens que receberam aconselhamento em VBG</span>
+                                    <span>Nº de adolescentes e jovens aconselhados sobre a Contracepção</span>
+                                    <span>Nº de adolescentes e jovens aconselhados sobre a Nutrição</span>
+                                    <span>Nº de adolescentes e jovens aconselhados sobre a Circuncisão</span>
+                                    <span>Nº de adolescentes e jovens aconselhados sobre a Saúde Mental</span>
+                                    <span>Nº de adolescentes e jovens que receberam outros aconselhamentos</span>
+                                </div>
+                            </section>
+                            <section class="rastreio-e-tratamento-de-its">
+                                <div class="titulo">
+                                    <span>Rastreio e Tratamento de ITS</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens rastreados para ITS</span>
+                                    <span>Nº de adolescentes e jovens rastreados para Sífilis</span>
+                                    <span>Nº de adolescentes tratados para ITS</span>
+                                    <span>Nº de adolescentes tratados para Sífilis</span>
+                                </div>
+                            </section>
+                            <section class="rastreio-e-tratamento-de-vbg">
+                                <div class="titulo">
+                                    <span>Rastreio e Tratamento de VBG</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens rastreados em VBG</span>
+                                    <span>Nº de adolescentes e jovens em seguimento de VBG</span> 
+                                </div>  
+                            </section>
+                            <section class="rastreio-de-ca-do-colo">
+                                <div class="titulo">
+                                    <span>
+                                        Rastreio, Prevenção e Encaminhamento do Cancro do Colo do Útero
+                                    </span>
+
+                                    <span>
+                                        Transferida
+                                    </span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens que fizeram vacina contra HPV</span>
+                                    <span>Nº de adolescentes e jovens testadas com VIA</span>
+                                    <span>Nº de adolescentes e jovens testadas com VIA Positivo</span>
+                                    <span>Lesão acima de 75%</span>
+                                    <span>Suspeita de Cancro do colo do útero</span>
+                                </div> 
+                            </section>
+                            <section class="estado-serologico">
+                                <div class="titulo">
+                                    <span>Estado Serológico</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens com seroestado desconhecido à entrada </span>
+                                    <span>Nº de adolescentes e jovens com seroestado positivo à entrada</span>
+                                    <span>Nº de adolescentes e jovens com seroestado negativo à entrada</span>
+                                </div>
+                            </section>
+                            <section class="testagem-para-hiv">
+                                <div class="titulo">
+                                    <span>Testagem para HIV</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens com resultado de HIV positivo (HIV&plus;) à entrada</span>
+                                    <span>Nº de adolescentes e jovens testados</span>
+                                    <span>Nº de adolescentes e jovens testados positivo</span>
+                                    <span>Nº de parceiros testados</span>
+                                    <span>Nº de parceiros testados positivo</span>
+                                </div>
+                            </section>
+                            <section class="tarv">
+                                <div class="titulo">
+                                    <span>TARV</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens em TARV à entrada</span>
+                                    <span>Nº de adolescentes e jovens que iniciaram TARV</span>
+                                    <span>Nº de adolescentes e jovens que continuam o TARV</span>
+                                </div> 
+                            </section>
+                            <section class="profilaxias">
+                                <div class="titulo">
+                                    <span>Profilaxias</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Inica CTZ</span>
+                                <span>Continua CTZ</span>
+                                </div>
+                            </section>
+                            <section class="contracepcao">
+                                <div class="titulo">
+                                    <span>Contracepção</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens novos utentes</span>
+                                    <span>Nº de adolescentes e jovens que continuam no método</span>
+                                </div> 
+                            </section>
+                            <section class="contracepcao-e-protecao">
+                                <div class="titulo">
+                                    <div class="subtitulo subtitulo-1">
+                                        <span>Contracepção e Protecção</span>
+                                    </div>
+                                    <div class="subtitulo subtitulo-2">
+                                        <span>Pílula</span>
+                                        <span>DIU</span>
+                                        <span>Injectável</span>
+                                        <span>Implante</span>
+                                        <span> Contr. de Emergência</span>
+                                        <span>Preservativos</span>
+                                    </div>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº das adolescentes/jovens que iniciam este método</span>
+                                    <span>Nº das adolescentes/jovens que continuam o método</span>
+                                    <span>Nº de ciclos oferecidos às adolescentes/jovens</span>
+
+                                    <span>Nº das adolescentes/jovens que iniciou este método</span>
+                                    <span>Nº das adolescentes/jovens que continua o método</span>
+                                    
+                                    <span>Nº das adolescentes/jovens que iniciou este método</span>
+                                    <span>Nº das adolescentes/jovens que continua o método</span>
+
+                                    <span>Nº das adolescentes/jovens que iniciou este método</span>
+                                    <span>Nº das adolescentes/jovens que continua o método</span>
+
+                                    <span>Nº das adolescentes/jovens que receberam contracepção de emergência</span>
+
+                                    <span>Nº das adolescentes/jovens que receberam preservativos masculinos</span>
+                                    <span>Nº das adolescentes/jovens que receberam preservativos femininos</span>
+                                </div>
+                            </section>
+                            <section class="sal-ferroso">
+                                <div class="titulo">
+                                    <span>Sal Ferroso</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes distribuídos Sal Ferroso</span>
+                                </div>
+                            </section>
+                            <section class="desparasitacao">
+                                <div class="titulo">
+                                    <span>Desparasitação</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens desparasitados</span>
+                                </div> 
+                            </section>
+                            <section class="referencia">
+                                <div class="titulo">
+                                    <span>Referência</span>
+                                </div>
+                                <div class="indicadores">
+                                    <span>Nº de adolescentes e jovens referidos para Circuncisão</span>
+                                    <span>Nº de adolescentes e jovens referidos para Apoio psicológico</span>
+                                    <span>Nº de adolescentes e jovens referidos para SAAJ Diferenciado</span>
+                                    <span>Nº de adolescentes e jovens referidos para TARV</span>
+                                    <span>Nº de adolescentes e jovens referidos para Outros Serviços</span>
+                                </div>
+                            </section>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            
+            <div class="linha-do-rodape">
+                <p>Idealizado por Castro Silvestre e concretizado por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de SAAJ</p>
+
+                <a href="#involucro" class="voltar">Voltar ao topo</a>
+            </div>
+        </footer>
+    </body>
+
+</html>
