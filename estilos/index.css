@@ -76,7 +76,6 @@ header div.emblema-e-republica {
 
 header div.republica {
     line-height: 1.5;
-    padding-top: 1px;
 }
 
 header div.republica span {
@@ -359,7 +358,7 @@ div.caixa-de-pesquisa {
     right: calc(50vw - 257px / 2);
     visibility: hidden;
     transition: top 200ms linear;
-    z-index: 100000;
+    z-index: 15000;
 }
 
 div.caixa-de-pesquisa.on {
@@ -399,6 +398,216 @@ div.caixa-de-pesquisa button:hover {
 div.caixa-de-pesquisa button:active {
     opacity: .8;
 }
+
+/* CONFIRMAÇÃO DE ESVAZIAMENTO DA FICHA */
+
+div.caixa-de-confirmacao {
+    min-width: 375px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--white);
+    position: fixed;
+    top: calc(50vh - 397px * 1/2);
+    right: calc(50vw - 375px *  1/2);
+    z-index: 30000;
+    display: none;
+}
+
+div.caixa-de-confirmacao.on {
+    display: block;
+}
+
+div.caixa-de-confirmacao div.alerta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--cinza10);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+div.caixa-de-confirmacao h3,
+div.caixa-de-confirmacao h4 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.caixa-de-confirmacao h4 {
+    margin-top: 20px;
+}
+
+div.caixa-de-confirmacao p,
+div.caixa-de-confirmacao ul,
+div.caixa-de-confirmacao li {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+div.caixa-de-confirmacao ul {
+    max-height: 142px;
+    overflow-y: auto;
+}
+
+div.caixa-de-confirmacao ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+div.caixa-de-confirmacao ul::-webkit-scrollbar-thumb {
+    background-color: var(--cinza8);
+    border-radius: 40px;
+}
+
+div.caixa-de-confirmacao ul::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cinza10);
+}
+
+div.caixa-de-confirmacao ul::-webkit-scrollbar-thumb:active {
+    background-color: var(--cinza8);
+}
+
+div.caixa-de-confirmacao ul li {
+    display: flex;
+}
+
+div.caixa-de-confirmacao li label {
+    align-self: center;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+div.caixa-de-confirmacao li input {
+    margin-left: 0;
+    cursor: pointer;
+}
+
+div.caixa-de-confirmacao div.botoes-de-confirmacao {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto auto auto;
+}
+
+div.botoes-de-confirmacao button {
+    width: calc(50% - 5px);
+    font-size: 0.8125rem;
+    padding: 6px 0;
+    border-radius: 4px;
+}
+
+div.botoes-de-confirmacao 
+button.cancelar:hover {
+    background-color: var(--cinza13);
+}
+
+div.botoes-de-confirmacao 
+button.confirmar {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+div.botoes-de-confirmacao 
+button.confirmar:hover {
+    background-color:var(--redalpha)
+}
+
+
+/* RAZÃO PELAS CÉLULAS COM FUNDO VERMELHO */
+/* FEEDBACK PARA CĆ‰LULAS VERMELHAS */
+
+div.razao-pelas-celulas-com-fundo-vermelho {
+    max-width: 530px;
+    padding: 15px;
+    position: fixed;
+    right: calc(50vw - 530px / 2);
+    top: -105vh;
+    box-shadow: 0 0 10px var(--cinza5);
+    font-size: 13px;
+    line-height: 1.5;
+    background-color: var(--white);
+    z-index: 40000;
+    visibility: hidden;
+    transition: top 150ms ease;
+}
+
+div.razao-pelas-celulas-com-fundo-vermelho.on {
+    top: calc(50vh - 320px / 2);
+    visibility: visible;
+}
+
+div.razao-pelas-celulas-com-fundo-vermelho h2 {
+    font-size: 1.125rem;
+}
+
+div.razao-pelas-celulas-com-fundo-vermelho p {
+    margin: 20px 0 20px 16px;
+}
+
+div.razao-pelas-celulas-com-fundo-vermelho p.obs {
+    margin-left: 0;
+    padding-left: 10px;
+    border-left: 6px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    font-weight: bold;
+}
+
+div.razao-pelas-celulas-com-fundo-vermelho > p.afirmacao {
+    border-color: var(--azulescuro) !important;
+}
+
+div.razao-pelas-celulas-com-fundo-vermelho 
+div.seccao-de-interatividade {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+div.seccao-de-interatividade > div {
+    display: flex;
+    align-items: center;
+}
+
+div.seccao-de-interatividade > div input {
+    height: 15px;
+    margin: 0 4px 0 0;
+}
+
+div.seccao-de-interatividade > div input:hover, 
+div.seccao-de-interatividade > div label:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+div.seccao-de-interatividade > div input:active, 
+div.seccao-de-interatividade > div label:active {
+    opacity: 1;
+}
+
+div.seccao-de-interatividade > button {
+    background-color: var(--white);
+    padding: 5px;
+    border: 1px solid var(--cinza10);
+    font-size: 0.8125rem;
+    display: block;
+}
+
+div.seccao-de-interatividade > button:hover {
+    background-color: #f0f0f0;
+}
+
+div.seccao-de-interatividade > button:active {
+    background-color: #ddd;
+}
+
+/* DESFOQUE DO FUNDO */
+div.desfoque.on {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: var(--blackalpha5);
+    z-index: 20000;
+}
+
 
 /* FORMATAÇÃO PARA PRINT */
 
