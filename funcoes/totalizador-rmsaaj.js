@@ -35,16 +35,15 @@ function totalizar(celulasPorTotalizar, celulaDeSaida) {
 }
 
 // VARIÁVEIS GLOBAIS
-let inputCels, readonlyCelsDarker;
-
+let inputCels;
 window.addEventListener("load", () => {
     inputCels = document.querySelectorAll("div.input-container input");
-    readonlyCelsDarker = document.querySelector("#readonlyinputs-darker");
 
     // INVOCAÇÃO DAS FUNÇÕES
     storage.salvarFicha();
     storage.salvarDadosAdicionais();
     storage.salvarDestaqueDeTotais();
+    // A variável 'readonlyCelsDarker' está declarada no arquivo 'menu.js'
     readonlyCelsDarker.addEventListener("change", () => storage.salvarDestaqueDeTotais());
 
     // TOTALIZAÇÃO

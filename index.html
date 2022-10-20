@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="estilos/index.css" />
 
         <!-- SCRIPTS -->
-        <script src="funcoes/index.js"></script>
+        <script src="funcoes/menu.js"></script>
         <script src="funcoes/totalizador-rmsaaj.js"></script>
          
         <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do Doseador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
@@ -37,13 +37,12 @@
                                         
                 <section class="menu" role="navigation">
                     <ul>
-                        <li class="destacar-as-celulas-automaticas" 
-                            title="Escurecer o fundo de Subtotais e Totais">
+                        <li class="destacar-as-celulas-automaticas" title="Adicionar um fundo opaco às celulas dos totais">
                             <input type="checkbox" id="readonlyinputs-darker"/> 
                             <label for="readonlyinputs-darker">Destacar o fundo dos totais</label>
                         </li>
 
-                        <li title="Pesquisar por um número de linha entre 1 e 53 (Ctrl + B)">
+                        <li title="Migrar até uma determinada linha">
                             <button class="ir-para">Ir para linha...</button>
                         </li>  
                             
@@ -52,7 +51,7 @@
                         </li>
 
                         <li class="imprimir">
-                            <button onclick="window.print()" title="Imprimir a ficha (Ctrl + P)">
+                            <button onclick="window.print()" title="Imprimir a ficha">
                                 Imprimir
                             </button>
                         </li>
@@ -1331,6 +1330,16 @@
                     </footer>
                 </div>
             </div>
+ 
+            <section class="manipulacao-do-menu">
+                <!-- Caixa de pesquisa "Ir para" -->
+                <div class="pesquisa">
+                    <div class="caixa-de-pesquisa">
+                        <input type="number" placeholder="Introduza o número da linha" min="1" max="63" class="pesquisar-linha">    
+                        <button class="fechar" title="Fechar">&times;</button>
+                    </div>
+                </div> 
+            </section>
         </main>
 
         <footer>
@@ -1341,6 +1350,8 @@
                 <a href="#involucro" class="voltar">Voltar ao topo</a>
             </div>
         </footer>
+
+        <div class="desfoque"></div>
     </body>
 
 </html>

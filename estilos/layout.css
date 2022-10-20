@@ -18,12 +18,12 @@
     --white: #ffffff;
     --azul: #0060EE;
     --azulminiopaco: #1558bc;
-    --azulescuro: #0f1c2e;
+    --azulescuro: #6985a7;
     --azulclaro: #dce4f4;
     --roxoclaro: rgb(116, 116, 235);
     --red: #dd0000;
     --redalpha: rgba(238, 0, 0, .8);
-    --orange: #faa032;
+    --cor-laranja: #faa032;
 }
 
 html {

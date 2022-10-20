@@ -55,6 +55,12 @@ div.container {
 
 .container input[readonly] {
     font-weight: bold;
+    cursor: context-menu;
+    transition: background-color 400ms ease-out;
+}
+
+.container input[readonly].bg-gray {
+    background-color: var(--cinza12);
 }
 
 .container > header {
@@ -202,6 +208,11 @@ div.body div.coluna-de-livro-de-registo span {
     text-align: center;
 }
 
+div.body div.coluna-de-numeros-das-linhas span.fundo-laranja {
+    background-color: var(--cor-laranja);
+    color: var(--white);
+}
+
 div.body div.coluna-de-livro-de-registo {
     display: grid;
     grid-template-rows: calc(24px*2) calc(24px*5) repeat(11, 24px) calc(24px*3) repeat(8, 24px) calc(24px*3) calc(24px*3)  calc(24px*2) repeat(17, 24px) calc(24px*2) repeat(2, 24px) calc(24px*5);
@@ -336,6 +347,60 @@ div.ficha footer div.compilacao {
     justify-self: center;
 }
 
+/* INTERATIVIDADE DO MENU */
+div.caixa-de-pesquisa { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    background-color: var(--azulescuro);
+    position: fixed;
+    top: -35px;
+    right: calc(50vw - 257px / 2);
+    visibility: hidden;
+    transition: top 200ms linear;
+    z-index: 100000;
+}
+
+div.caixa-de-pesquisa.on {
+    top: 0;
+    visibility: initial;
+}
+
+div.caixa-de-pesquisa input.pesquisar-linha { 
+    min-width: 188px;
+    padding: 2px 0 2px 5px;
+    border: 2px solid var(--azulescuro) !important;
+    background-color: var(--cinza13);
+}
+
+div.caixa-de-pesquisa input.pesquisar-linha:focus { 
+    border-color: var(--cinza5) !important;
+}
+
+div.caixa-de-pesquisa button {
+    width: 24px;
+    height: 20px;
+    font-weight: bold;
+}
+
+div.caixa-de-pesquisa button {
+    background-color: inherit;
+    color: var(--white);
+    font-size: 1rem;
+    margin-left: 2px;
+}
+
+div.caixa-de-pesquisa button:hover {
+    background-color: var(--red);
+    border-radius: 2px;
+}
+
+div.caixa-de-pesquisa button:active {
+    opacity: .8;
+}
+
+/* FORMATAÇÃO PARA PRINT */
 
 @media print {
     @page {
@@ -343,3 +408,5 @@ div.ficha footer div.compilacao {
         margin-bottom: 0.9cm;
     }
 }
+
+/* MANIPULAÇÃO DE ELEMENTOS POR JS */
