@@ -39,8 +39,7 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 
 div.container {
     max-width: 1151px;
-    margin: 0 auto;
-    margin-top: 30px;
+    margin: 30px auto 50px auto;
 }
 
 .container input {
@@ -51,11 +50,16 @@ div.container {
     display: grid;
     grid-template-columns: 250px 335px 1fr;
     text-transform: uppercase;
-    padding: 5px;
+    padding: 5px 5px 5px 50px;
 }
 
 header div.emblema-e-republica {
     display: flex;
+}
+
+header div.republica {
+    line-height: 1.5;
+    padding-top: 1px;
 }
 
 header div.republica span {
@@ -85,15 +89,17 @@ header div.visto {
     flex-direction: column;
     align-items: center;
     text-transform: initial;
+    margin-right: 50px;
 }
 
 header div.visto input {
-    line-height: 1.5;
+    line-height: 2;
+    text-align: center;
 }
 
 header h1 {
     grid-column: 1/4;
-    padding: 24px 0 24px 50px;
+    margin: 20px 0 10px 52px;
 }
 
 /* FICHA */
@@ -110,6 +116,7 @@ div.ficha header {
     border: 1px solid var(--cinza5);
     border-bottom: none;
     font-weight: bold;
+    line-height: 1.5;
 }
 
 div.ficha header > div:first-child {
@@ -124,7 +131,7 @@ div.linha-de-indicadores {
 
 div.ficha div.linha-de-sexo-e-faixas-etarias {
     display: grid;
-    grid-template-columns: 449px repeat(2, calc(45px*5)) 115px;
+    grid-template-columns: 447px repeat(2, calc(45px*5)) 100px;
     grid-template-areas: ". sexo-m sexo-f total-parcial";
 }
 
@@ -151,18 +158,22 @@ div.grade-de-sexo span.sexo {
 
 div.grade-de-total-parcial {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50px);
 }
 
 div.grade-de-total-parcial span.total {
     grid-column: 1/3;
 }
 
+div.grade-de-total-parcial span:nth-child(n+2) {
+    font-size: 9.5px;
+}
 
-/* Body da ficha */
+/* BODY DA FICHA */
+
 div.ficha div.body {
     display: grid; 
-    grid-template-columns: repeat(2, 50px) 449px repeat(10, 45px) repeat(3, 50px);
+    grid-template-columns: repeat(2, 50px) 448px repeat(10, 45px) repeat(3, 50px);
     border: 1px solid var(--cinza5);
     border-bottom: none;
 }
@@ -295,4 +306,22 @@ div.input-container.total {
 div.input-container input {
     max-width: 100%;
     max-height: 100%;
+}
+
+
+/* FOOTER DA FICHA */
+
+div.ficha footer {
+    display: grid;
+    grid-template-columns: 250px 620px 281px;
+    margin-top: 20px;
+    justify-items: center;
+}
+
+
+@media print {
+    @page {
+        margin: 0.25cm;
+        margin-bottom: 0.9cm;
+    }
 }

@@ -133,7 +133,7 @@ body > header {
 
 .linha-do-cabecalho, 
 .linha-do-rodape {
-    max-width: 1300px;
+    max-width: 1151px;
     margin: 0 auto;
 }
 
@@ -165,6 +165,7 @@ body > header {
 .menu {
     flex: 1;
     justify-content: flex-end;
+    margin-right: -10px;
 }
 
 .menu li.destacar-as-celulas-automaticas:hover,
@@ -173,7 +174,7 @@ body > header {
 }
 
 .menu li label {
-    padding: 4px 10px 4px 0;
+    padding: 8px 10px 8px 0;
 }
 
 .menu li input[type=checkbox] {
@@ -184,13 +185,13 @@ body > header {
     cursor: pointer;
 }
 
-/* BOTÕES DO MENU E LINKS */
+/* BOTÕES DO MENU */
 
 .menu li button {
     background-color: inherit;
     font-size: 11px;
     display: inline-block;
-    padding: 9px;
+    padding: 10px;
 }
 
 .menu li a {
