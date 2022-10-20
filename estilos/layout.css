@@ -133,7 +133,7 @@ body > header {
 
 .linha-do-cabecalho, 
 .linha-do-rodape {
-    max-width: 1151px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
@@ -215,7 +215,7 @@ body > header {
 /* RODAPÉ */
 
 body > footer {
-    background-color: var(--azulclaro);
+    background-color: var(--cor-primaria);
     padding: 40px 0;
     color: var(--cinza5);
 }

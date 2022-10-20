@@ -38,11 +38,22 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 }
 
 div.container {
-    max-width: 1151px;
+    max-width: 1150px;
     margin: 30px auto 50px auto;
 }
 
-.container input {
+.container input[type=text] {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.container input[type=number] {
+    font-size: 11px;
+    text-align: center;
+    padding: 1px 2px;
+}
+
+.container input[readonly] {
     font-weight: bold;
 }
 
@@ -93,8 +104,8 @@ header div.visto {
 }
 
 header div.visto input {
-    line-height: 2;
     text-align: center;
+    margin-top: 8px;
 }
 
 header h1 {
@@ -117,6 +128,9 @@ div.ficha header {
     border-bottom: none;
     font-weight: bold;
     line-height: 1.5;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
 }
 
 div.ficha header > div:first-child {
@@ -259,6 +273,7 @@ div.situacao-escolar {
     grid-area: situacao;
     display: grid;
     grid-template-columns: 60px 1fr;
+    line-height: 1.5;
 }
 
 /* Parceiros presentes */
@@ -308,14 +323,17 @@ div.input-container input {
     max-height: 100%;
 }
 
-
 /* FOOTER DA FICHA */
 
 div.ficha footer {
     display: grid;
-    grid-template-columns: 250px 620px 281px;
+    grid-template-columns: 150px 570px 230px;
     margin-top: 20px;
-    justify-items: center;
+    justify-content: center;
+}
+
+div.ficha footer div.compilacao {
+    justify-self: center;
 }
 
 
