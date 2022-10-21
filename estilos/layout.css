@@ -5,6 +5,7 @@
     --blackalpha5: rgba(0, 0, 0, .5);
     --blackalpha8: rgba(0, 0, 0, .8);
     --cor-primaria: #c0c5da;
+    --cor-secundaria: #6985a7;
     --cor-de-texto: #333333;
     --cinza4: #444444;
     --cinza5: #555555;
@@ -18,7 +19,6 @@
     --white: #ffffff;
     --azul: #0060EE;
     --azulminiopaco: #1558bc;
-    --azulescuro: #6985a7;
     --azulclaro: #dce4f4;
     --roxoclaro: rgb(116, 116, 235);
     --red: #dd0000;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body p, span, label, ul, ol,
 h1, h2, h3, h4, h5, h6 {
-    cursor: context-menu;
+    cursor: default;
 }
 
 body b, strong {
@@ -146,6 +146,7 @@ body > header {
     font-size: 1rem !important;
     font-weight: bold;
     color: var(--fullblack);
+    cursor: default;
 }
 
 .linha-do-cabecalho .logo > strong:nth-child(2) { 
@@ -218,6 +219,21 @@ body > footer {
     background-color: var(--cor-primaria);
     padding: 40px 0;
     color: var(--cinza5);
+}
+
+footer .linha-do-rodape {
+    position: relative;
+}
+
+footer .linha-do-rodape a.voltar {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    display: block;
+    padding: 10px;
+    margin-right: -10px;
+    font-size: 24px;
+    color: var(--cor-de-texto);
 }
 
 body > footer p {

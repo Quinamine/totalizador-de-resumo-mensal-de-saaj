@@ -53,9 +53,13 @@ div.container {
     padding: 1px 2px;
 }
 
+.container input[type=number] {
+    background-color: var(--red) !important;
+}
+
 .container input[readonly] {
     font-weight: bold;
-    cursor: context-menu;
+    cursor: default;
     transition: background-color 400ms ease-out;
 }
 
@@ -208,7 +212,7 @@ div.body div.coluna-de-livro-de-registo span {
 }
 
 div.body div.coluna-de-numeros-das-linhas span.fundo-laranja {
-    background-color: var(--cor-laranja);
+    background-color: var(--orange);
     color: var(--white);
 }
 
@@ -352,7 +356,7 @@ div.caixa-de-pesquisa {
     align-items: center;
     justify-content: space-between;
     padding: 4px;
-    background-color: var(--azulescuro);
+    background-color: var(--cor-secundaria);
     position: fixed;
     top: -35px;
     right: calc(50vw - 257px / 2);
@@ -369,7 +373,7 @@ div.caixa-de-pesquisa.on {
 div.caixa-de-pesquisa input.pesquisar-linha { 
     min-width: 188px;
     padding: 2px 0 2px 5px;
-    border: 2px solid var(--azulescuro) !important;
+    border: 2px solid var(--cor-secundaria) !important;
     background-color: var(--cinza13);
 }
 
@@ -397,6 +401,44 @@ div.caixa-de-pesquisa button:hover {
 
 div.caixa-de-pesquisa button:active {
     opacity: .8;
+}
+
+div.caixa-de-alerta {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: var(--white);
+    position: fixed;
+    top: calc(50vh - 113px / 2);
+    left: calc(50vw - 450px / 2);
+    z-index: 25000;
+    display: none;
+}
+
+div.caixa-de-alerta.on {
+    display: block;
+}
+
+div.caixa-de-alerta p {
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+div.caixa-de-alerta button {
+    width: 50px;
+    padding: 6px 4px;
+    margin-left: auto;
+    display: block;
+    color: var(--white);
+    background-color: var(--cor-secundaria);
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+div.caixa-de-alerta button:hover {
+    background-color: var(--roxoclaro);
 }
 
 /* CONFIRMAÇÃO DE ESVAZIAMENTO DA FICHA */
@@ -512,7 +554,6 @@ button.confirmar:hover {
 
 
 /* RAZÃO PELAS CÉLULAS COM FUNDO VERMELHO */
-/* FEEDBACK PARA CĆ‰LULAS VERMELHAS */
 
 div.razao-pelas-celulas-com-fundo-vermelho {
     max-width: 530px;
@@ -551,7 +592,7 @@ div.razao-pelas-celulas-com-fundo-vermelho p.obs {
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho > p.afirmacao {
-    border-color: var(--azulescuro) !important;
+    border-color: var(--cor-secundaria) !important;
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho 
@@ -607,7 +648,6 @@ div.desfoque.on {
     background-color: var(--blackalpha5);
     z-index: 20000;
 }
-
 
 /* FORMATAÇÃO PARA PRINT */
 

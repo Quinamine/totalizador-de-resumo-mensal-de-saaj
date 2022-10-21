@@ -25,7 +25,6 @@ const storage  = {
     }
 }
 
-
 function totalizar(celulasPorTotalizar, celulaDeSaida) {
     let total = 0;
     for (const cel of celulasPorTotalizar) {
@@ -42,10 +41,15 @@ window.addEventListener("load", () => {
     // INVOCAÇÃO DAS FUNÇÕES
     storage.salvarFicha();
     storage.salvarDadosAdicionais();
-    storage.salvarDestaqueDeTotais();
+    
     // A variável 'readonlyCelsDarker' está declarada no arquivo 'menu.js'
     readonlyCelsDarker.addEventListener("change", () => storage.salvarDestaqueDeTotais());
 
+    // No Load do Windows
+    if(localStorage.getItem("trmsaaj-destaque")) {
+        readonlyCelsDarker.setAttribute("checked", "");
+        menu.destacarFundoDeTotais();
+    }
     // TOTALIZAÇÃO
     inputCels.forEach( cel => {
         cel.addEventListener("input", () => {

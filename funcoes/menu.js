@@ -1,7 +1,6 @@
 
 const menu = {
     destacarFundoDeTotais() {
-        const  readonlyCels = document.querySelectorAll("input[readonly]");
         for (const cel of readonlyCels) {
             readonlyCelsDarker.checked ? 
                 cel.classList.add("bg-gray") : 
@@ -30,7 +29,9 @@ const menu = {
             return false;
         }
         else if((numLinha < 0) || (numLinha > 63)) {
-            window.alert("O número a pesquisar deve ser maior que 0 e menor que 64, pois a ficha só tem 63 linhas a partir de 1.");
+            const alerta = document.querySelector("div.caixa-de-alerta.query-out-of-range");
+            alerta.classList.add("on");
+            this.desfocarFundo();
             this.resetarFundoDoNumeroDaLinha();
         }
 
@@ -49,8 +50,6 @@ const menu = {
             this.resetarFundoDoNumeroDaLinha();
             rowNumbers[rowIndex].classList.add("fundo-laranja");
         }
-
-       
     },
 
     resetarFundoDoNumeroDaLinha() {
@@ -75,7 +74,9 @@ const menu = {
                     this.desfocarFundo();
                 }
                 else {
-                    window.alert("A ficha não está preenchida.");
+                    const alerta = document.querySelector("div.caixa-de-alerta.ficha-vazia");
+                    alerta.classList.add("on");
+                    this.desfocarFundo();
                 }
             },
 
@@ -112,7 +113,7 @@ const menu = {
     },
 
     focarFundo() {
-        const janelasDesfocantes = document.querySelectorAll("div.caixa-de-confirmacao, div.hamburguer");  
+        const janelasDesfocantes = document.querySelectorAll("div.caixa-de-confirmacao, div.caixa-de-alerta, div.hamburguer");  
         let janelasAbertas = 0;
 
         for (const janela of janelasDesfocantes) {
@@ -123,13 +124,13 @@ const menu = {
     }
 }
 
-
 // Variáveis globais
-let readonlyCelsDarker,
+let readonlyCelsDarker, readonlyCels,
 srcContainer, srcInput, rowNumbers,
 divDesfocante;
 window.addEventListener("load", () => {
     readonlyCelsDarker = document.querySelector("#readonlyinputs-darker");
+    readonlyCels = document.querySelectorAll("input[readonly]");
     srcContainer = document.querySelector("div.caixa-de-pesquisa");
     srcInput = document.querySelector("div.caixa-de-pesquisa input.pesquisar-linha");
     rowNumbers = document.querySelectorAll("div.coluna-de-numeros-das-linhas span")
@@ -142,6 +143,24 @@ window.addEventListener("load", () => {
     IrParaBtn.addEventListener("click", () => menu.mostrarCaixaDePesquisa());
     fecharIrParaBtn.addEventListener("click", () => menu.omitirCaixaDePesquisa());
     srcInput.addEventListener("keyup", () => menu.pesquisarLinha(srcInput.value));
+
+    // FECHAR CAIXA DE ALERTA
+    const botoesFecharAlerta = document.querySelectorAll("div.caixa-de-alerta button");
+    for (const btn of botoesFecharAlerta) {
+        btn.addEventListener("click", () => {
+            btn.parentElement.classList.remove("on");
+            menu.focarFundo();
+        })
+    }
+
+    // PROTEGER ACESSO À READONLY CELS
+    readonlyCels.forEach ( cel => {
+        cel.addEventListener("click", () => {
+            const alerta = document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular");
+            alerta.classList.add("on");
+            menu.desfocarFundo();
+        })
+    })
 
     // ESVAZIAR FICHA 
     const botaoEsvaziar = document.querySelector(".esvaziar-ficha");
@@ -156,6 +175,8 @@ window.addEventListener("load", () => {
         menu.esvaziamento().omitirCaixaDeConfirmacao();
     });
 
+    
+    
  
 })
 
