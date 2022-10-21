@@ -53,8 +53,9 @@ div.container {
     padding: 1px 2px;
 }
 
-.container input[type=number] {
+.container input[type=number].fundo-vermelho {
     background-color: var(--red) !important;
+    color: var(--white);
 }
 
 .container input[readonly] {

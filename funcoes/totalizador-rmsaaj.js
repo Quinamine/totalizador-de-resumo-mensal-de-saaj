@@ -1,4 +1,3 @@
-
 const storage  = {
     salvarFicha() {
         for (let i = 0; i < inputCels.length; i++) {
@@ -33,16 +32,12 @@ function totalizar(celulasPorTotalizar, celulaDeSaida) {
     celulaDeSaida.value = total;
 }
 
-// VARIÁVEIS GLOBAIS
-let inputCels;
 window.addEventListener("load", () => {
-    inputCels = document.querySelectorAll("div.input-container input");
-
     // INVOCAÇÃO DAS FUNÇÕES
     storage.salvarFicha();
     storage.salvarDadosAdicionais();
     
-    // A variável 'readonlyCelsDarker' está declarada no arquivo 'menu.js'
+    // A variável 'readonlyCelsDarker' está declarada globalmente no arquivo 'menu.js'
     readonlyCelsDarker.addEventListener("change", () => storage.salvarDestaqueDeTotais());
 
     // No Load do Windows
@@ -51,8 +46,10 @@ window.addEventListener("load", () => {
         menu.destacarFundoDeTotais();
     }
     // TOTALIZAÇÃO
+    // A variável 'inputCels' está declarada globalmente no arquivo 'inputValidation.js'
     inputCels.forEach( cel => {
         cel.addEventListener("input", () => {
+
             if((cel.dataset.totalparcial) && (cel.dataset.totalgeral)) {
                 cel.classList.add(`${cel.dataset.totalparcial}`);
                 cel.classList.add(`${cel.dataset.totalgeral}`);

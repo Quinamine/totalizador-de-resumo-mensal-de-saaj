@@ -91,7 +91,7 @@ const menu = {
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
                     localStorage.removeItem(`trmsaaj-cel${i}`);
-                    celulas[i].classList.remove("bg-red");
+                    celulas[i].classList.remove("fundo-vermelho");
                 };
 
                 limpadoresDeDadosAdicionais.forEach ( limpador => {
@@ -163,14 +163,14 @@ window.addEventListener("load", () => {
     })
 
     // ESVAZIAR FICHA 
-    const botaoEsvaziar = document.querySelector(".esvaziar-ficha");
-    botaoEsvaziar.addEventListener("click", () => menu.esvaziamento().mostrarCaixaDeConfirmacao());
+    const btnEsvaziar = document.querySelector(".esvaziar-ficha");
+    btnEsvaziar.addEventListener("click", () => menu.esvaziamento().mostrarCaixaDeConfirmacao());
 
-    const botaoCancelar = document.querySelector(".cancelar");
-    botaoCancelar.addEventListener("click", () =>  menu.esvaziamento().omitirCaixaDeConfirmacao());
+    const btnCancelar = document.querySelector(".cancelar");
+    btnCancelar.addEventListener("click", () =>  menu.esvaziamento().omitirCaixaDeConfirmacao());
 
-    const botaoConfirmar = document.querySelector(".confirmar");
-    botaoConfirmar.addEventListener("click", () => {
+    const btnConfirmar = document.querySelector(".confirmar");
+    btnConfirmar.addEventListener("click", () => {
         menu.esvaziamento().limparDados();
         menu.esvaziamento().omitirCaixaDeConfirmacao();
     });
