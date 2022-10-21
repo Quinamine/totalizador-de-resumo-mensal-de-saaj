@@ -126,7 +126,7 @@ const menu = {
 
 // Variáveis globais
 let readonlyCelsDarker, readonlyCels,
-srcContainer, srcInput, rowNumbers,
+srcContainer, srcInput, rowNumbers, 
 divDesfocante;
 window.addEventListener("load", () => {
     readonlyCelsDarker = document.querySelector("#readonlyinputs-darker");
@@ -175,9 +175,6 @@ window.addEventListener("load", () => {
         menu.esvaziamento().omitirCaixaDeConfirmacao();
     });
 
-    
-    
- 
 })
 
 

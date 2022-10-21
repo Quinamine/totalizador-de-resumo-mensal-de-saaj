@@ -131,25 +131,24 @@ body > header {
     box-shadow: 0 0 10px var(--cinza13);
 }
 
-.linha-do-cabecalho, 
-.linha-do-rodape {
+div.linha {
     max-width: 1150px;
     margin: 0 auto;
 }
 
-.linha-do-cabecalho {
+div.linha.do-cabecalho {
     display: flex;
     align-items: center;
 }
 
-.linha-do-cabecalho .logo {
+div.linha.do-cabecalho .logo {
     font-size: 1rem !important;
     font-weight: bold;
     color: var(--fullblack);
     cursor: default;
 }
 
-.linha-do-cabecalho .logo > strong:nth-child(2) { 
+div.linha.do-cabecalho .logo > strong:nth-child(2) { 
     display: none;
     font-weight: initial;
 }
@@ -221,11 +220,11 @@ body > footer {
     color: var(--cinza5);
 }
 
-footer .linha-do-rodape {
+footer div.linha.do-rodape {
     position: relative;
 }
 
-footer .linha-do-rodape a.voltar {
+footer div.linha.do-rodape a.voltar {
     position: absolute;
     top: -40px;
     right: 0;

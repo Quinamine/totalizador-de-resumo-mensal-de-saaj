@@ -30,7 +30,7 @@
 
     <body ontouchstart="" id="ficha">
         <header>
-            <div class="linha-do-cabecalho">
+            <div class="linha do-cabecalho">
         
                 <a href="index.html" class="logo">
                     <strong>Totalizador de Resumo Mensal de SAAJ</strong>
@@ -47,12 +47,12 @@
                             <button class="ir-para">Ir para linha...</button>
                         </li>  
                             
-                        <li title="Limpar dados da ficha">
+                        <li title="Limpar os dados da ficha">
                             <button class="esvaziar-ficha">Esvaziar a ficha</button>
                         </li>
 
-                        <li class="imprimir">
-                            <button onclick="window.print()" title="Imprimir a ficha">
+                        <li class="imprimir" title="Imprimir a ficha">
+                            <button onclick="window.print()">
                                 Imprimir
                             </button>
                         </li>
@@ -1333,6 +1333,11 @@
             </div>
  
             <aside class="manipulacao-do-menu">
+                <!-- Adicionar nota -->
+                <div class="linha nota">
+                    <textarea id="campo-de-nota" rows="3" placeholder="Adicionar uma nota..."></textarea>
+                </div>
+                
 
                 <!-- Caixa de pesquisa "Ir para" -->
                 <div class="pesquisa">
@@ -1436,7 +1441,7 @@
                         </strong>
                     </p>
                     <p>
-                        As células de entrada de dados do Totalizador têm uma largura cabível para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, só ficam visíveis os primeiros 6 algarismos e do 7º em diante, ficam fora da viewport (área visível) da célula.
+                        As células de entrada de dados do Totalizador têm uma largura cabível para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da viewport (área visível) da célula.
                     </p>
                     <p class="obs afirmacao">
                          Acreditamos que actualmente não haja nenhuma Unidade Sanitária em Moçambique com um número de consultas do SAAJ próximo, equivalente ou maior que 999 999.
@@ -1449,14 +1454,12 @@
                         <button class="close-redcels-obs">Fechar</button>
                     </div>
                 </div>
-
-
             </aside>
         </main>
 
         <footer>
             
-            <div class="linha-do-rodape">
+            <div class="linha do-rodape">
                 <p>Idealizado por Castro Silvestre e concretizado por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de SAAJ -&nbsp;Todos os direitos reservados</p>
 
                 <a href="#ficha" class="voltar">&uarr;</a>

@@ -6,6 +6,8 @@ const validacao = {
             let numAlgarismos = cel.value.length;
             if(numAlgarismos > 6) {
                 numAlgarismos > 6 && cel.classList.add("fundo-vermelho");
+            } else {
+                cel.classList.remove("fundo-vermelho");
             };
         }
     },
@@ -32,7 +34,6 @@ const validacao = {
     }
 }
 
-
 let inputCels, alertaVermelho;
 window.addEventListener("load", () => {
     inputCels = document.querySelectorAll("div.input-container input");
@@ -47,10 +48,19 @@ window.addEventListener("load", () => {
         cel.addEventListener("input", function() {
             validacao.validarInput();
 
-            const totalParcial = document.querySelector(`.${cel.dataset.totalparcial}`);
-            if( (cel.matches(".fundo-vermelho")) || 
-            (totalParcial.matches(".fundo-vermelho")) ) {
+            const totalParcialAfim = document.querySelector(`.${cel.dataset.totalparcialoutput}`);
+
+            // Mostrar alerta se a 'cel' ficar vermelha
+            if(cel.matches(".fundo-vermelho")) {
                 setTimeout(validacao.mostrarAlertaVermelho, 2500);
+                return false;
+            }
+
+            // Mostrar alerta se as células dos totais ficarem vermelhas;
+            for (const c of inputCels) {
+                if( c.hasAttribute("readonly") && c.matches(".fundo-vermelho")) {
+                    setTimeout(validacao.mostrarAlertaVermelho, 2500);
+                }
             }
         });
     });
