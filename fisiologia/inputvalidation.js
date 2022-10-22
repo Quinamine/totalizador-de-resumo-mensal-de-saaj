@@ -1,3 +1,4 @@
+"use strict";
 
 const validacao = {
 
@@ -34,15 +35,14 @@ const validacao = {
     }
 }
 
+// VARIÁVEIS GLOBAIS
 let inputCels, alertaVermelho;
-window.addEventListener("load", () => {
+function inicializacao() {
     inputCels = document.querySelectorAll("div.input-container input");
     alertaVermelho = document.querySelector("div.razao-pelas-celulas-com-fundo-vermelho");
-    const btnFecharAlertaVermelho = document.querySelector("button.close-redcels-obs");
+}
 
-    // VALIDAR INPUT - NO LOAD DO WINDOWS
-    validacao.validarInput();
-
+function eventos() {
     // VALIDAR INPUT NO EVENTO DE ENTRADA DE DADOS
     inputCels.forEach ( cel => {
         cel.addEventListener("input", function() {
@@ -66,9 +66,16 @@ window.addEventListener("load", () => {
     });
 
     // FECHAR ALERTA VERMELHO
+    const btnFecharAlertaVermelho = document.querySelector("button.close-redcels-obs");
     btnFecharAlertaVermelho.addEventListener("click", () => {
         validacao.fecharAlertaVermelho();
         validacao.salvarPreferenciaNaoMostrarMais();
     });
+}
 
+window.addEventListener("load", () => {
+    // VALIDAR INPUT - NO LOAD DO WINDOWS
+    inicializacao();
+    eventos();
+    validacao.validarInput();
 })

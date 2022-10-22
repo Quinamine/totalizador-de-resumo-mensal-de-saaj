@@ -1,3 +1,5 @@
+"use strict";
+
 const storage  = {
     salvarFicha() {
         for (let i = 0; i < inputCels.length; i++) {
@@ -44,25 +46,9 @@ function totalizar(celulasPorTotalizar, celulaDeSaida) {
     celulaDeSaida.value = total;
 }
 
-window.addEventListener("load", () => {
-    // INVOCAÇÃO DAS FUNÇÕES
-    storage.salvarFicha();
-    storage.salvarDadosAdicionais();
-    storage.salvarNota();
-    
-    // RETORNAR NOTA NO LOAD DO WINDOWS
-    textArea.value = localStorage.getItem("trmsaaj-nota");
-    textArea.value !== "" && textArea.classList.add("bold");
-
-    
+function escutarEventos() {
     // A variável 'readonlyCelsDarker' está declarada globalmente no arquivo 'menu.js'
     readonlyCelsDarker.addEventListener("change", () => storage.salvarDestaqueDeTotais());
-
-    // NO LOAD DO WINDOWS
-    if(localStorage.getItem("trmsaaj-destaque")) {
-        readonlyCelsDarker.setAttribute("checked", "");
-        menu.destacarFundoDeTotais();
-    }
 
     // TOTALIZAÇÃO
     // A variável 'inputCels' está declarada globalmente no arquivo 'inputValidation.js'
@@ -99,4 +85,22 @@ window.addEventListener("load", () => {
             }
         }
     })
-})
+}
+
+window.addEventListener("load", () => {
+    // INVOCAÇÃO DAS FUNÇÕES
+    storage.salvarFicha();
+    storage.salvarDadosAdicionais();
+    storage.salvarNota();
+    escutarEventos();
+    
+    // RETORNAR NOTA NO LOAD DO WINDOWS
+    textArea.value = localStorage.getItem("trmsaaj-nota");
+    textArea.value !== "" && textArea.classList.add("bold");
+
+    // DESTAQUE DE CÉLULAS NO LOAD DO WINDOWS
+    if(localStorage.getItem("trmsaaj-destaque")) {
+        readonlyCelsDarker.setAttribute("checked", "");
+        menu.destacarFundoDeTotais();
+    };
+});
