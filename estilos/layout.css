@@ -41,9 +41,14 @@ body {
 
 main {
     flex: 1;
-    overflow: auto;
-    max-width: 100%;
-    padding: 0 15px;
+}
+
+@media screen and (max-width: 1149px) {
+    main {
+        max-width: 100%;
+        overflow: auto;
+        padding: 0 15px;
+    }
 }
 
 *::selection {
@@ -299,7 +304,7 @@ footer div.linha.do-rodape a.voltar {
     padding: 10px;
     margin-right: -10px;
     font-size: 24px;
-    color: var(--cor-de-texto);
+    color: var(--fullblack);
 }
 
 @media screen and (max-width: 1150px) {

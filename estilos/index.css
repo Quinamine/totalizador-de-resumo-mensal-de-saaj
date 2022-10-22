@@ -235,7 +235,7 @@ div.coluna-de-indicadores {
     grid-template-rows: calc(24px*2) calc(24px*7) 24px calc(24px*8) calc(24px*4) calc(24px*2) calc(24px*5) calc(24px*3) calc(24px*5) calc(24px*3) repeat(2, calc(24px*2)) calc(24px*12) repeat(2, 24px) calc(24px*5);
 }
 
-@media screen and (min-width: 530px) and (max-width: 1150px) {
+@media screen and (min-width: 530px) and (max-width: 1149px) {
     div.coluna-de-indicadores {
         position: sticky;
         left: -75px;
@@ -519,7 +519,6 @@ div.caixa-de-confirmacao {
     }
 }
 
-
 div.caixa-de-confirmacao.on {
     display: block;
 }
@@ -704,6 +703,56 @@ div.seccao-de-interatividade > button:active {
     background-color: #ddd;
 }
 
+/* LINHA DE REFERÊNCIA DE SEXO E IDADE */
+div.linha-de-referencia {
+    display: none;
+}
+
+@media screen and (max-width: 1149px) {
+    div.linha-de-referencia {
+        display: block;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 10000 !important;
+        background-color: var(--roxoclaro);
+        box-shadow: 0 -1px 5px var(--cinza14);
+        z-index: 1;
+    }
+    
+    div.coluna-de-referencia  {
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+        color: var(--fullblack);
+    }
+    
+    div.coluna-de-referencia > * {
+        margin: 0 5px;
+        display: flex;
+        align-items: center;
+    }
+    
+    div.coluna-de-referencia output {
+        min-height: 18px;
+        border: thin solid var(--cinza5);
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--cor-secundaria);
+        font-weight: bold;
+        min-width: 24px;
+    }
+    
+    div.coluna-de-referencia output.ref-de-faixa-etaria {
+        min-width: 70px;
+    }
+}
+
 /* DESFOQUE DO FUNDO */
 div.desfoque.on {
     width: 100%;
@@ -724,4 +773,3 @@ div.desfoque.on {
     }
 }
 
-/* MANIPULAÇÃO DE ELEMENTOS POR JS */
