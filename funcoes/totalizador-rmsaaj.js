@@ -44,11 +44,7 @@ function totalizar(celulasPorTotalizar, celulaDeSaida) {
     celulaDeSaida.value = total;
 }
 
-let textArea;
 window.addEventListener("load", () => {
-    // VARIÁVEIS
-    textArea = document.querySelector("textarea#campo-de-nota");
-    
     // INVOCAÇÃO DAS FUNÇÕES
     storage.salvarFicha();
     storage.salvarDadosAdicionais();

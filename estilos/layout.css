@@ -41,10 +41,13 @@ body {
 
 main {
     flex: 1;
+    overflow: auto;
+    max-width: 100%;
+    padding: 0 15px;
 }
 
 *::selection {
-    background-color: var(--cinza4);
+    background-color: var(--cor-secundaria);
     color: var(--white);
 }
 
@@ -65,7 +68,6 @@ a {
     text-decoration: none;
     color: var(--azulminiopaco)
 }
-
 
 button {
     border: none;
@@ -136,79 +138,144 @@ div.linha {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 1150px) {
+    div.linha {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 div.linha.do-cabecalho {
     display: flex;
     align-items: center;
 }
 
-div.linha.do-cabecalho .logo {
-    font-size: 1rem !important;
+div.linha.do-cabecalho a.logo {
+    font-size: 1rem;
     font-weight: bold;
     color: var(--fullblack);
     cursor: default;
 }
 
-div.linha.do-cabecalho .logo > strong:nth-child(2) { 
-    display: none;
-    font-weight: initial;
+@media screen and (max-width: 1023px) {
+    div.linha.do-cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: auto;
+    } 
+
+    div.linha.do-cabecalho::-webkit-scrollbar {
+        height: 4px;
+    } 
+
+    div.linha.do-cabecalho::-webkit-scrollbar-thumb {
+        background-color: var(--cinza10);
+        border-radius: 50px;
+    } 
+
+    div.linha.do-cabecalho a.logo {
+        line-height: 1.5;
+        margin-top: 5px;
+        position: sticky;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    div.linha.do-cabecalho a.logo {
+        font-size: 15px;
+    }
 }
 
 /* SECÇÃO DE NAVEGAÇÃO */
-
-.menu, 
-.menu ul,
-.menu ul li.destacar-as-celulas-automaticas {
+section.menu, 
+section.menu ul,
+section.menu li.destacar-as-celulas-automaticas {
     display: flex;
     align-items: center;
+    
 }
 
-.menu {
+section.menu {
     flex: 1;
     justify-content: flex-end;
     margin-right: -10px;
+    font-size: 12px;
 }
 
-.menu li.destacar-as-celulas-automaticas:hover,
-.menu li.destacar-as-celulas-automaticas label {
+@media screen and (max-width: 1023px) {
+    section.menu,
+    section.menu ul {
+        width: 100%;
+    } 
+
+    section.menu {
+        min-width: 590px;
+    }
+
+    section.menu ul li {
+        flex: 1;
+        text-align: center;
+    }
+
+    section.menu li.destacar-as-celulas-automaticas {
+        justify-content: center;
+    }
+
+    section.menu li button {
+        width: 100%;
+    }
+}
+
+section.menu li.destacar-as-celulas-automaticas:hover,
+section.menu li.destacar-as-celulas-automaticas label {
     cursor: pointer;
 }
 
-.menu li label {
+section.menu li label {
     padding: 8px 10px 8px 0;
 }
 
-.menu li input[type=checkbox] {
+section.menu li input[type=checkbox] {
     width: 12px;
     height: 11px;
-    margin-top: 1px;
-    margin-right: 4px;
+    margin: 1px 4px 3px 0;
     cursor: pointer;
 }
 
 /* BOTÕES DO MENU */
 
-.menu li button {
+section.menu li button {
     background-color: inherit;
-    font-size: 11px;
+    font-size: 12px;
     display: inline-block;
     padding: 10px;
 }
 
-.menu li a {
-    padding: 10px;
-    color: inherit;
+section.menu button span.print-2-pdf {
+    display: none;
 }
 
+@media screen and (max-width: 1023px) {
+    section.menu button span.print-2-pdf {
+        display: block;
+    }
 
+    section.menu button span.imprimir {
+        display: none;
+    }
+    
+    
+}
 /* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 
-.menu li:first-child:hover,
-.menu li button:hover,
-.menu li a:hover {
+section.menu li:first-child:hover,
+section.menu li button:hover,
+section.menu li a:hover {
     background-color: var(--cinzaf0);
 }
 
-.menu ul li:first-child:active {
+section.menu ul li:first-child:active {
     opacity: 0.7;
 }
 
@@ -235,6 +302,14 @@ footer div.linha.do-rodape a.voltar {
     color: var(--cor-de-texto);
 }
 
+@media screen and (max-width: 1150px) {
+    footer div.linha.do-rodape a.voltar {
+        right: 15px;
+    }
+}
+
 body > footer p {
     text-align: center;
+    font-size: 12px;
+    color: var(--cor-de-texto);
 }

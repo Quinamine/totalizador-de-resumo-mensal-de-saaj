@@ -38,9 +38,11 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 }
 
 div.container {
+    min-width: 1150px;
     max-width: 1150px;
     margin: 30px auto 10px auto;
 }
+
 
 .container input[type=text] {
     font-size: 12px;
@@ -233,6 +235,15 @@ div.coluna-de-indicadores {
     grid-template-rows: calc(24px*2) calc(24px*7) 24px calc(24px*8) calc(24px*4) calc(24px*2) calc(24px*5) calc(24px*3) calc(24px*5) calc(24px*3) repeat(2, calc(24px*2)) calc(24px*12) repeat(2, 24px) calc(24px*5);
 }
 
+@media screen and (min-width: 530px) and (max-width: 1150px) {
+    div.coluna-de-indicadores {
+        position: sticky;
+        left: -75px;
+        background-color: var(--white);
+        z-index: 5000;
+    }
+}
+
 /* SECTIONS */
 div.coluna-de-indicadores section:nth-child(n+4) {
     display: grid;
@@ -355,6 +366,18 @@ div.ficha footer div.compilacao {
 div.nota {
     margin-bottom: 20px;
 }
+@media screen and (max-width: 1150px) {
+    div.linha.nota {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media print {
+    div.nota.no-print {
+        display: none;
+    }
+}
 
 div.nota textarea {
     font: 13px Arial, Helvetica, san-serif;
@@ -437,8 +460,17 @@ div.caixa-de-alerta {
     position: fixed;
     top: calc(50vh - 113px / 2);
     left: calc(50vw - 450px / 2);
+    margin: 0 auto;
     z-index: 25000;
     display: none;
+}
+
+@media screen and (max-width: 450px) {
+    div.caixa-de-alerta {
+        width: 95%;
+        top: calc(50vh - 132px / 2);
+        left: calc(50vw - 95% / 2);
+    }
 }
 
 div.caixa-de-alerta.on {
@@ -478,6 +510,15 @@ div.caixa-de-confirmacao {
     z-index: 30000;
     display: none;
 }
+
+@media screen and (max-width: 450px) {
+    div.caixa-de-confirmacao {
+        width: 95%;
+        min-width: initial;
+        left: calc(50vw - 95% / 2);
+    }
+}
+
 
 div.caixa-de-confirmacao.on {
     display: block;

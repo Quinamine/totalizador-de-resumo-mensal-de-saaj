@@ -33,14 +33,14 @@
             <div class="linha do-cabecalho">
         
                 <a href="index.html" class="logo">
-                    <strong>Totalizador de Resumo Mensal de SAAJ</strong>
+                    Totalizador de Resumo Mensal de SAAJ
                 </a>
                                         
                 <section class="menu" role="navigation">
                     <ul>
                         <li class="destacar-as-celulas-automaticas" title="Adicionar um fundo opaco às celulas dos totais">
                             <input type="checkbox" id="readonlyinputs-darker"/> 
-                            <label for="readonlyinputs-darker">Destacar o fundo dos totais</label>
+                            <label for="readonlyinputs-darker">Destacar&nbsp;o&nbsp;fundo&nbsp;dos&nbsp;totais</label>
                         </li>
 
                         <li title="Migrar até uma determinada linha">
@@ -51,9 +51,10 @@
                             <button class="esvaziar-ficha">Esvaziar a ficha</button>
                         </li>
 
-                        <li class="imprimir" title="Imprimir a ficha">
-                            <button onclick="window.print()">
-                                Imprimir
+                        <li title="Imprimir a ficha">
+                            <button class="imprimir-ficha">
+                                <span class="imprimir">Imprimir</span>
+                                <span class="print-2-pdf">Converter para PDF</span>
                             </button>
                         </li>
                     </ul>
@@ -1347,7 +1348,7 @@
                     </div>
                     
                     <div class="caixa-de-alerta query-out-of-range">
-                        <p>O número a pesquisar deve ser maior que 0 e menor que 64, pois a ficha tem no máximo 63 linhas a partir de 1.</p>
+                        <p>O número <b class="entered-num"></b> está fora do intervalo das linhas, pois a ficha tem no máximo 63 linhas a partir de 1.</p>
                         
                         <button>OK</button>
                     </div>
@@ -1428,7 +1429,7 @@
 
                 <!-- Restrição à readonly cels -->
                 <div class="caixa-de-alerta restricao-de-acesso-celular">
-                    <p>Para prevenir possíveis alterações acidentais, as células dos totais têm o acesso restrito.</p>               
+                    <p>Para prevenir possíveis alterações acidentais dos resultados, as células dos totais têm o acesso interdito.</p>               
                     <button>OK</button>
                 </div>
 
@@ -1460,7 +1461,7 @@
         <footer>
             
             <div class="linha do-rodape">
-                <p>Idealizado por Castro Silvestre e concretizado por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de SAAJ -&nbsp;Todos os direitos reservados</p>
+                <p>Desenvolvido por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> em colaboração com Castro Silvestre |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de SAAJ -&nbsp;Todos os direitos reservados</p>
 
                 <a href="#ficha" class="voltar">&uarr;</a>
             </div>
