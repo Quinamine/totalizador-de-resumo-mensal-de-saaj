@@ -620,6 +620,7 @@ button.confirmar:hover {
 /* RAZÃO PELAS CÉLULAS COM FUNDO VERMELHO */
 
 div.razao-pelas-celulas-com-fundo-vermelho {
+    width: 100%;
     max-width: 530px;
     padding: 15px;
     position: fixed;
@@ -638,6 +639,18 @@ div.razao-pelas-celulas-com-fundo-vermelho.on {
     top: calc(50vh - 320px / 2);
     visibility: visible;
 }
+
+@media screen and (max-width: 530px) {
+    div.razao-pelas-celulas-com-fundo-vermelho.on {
+        top: 67px;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        overflow: auto;
+        padding-bottom: 100px;
+    }
+}
+
 
 div.razao-pelas-celulas-com-fundo-vermelho h2 {
     font-size: 1.125rem;
@@ -666,6 +679,18 @@ div.seccao-de-interatividade {
     align-items: flex-end;
 }
 
+@media screen and (max-width: 530px) {
+    div.razao-pelas-celulas-com-fundo-vermelho.on 
+    div.seccao-de-interatividade {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 7px 15px;
+        background: var(--white);
+        align-items: center;
+    }
+}
 div.seccao-de-interatividade > div {
     display: flex;
     align-items: center;
@@ -716,7 +741,7 @@ div.linha-de-referencia {
         left: 0;
         bottom: 0;
         z-index: 10000 !important;
-        background-color: var(--roxoclaro);
+        background-color: var(--cor-primaria);
         box-shadow: 0 -1px 5px var(--cinza14);
         z-index: 1;
     }
@@ -727,7 +752,7 @@ div.linha-de-referencia {
         padding: 4px 8px;
         display: flex;
         align-items: center;
-        color: var(--fullblack);
+        font-size: 12px;
     }
     
     div.coluna-de-referencia > * {
@@ -743,7 +768,8 @@ div.linha-de-referencia {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--cor-secundaria);
+        background-color: var(--blackalpha5);
+        color: var(--white);
         font-weight: bold;
         min-width: 24px;
     }
