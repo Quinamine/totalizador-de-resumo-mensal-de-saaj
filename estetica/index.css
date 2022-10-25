@@ -38,19 +38,16 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 }
 
 div.container {
-    min-width: 1150px;
-    max-width: 1150px;
+    max-width: 1312px;
     margin: 30px auto 10px auto;
 }
 
 
 .container input[type=text] {
-    font-size: 12px;
     font-weight: bold;
 }
 
 .container input[type=number] {
-    font-size: 11px;
     text-align: center;
     padding: 1px 2px;
 }
@@ -72,7 +69,7 @@ div.container {
 
 .container > header {
     display: grid;
-    grid-template-columns: 250px 335px 1fr;
+    grid-template-columns: 300px 335px 1fr;
     text-transform: uppercase;
     margin-left: 50px;
 }
@@ -122,7 +119,8 @@ header div.visto input {
 
 header h1 {
     grid-column: 1/4;
-    margin: 20px 0 10px 52px;
+    margin: 20px 0 10px 62px;
+    font-weight: bold;
 }
 
 /* FICHA */
@@ -133,13 +131,13 @@ div.ficha header span {
 
 div.ficha header {
     display: grid;
-    grid-template-columns: repeat(2, 50px) 998px 50px;
+    grid-template-columns: repeat(2, 55px) 1150px 55px;
     background-color: var(--cor-primaria);
     text-align: center;
     border: 1px solid var(--cinza5);
     border-bottom: none;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.4;
     position: sticky;
     top: 0;
     z-index: 10000;
@@ -157,7 +155,7 @@ div.linha-de-indicadores {
 
 div.ficha div.linha-de-sexo-e-faixas-etarias {
     display: grid;
-    grid-template-columns: 447px repeat(2, calc(45px*5)) 100px;
+    grid-template-columns: 599px repeat(2, calc(45px*5)) 100px;
     grid-template-areas: ". sexo-m sexo-f total-parcial";
 }
 
@@ -176,6 +174,7 @@ div.ficha div.linha-de-sexo-e-faixas-etarias div.grade-de-total-parcial {
 div.grade-de-sexo {
     display: grid;
     grid-template-columns: repeat(5, 45px);
+    font-size: 11px;
 }
 
 div.grade-de-sexo span.sexo {
@@ -184,7 +183,7 @@ div.grade-de-sexo span.sexo {
 
 div.grade-de-total-parcial {
     display: grid;
-    grid-template-columns: repeat(2, 50px);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 div.grade-de-total-parcial span.total {
@@ -199,7 +198,7 @@ div.grade-de-total-parcial span:nth-child(n+2) {
 
 div.ficha div.body {
     display: grid; 
-    grid-template-columns: repeat(2, 50px) 448px repeat(10, 45px) repeat(3, 50px);
+    grid-template-columns: repeat(2, 55px) 600px repeat(10, 45px) repeat(3, 50px);
     border: 1px solid var(--cinza5);
     border-bottom: none;
 }
@@ -277,6 +276,10 @@ section div.titulo  {
     font-weight: bold;
 }
 
+section div.titulo  span {
+    line-height: 1.4;
+}
+
 /* consultas */
 div.coluna-de-indicadores section.consultas {
     display: grid;
@@ -299,7 +302,6 @@ div.situacao-escolar {
     grid-area: situacao;
     display: grid;
     grid-template-columns: 60px 1fr;
-    line-height: 1.5;
 }
 
 /* Parceiros presentes */
@@ -331,6 +333,7 @@ section.contracepcao-e-protecao div.subtitulo-2 {
 
 section.contracepcao-e-protecao div.subtitulo-2 span {
     height: 100%;
+    line-height: 1;
 }
 
 /* INPUT CONTAINER */
@@ -353,14 +356,11 @@ div.input-container input {
 
 div.ficha footer {
     display: grid;
-    grid-template-columns: 150px 570px 230px;
+    grid-template-columns: 150px 912px 250px;
+    justify-items: center;
     margin-top: 20px;
-    justify-content: center;
 }
 
-div.ficha footer div.compilacao {
-    justify-self: center;
-}
 
 /* INTERATIVIDADE DO MENU */
 div.nota {
@@ -752,7 +752,6 @@ div.linha-de-referencia {
         padding: 4px 8px;
         display: flex;
         align-items: center;
-        font-size: 12px;
     }
     
     div.coluna-de-referencia > * {
@@ -794,8 +793,8 @@ div.desfoque.on {
 
 @media print {
     @page {
-        margin: 0.25cm;
-        margin-bottom: 0.9cm;
+        margin: 0.5cm;
+        margin-bottom: 1cm;
     }
 }
 
