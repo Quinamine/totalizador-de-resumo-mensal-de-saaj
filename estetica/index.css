@@ -42,8 +42,8 @@ div.container {
     margin: 30px auto 10px auto;
 }
 
-
-.container input[type=text] {
+.container input[type=text],
+input[type=date] {
     font-weight: bold;
 }
 
@@ -356,11 +356,17 @@ div.input-container input {
 
 div.ficha footer {
     display: grid;
-    grid-template-columns: 150px 912px 250px;
-    justify-items: center;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 367px);
+    padding: 15px 100px 0 110px;
 }
 
+div.ficha footer div.compilacao {
+    justify-self: center;
+}
+
+div.ficha footer div.assinatura {
+    justify-self: end;
+}
 
 /* INTERATIVIDADE DO MENU */
 div.nota {
@@ -383,7 +389,7 @@ div.nota textarea {
     font: 13px Arial, Helvetica, san-serif;
     outline: none;
     border: none;
-    min-width: 870px;
+    min-width: 880px;
     padding: 5px;
     line-height: 1.5;
     border: 1px solid var(--cinza5);
@@ -501,6 +507,8 @@ div.caixa-de-alerta button:hover {
 
 div.caixa-de-confirmacao {
     min-width: 375px;
+    max-height: 100vh;
+    overflow: auto;
     padding: 20px;
     border-radius: 10px;
     background: var(--white);
@@ -535,7 +543,7 @@ div.caixa-de-confirmacao div.alerta {
 
 div.caixa-de-confirmacao h3,
 div.caixa-de-confirmacao h4 {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
 }
 
