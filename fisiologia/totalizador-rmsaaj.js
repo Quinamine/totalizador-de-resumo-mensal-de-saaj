@@ -67,7 +67,12 @@ function escutarEventos() {
                 totalizar(totalParcial, totalParcialOutput);
                 totalizar(totalGeral, totalGeralOutput);
             }
-        })
+
+            if(cel.dataset.totalparcialnaoaplicaveloutput) {
+                let totalParcialNaoAplicavelOutput = document.querySelector(`.${cel.dataset.totalparcialnaoaplicaveloutput}`);
+                totalParcialNaoAplicavelOutput.value = 0;
+            }
+        });
 
         // No Load do Windows
         if (cel.value != "") {
@@ -83,8 +88,13 @@ function escutarEventos() {
                 totalizar(totalParcial, totalParcialOutput);
                 totalizar(totalGeral, totalGeralOutput);
             }
+
+            if(cel.dataset.totalparcialnaoaplicaveloutput) {
+                let totalParcialNaoAplicavelOutput = document.querySelector(`.${cel.dataset.totalparcialnaoaplicaveloutput}`)
+                totalParcialNaoAplicavelOutput.value = 0;
+            }
         }
-    })
+    });
 }
 
 window.addEventListener("load", () => {

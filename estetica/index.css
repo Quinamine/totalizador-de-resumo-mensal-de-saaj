@@ -63,9 +63,12 @@ input[type=date] {
     transition: background-color 400ms ease-out;
 }
 
-.container input[type=number].nao-aplicavel,
 .container input[readonly].bg-gray {
     background-color: var(--cinza12);
+}
+
+.container input[type=number].nao-aplicavel {
+    background-color: var(--cinza8);
 }
 
 .container > header {
@@ -184,7 +187,7 @@ div.grade-de-sexo span.sexo {
 
 div.grade-de-total-parcial {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50px);
 }
 
 div.grade-de-total-parcial span.total {

@@ -116,6 +116,11 @@ input:focus {
     border-bottom: 1px solid var(--azul) !important;
 }
 
+input[readonly]:focus {
+    border-color: var(--cinza5) !important;
+}
+
+
 input[readonly] {
     font-weight: bold;
     cursor: context-menu;
@@ -157,7 +162,7 @@ div.linha.do-cabecalho {
 }
 
 div.linha.do-cabecalho a.logo {
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: bold;
     color: var(--fullblack);
     cursor: default;
