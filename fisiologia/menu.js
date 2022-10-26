@@ -34,7 +34,7 @@ const menu = {
             alerta.querySelector("b.entered-num").textContent = numLinha;
             alerta.classList.add("on");
             srcInput.setAttribute("readonly", "");
-            this.desfocarFundo();
+            desfoqueDoFundo.on()
             this.resetarFundoDoNumeroDaLinha();
         }
 
@@ -74,18 +74,18 @@ const menu = {
 
                 if(celulasPreenchidas > 0) {
                     confirmacao.classList.add("on");
-                    this.desfocarFundo();
+                    desfoqueDoFundo.on()
                 }
                 else {
                     const alerta = document.querySelector("div.caixa-de-alerta.ficha-vazia");
                     alerta.classList.add("on");
-                    this.desfocarFundo();
+                    desfoqueDoFundo.on()
                 }
             },
 
             omitirCaixaDeConfirmacao: () => {
                 confirmacao.classList.remove("on");
-                this.focarFundo();
+                desfoqueDoFundo.off()
             },
 
             limparDados: () => {   
@@ -105,7 +105,7 @@ const menu = {
                         localStorage.removeItem(`trmsaaj-${IdDoDadoAdicional}`);
                     }
                 }); 
-                this.focarFundo();  
+                desfoqueDoFundo.off()  
             }
         }
     },
@@ -118,12 +118,14 @@ const menu = {
 
         window.print();
     },
-    // DESFOQUE DO FUNDO 
-    desfocarFundo() {
+}
+
+const desfoqueDoFundo = {
+    on() {
         divDesfocante.classList.add("on");
     },
 
-    focarFundo() {
+    off() {
         const janelasDesfocantes = document.querySelectorAll("div.caixa-de-confirmacao, div.caixa-de-alerta, div.hamburguer");  
         let janelasAbertas = 0;
 
@@ -168,18 +170,27 @@ function eventListeners() {
          btn.addEventListener("click", () => {
              btn.parentElement.classList.remove("on");
              srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
-             menu.focarFundo();
+             desfoqueDoFundo.off()
          })
      }
  
      // PROTEGER ACESSO À READONLY CELS
      readonlyCels.forEach ( cel => {
          cel.addEventListener("click", () => {
-             const alerta = document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular");
-             alerta.classList.add("on");
-             menu.desfocarFundo();
+             if(cel.matches(".nao-aplicavel")) {
+                const alerta = document.querySelector("div.caixa-de-alerta.indicador-nao-aplicavel");
+                const sexoAQueNaoSeAplica = alerta.querySelector("span.sexo-output");
+
+                alerta.classList.add("on");
+                cel.parentElement.matches(".sexo-m") ?
+                    sexoAQueNaoSeAplica.textContent = "masculino" : 
+                    sexoAQueNaoSeAplica.textContent = "feminino";
+             } else {
+                document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");
+             }           
+             desfoqueDoFundo.on()
          })
-     })
+     });
  
      // ESVAZIAR FICHA 
      const btnEsvaziar = document.querySelector("button.esvaziar-ficha");
@@ -207,7 +218,7 @@ window.addEventListener("keyup", event => {
         const caixasDeAlerta = document.querySelectorAll("div.caixa-de-alerta");
         caixasDeAlerta.forEach ( caixa => caixa.classList.remove("on"));
         srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
-        menu.focarFundo();
+        desfoqueDoFundo.off()
     }
 })
 

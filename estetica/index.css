@@ -63,6 +63,7 @@ input[type=date] {
     transition: background-color 400ms ease-out;
 }
 
+.container input[type=number].nao-aplicavel,
 .container input[readonly].bg-gray {
     background-color: var(--cinza12);
 }
@@ -386,7 +387,7 @@ div.nota {
 }
 
 div.nota textarea {
-    font: 13px Arial, Helvetica, san-serif;
+    font: 14px Arial, Helvetica, san-serif;
     outline: none;
     border: none;
     min-width: 880px;
@@ -461,7 +462,7 @@ div.caixa-de-alerta {
     max-width: 450px;
     padding: 15px;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 14px;
     background-color: var(--white);
     position: fixed;
     top: calc(50vh - 113px / 2);
@@ -496,7 +497,7 @@ div.caixa-de-alerta button {
     color: var(--white);
     background-color: var(--cor-secundaria);
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 div.caixa-de-alerta button:hover {
@@ -635,7 +636,7 @@ div.razao-pelas-celulas-com-fundo-vermelho {
     right: calc(50vw - 530px / 2);
     top: -105vh;
     box-shadow: 0 0 10px var(--cinza5);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
     background-color: var(--white);
     z-index: 40000;
@@ -659,9 +660,8 @@ div.razao-pelas-celulas-com-fundo-vermelho.on {
     }
 }
 
-
 div.razao-pelas-celulas-com-fundo-vermelho h2 {
-    font-size: 1.125rem;
+    font-size: 18px;
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho p {
@@ -702,6 +702,7 @@ div.seccao-de-interatividade {
 div.seccao-de-interatividade > div {
     display: flex;
     align-items: center;
+    font-size: 13px;
 }
 
 div.seccao-de-interatividade > div input {
@@ -724,7 +725,7 @@ div.seccao-de-interatividade > button {
     background-color: var(--white);
     padding: 5px;
     border: 1px solid var(--cinza10);
-    font-size: 0.8125rem;
+    font-size: 13px;
     display: block;
 }
 

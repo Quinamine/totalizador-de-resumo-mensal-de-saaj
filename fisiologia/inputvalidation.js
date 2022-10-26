@@ -16,13 +16,13 @@ const validacao = {
     mostrarAlertaVermelho: () => {
         if(!sessionStorage.getItem("trmsaaj-alertaVermelho")) {
             alertaVermelho.classList.add("on");
-            menu.desfocarFundo();
+            desfoqueDoFundo.on()
         }
     },
 
     fecharAlertaVermelho: () => {
         alertaVermelho.classList.remove("on");
-        menu.focarFundo();
+        desfoqueDoFundo.off()
     },
 
     salvarPreferenciaNaoMostrarMais: () => {
