@@ -56,19 +56,6 @@ main {
     color: var(--white);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--fullblack);
-}
-
-body p, span, label, ul, ol,
-h1, h2, h3, h4, h5, h6 {
-    cursor: default;
-}
-
-body b, strong {
-    font-weight: bold;
-}
-
 a {
     text-decoration: none;
     color: var(--azulminiopaco)
@@ -85,13 +72,8 @@ button:hover {
     cursor: pointer;
 }
 
-a, button:active {
+a:active, button:active {
     opacity: 0.7;
-}
-
-p, li, dt, dd, 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.5;
 }
 
 input {
@@ -130,6 +112,51 @@ input[readonly] {
 input[readonly].gray {
     color: var(--cor-de-texto);
     background-color: var(--cinza12) !important;
+}
+
+/* Tags de texto */
+p, li, dt, dd, article span,
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    cursor: default;
+}
+
+h2, h3, h4, h5, h6, dt, article li  {
+    margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4, dt {
+  font-size: 16px;
+}
+
+ul, ol, dl {
+  padding: 0;
+  list-style-position: inside !important;
+}
+
+p, dd, figure article ol li:last-child, 
+article ul li:last-child, figure {
+  margin-bottom: 15px;
+}
+
+dd.mb-10 {
+    margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+b, strong {
+    font-weight: bold;
 }
 
 /* CABEÇALHO */
@@ -243,13 +270,13 @@ section.menu li.destacar-as-celulas-automaticas label {
 }
 
 section.menu li label {
-    padding: 8px 10px 8px 0;
+    padding: 10px 10px 10px 0;
 }
 
 section.menu li input[type=checkbox] {
     width: 12px;
     height: 11px;
-    margin: 1px 4px 3px 0;
+    margin: 1px 4px 3px 4px;
     cursor: pointer;
 }
 
@@ -259,7 +286,7 @@ section.menu li button {
     background-color: inherit;
     font-size: 12px;
     display: inline-block;
-    padding: 10px;
+    padding: 12px;
 }
 
 section.menu button span.print-2-pdf {
@@ -321,4 +348,11 @@ footer div.linha.do-rodape a.voltar {
 body > footer p {
     text-align: center;
     color: var(--cor-de-texto);
+}
+
+@media print {
+    @page {
+        margin: 0.5cm;
+        margin-bottom: 1cm;
+    }
 }

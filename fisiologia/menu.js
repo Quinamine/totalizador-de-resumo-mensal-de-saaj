@@ -118,6 +118,11 @@ const menu = {
 
         window.print();
     },
+
+    abrirConteudoSobre() {
+        document.querySelector("section#sobre").classList.add("on");
+        desfoqueDoFundo.on();
+    }
 }
 
 const desfoqueDoFundo = {
@@ -208,6 +213,19 @@ function eventListeners() {
      // IMPRIMIR 
      const btnImprimir = document.querySelector("button.imprimir-ficha");
      btnImprimir.addEventListener("click", () => menu.imprimirFicha());
+
+     // ABRIR CONTEÚDO SOBRE
+     const btnSobre = document.querySelector("button.abrir-artigo-sobre");
+     btnSobre.addEventListener("click", () => menu.abrirConteudoSobre());
+
+      // FECHAR CONTEÚDO SOBRE E COOKIES
+      const btnsFecharArtigo = document.querySelectorAll("button.fechar-artigo");
+      btnsFecharArtigo.forEach ( btn => {
+        btn.addEventListener("click", () => {
+            btn.parentElement.classList.remove("on");
+            desfoqueDoFundo.off();
+        })
+      })
 }
 
 // FECHAR CAIXA DE ALERTA PELO ENTER
