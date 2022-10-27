@@ -47,7 +47,7 @@ input[type=date] {
     font-weight: bold;
 }
 
-.container input[type=number] {
+.container div.ficha input[type=number] {
     text-align: center;
     padding: 1px 2px;
 }
@@ -124,6 +124,7 @@ header div.visto input {
 header h1 {
     grid-column: 1/4;
     margin: 20px 0 10px 62px;
+    font-size: inherit;
     font-weight: bold;
 }
 

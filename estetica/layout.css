@@ -121,8 +121,29 @@ h1, h2, h3, h4, h5, h6 {
     cursor: default;
 }
 
-h2, h3, h4, h5, h6, dt, article li  {
+h1, h2, h3, h4, h5, h6, dt, article li  {
     margin-bottom: 10px;
+}
+
+p, dd, figure article ol li:last-child, 
+article ul li:last-child, figure {
+  margin-bottom: 15px;
+}
+
+dd.mb-10, p.mb-10 {
+    margin-bottom: 10px;
+}
+
+ul, ol, dl {
+    padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fullblack);
+}
+
+h1 {
+    font-size: 24px;
 }
 
 h2 {
@@ -133,29 +154,25 @@ h3 {
   font-size: 20px;
 }
 
-h4, dt {
-  font-size: 16px;
+h4 {
+  font-size: 18px;
 }
 
-ul, ol, dl {
-  padding: 0;
-  list-style-position: inside !important;
-}
-
-p, dd, figure article ol li:last-child, 
-article ul li:last-child, figure {
-  margin-bottom: 15px;
-}
-
-dd.mb-10 {
-    margin-bottom: 10px;
-}
+h5, dt {
+    font-size: 16px;
+  }
 
 img {
   max-width: 100%;
 }
 
 b, strong {
+    font-weight: bold;
+}
+
+.destaque {
+    padding-left: 10px;
+    border-left: 6px solid var(--cor-primaria);
     font-weight: bold;
 }
 
@@ -230,8 +247,7 @@ section.menu,
 section.menu ul,
 section.menu li.destacar-as-celulas-automaticas {
     display: flex;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 section.menu {
@@ -336,7 +352,7 @@ footer div.linha.do-rodape a.voltar {
     padding: 10px;
     margin-right: -10px;
     font-size: 24px;
-    color: var(--fullblack);
+    color: var(--cor-de-texto);
 }
 
 @media screen and (max-width: 1312px) {

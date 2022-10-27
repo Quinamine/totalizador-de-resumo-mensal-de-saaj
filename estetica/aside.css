@@ -20,11 +20,15 @@ article section {
     display: none;
 }
 
+article section.on {
+    display: block;
+}
+
 article section button.fechar-artigo {
     font-size: 26px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: calc(50vh - 90vh/2);
+    right: calc(50vw - 700px/2);
     width: 40px;
     height: 40px;
     background-color: var(--white);
@@ -34,10 +38,6 @@ article section button.fechar-artigo {
 article section button.fechar-artigo:hover {
     background-color: var(--red);
     color: var(--white);
-}
-
-article section.on {
-    display: block;
 }
 
 article dl dt {
@@ -67,7 +67,7 @@ article li {
 
 article ul {
     list-style-type: disc;
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 article li ul {
@@ -77,6 +77,16 @@ article li ul {
 
 article ol {
     list-style-type: decimal;
+}
+
+article div.consentimento {
+    border-top: thin solid var(--cinza13);
+    padding-top: 10px;
+}
+
+article div.consentimento p {
+    background-color: var(--cinzaf4);
+    padding: 5px 5px 5px 10px;
 }
 
 /* PESQUISA */
@@ -343,16 +353,12 @@ div.razao-pelas-celulas-com-fundo-vermelho p {
     margin: 20px 0 20px 16px;
 }
 
-div.razao-pelas-celulas-com-fundo-vermelho p.obs {
+div.razao-pelas-celulas-com-fundo-vermelho p.destaque {
     margin-left: 0;
-    padding-left: 10px;
-    border-left: 6px solid var(--red);
-    border-radius: 0 4px 4px 0;
-    font-weight: bold;
 }
 
-div.razao-pelas-celulas-com-fundo-vermelho > p.afirmacao {
-    border-color: var(--cor-secundaria) !important;
+div.razao-pelas-celulas-com-fundo-vermelho p.obs {
+    border-color: var(--red);
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho 
@@ -374,6 +380,7 @@ div.seccao-de-interatividade {
         align-items: center;
     }
 }
+
 div.seccao-de-interatividade > div {
     display: flex;
     align-items: center;
@@ -406,10 +413,6 @@ div.seccao-de-interatividade > button {
 
 div.seccao-de-interatividade > button:hover {
     background-color: #f0f0f0;
-}
-
-div.seccao-de-interatividade > button:active {
-    background-color: #ddd;
 }
 
 /* LINHA DE REFERÊNCIA DE SEXO E IDADE */
@@ -472,5 +475,60 @@ div.desfoque.on {
     z-index: 20000;
 }
 
+/* AVISO DE USO DE COOKIES  */
 
+div.aviso-de-uso-de-cookies {
+    width: 100%;
+    max-width: 1312px;
+    padding: 15px;
+    position: fixed;
+    right: calc(50vw - 1312px / 2);
+    bottom: -132px;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    background: var(--blackalpha8); 
+    color: var(--cinza13);
+    box-shadow: 0 0 8px var(--cinza8);
+    visibility: hidden;
+    z-index: 10;
+    transition: bottom 150ms ease;
+}
 
+div.aviso-de-uso-de-cookies.on {
+    bottom: 20px;
+    visibility: visible;
+}
+
+div.aviso-de-uso-de-cookies p {
+    margin-bottom: 15px;
+}
+
+div.aviso-de-uso-de-cookies p a {
+    background-color: inherit;
+    text-decoration: underline;
+    color: inherit;
+}
+
+div.aviso-de-uso-de-cookies p a:hover {
+    color: var(--white);
+}
+
+div.aviso-de-uso-de-cookies p a:active {
+    color: var(--cinza10);
+}
+
+div.aviso-de-uso-de-cookies > button {
+    min-width: 180px;
+    margin: auto;
+    padding: 7px;
+    border: 2px solid var(--cinza10);
+    font-size: 14px;
+    color: var(--cinza13);
+    background-color: var(--fullblack);
+    display: block;
+}  
+
+div.aviso-de-uso-de-cookies button:hover {
+    border-color: var(--white);
+    color: var(--white);
+}

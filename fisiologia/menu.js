@@ -218,6 +218,11 @@ function eventListeners() {
      const btnSobre = document.querySelector("button.abrir-artigo-sobre");
      btnSobre.addEventListener("click", () => menu.abrirConteudoSobre());
 
+     // ABRIR CONTEÚDO SOBRE NO LOAD DO WINDOWS
+     if(location.hash === "#sobre") {
+        menu.abrirConteudoSobre();
+     }
+
       // FECHAR CONTEÚDO SOBRE E COOKIES
       const btnsFecharArtigo = document.querySelectorAll("button.fechar-artigo");
       btnsFecharArtigo.forEach ( btn => {
