@@ -39,6 +39,7 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 
 div.container {
     max-width: 1312px;
+    min-width: 1312px;
     margin: 30px auto 10px auto;
 }
 
@@ -47,7 +48,7 @@ input[type=date] {
     font-weight: bold;
 }
 
-.container div.ficha input[type=number] {
+.container input[type=number] {
     text-align: center;
     padding: 1px 2px;
 }
@@ -239,7 +240,7 @@ div.coluna-de-indicadores {
     grid-template-rows: calc(24px*2) calc(24px*7) 24px calc(24px*8) calc(24px*4) calc(24px*2) calc(24px*5) calc(24px*3) calc(24px*5) calc(24px*3) repeat(2, calc(24px*2)) calc(24px*12) repeat(2, 24px) calc(24px*5);
 }
 
-@media screen and (min-width: 530px) and (max-width: 1149px) {
+@media screen and (min-width: 670px) and (max-width: 1312px) {
     div.coluna-de-indicadores {
         position: sticky;
         left: -75px;
@@ -377,7 +378,7 @@ div.ficha footer div.assinatura {
 div.nota {
     margin-bottom: 20px;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1312px) {
     div.linha.nota {
         padding-left: 0px;
         padding-right: 0px;

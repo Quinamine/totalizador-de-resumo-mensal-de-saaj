@@ -47,23 +47,27 @@
                         </li>
 
                         <li title="Migrar até uma determinada linha">
-                            <button class="ir-para">Ir para linha...</button>
+                            <button class="ir-para">Ir&nbsp;para&nbsp;linha...</button>
                         </li>  
                             
                         <li title="Limpar os dados da ficha">
-                            <button class="esvaziar-ficha">Esvaziar a ficha</button>
+                            <button class="esvaziar-ficha">Esvaziar&nbsp;a&nbsp;ficha</button>
                         </li>
 
                         <li title="Imprimir a ficha">
                             <button class="imprimir-ficha">
                                 <span class="imprimir">Imprimir</span>
-                                <span class="print-2-pdf">Converter para PDF</span>
+                                <span class="print-2-pdf">Converter&nbsp;para&nbsp;PDF</span>
                             </button>
                         </li>
-
-                        <li title="Sobre o totalizador">
+                        <li title="Sobre o totalizador" class="sobre">
                             <button class="abrir-artigo-sobre">
                                 Sobre
+                            </button>
+                        </li>
+                        <li title="Partilhar o endereço do Totalizador">
+                            <button class="partilhar">
+                                Partilhar...
                             </button>
                         </li>
                     </ul>
@@ -1341,274 +1345,296 @@
                         </div>
                     </footer>
                 </div>
-
-                <aside class="manipulacao-do-menu">
-                    <!-- Adicionar nota -->
-                    <div class="linha nota">
-                        <textarea id="campo-de-nota" rows="3" placeholder="Adicionar uma nota..."></textarea>
-                    </div>
-
-                     <!-- Sobre e Cookies  -->
-                     <article >
-                        <section id="sobre">
-                            <h1>Sobre o totalizador</h1>
-                            
-                            <figure>
-                                <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ"/>
-                            </figure>
-
-                            <p>O <b>Totalizador de Resumo Mensal de SAAJ</b> é um serviço online gratuito que <b>auxilia na totalização do respectivo resumo a partir dos dados inseridos</b> pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de SAAJ actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</p>
-
-                            <p>O propósito é de flexibilizar a elaboração do resumo através do cálculo automático dos totais.</p>
-    
-                            <p>O Totalizador de Resumo Mensal de SAAJ reúne os seguintes recursos:</p>
-    
-                            <ul>
-                                <li>Calcula e autopreenche as células dos totais;</li>
-                                <li>Fornece resultados verdadeiros;</li>
-                                <li>Flexibiliza a elaboração do resumo;</li>
-                                <li>Salva os dados no navegador do usuário até que este os exclua;</li>
-                                <li>Pode ser impresso.</li>
-                            </ul>
-                            
-                            <button class="fechar-artigo" title="Fechar">
-                                &times;
-                            </button>
-                        </section>
-                        <section id="cookies">
-                            <h1>Política de Armazenamento</h1>
-    
-                            <p><b>Web Storage</b> é um recurso de armazenamento local (no navegador do usuário) de informações por meio de pequenos arquivos de texto, útil para guardar predefinições.</p>
-
-                            <p class="mb-10">Existem 2 tipos de Web Storage:</p>
-    
-                            <ul>
-                                <li> <b>Session Storage (Armazenamento de Sessão)</b> – elimina os dados gravados quando a janela da página é fechada.</li>
                 
-                                <li> <b>Local Storage (Armazenamento Local)</b> – mantém os dados salvos por um período determinado ou até que o usuário exclua.</li>
-                            </ul>
-                           
-                
-                            <p>
-                                O Totalizador de Resumo Mensal de SAAJ utiliza o primeiro para guardar o consentimento do usuário à Política de Armazenamento e o último pelas razões do subtítulo a seguir.
-                            </p>
+                 <!-- Adicionar nota -->
+                <div class="linha nota">
+                    <textarea id="campo-de-nota" rows="3" placeholder="Adicionar uma nota..."></textarea>
+                </div>
 
-                            <h2>Por que armazeno dados?</h2>
-
-                            <p class="mb-10">Por 3 razões, enumeradamente:</p>
-
-                            <dl>
-                                <dt id="um">Fazer um backup local</dt>
-            
-                                <dd class="mb-10">
-                                    Fazer uma cópia de segurança dos dados da ficha no navegador do usuário. Se forem preenchidos, os dados que são salvos incluem:
-                                </dd>
-                                <ul>
-                                    <li>
-                                        <b>Os dados da ficha propriamente dita.</b>
-                                    </li>
-                                    <li>
-                                        <b>Dados adicionais como:</b>
-                                        <ul>
-                                            <li>Província;</li>
-                                            <li>Distrito;</li>
-                                            <li>Unidade Sanitária;</li>
-                                            <li>Mês;</li>
-                                            <li>Nome do Director da US;</li>
-                                            <li>Data de elaboração;</li>
-                                            <li>Nome do Responsável pelo compilamento;</li>
-                                            <li>Assinatura do Responsável pelo compilamento.</li>
-                                        </ul>  
-                                    </li>
-                                                         
-                                </ul>
-            
-                                <dt id="dois">Durabilidade dos dados</dt>
-                                <dd>
-                                    Manter salvos os dados previamente inseridos no acto de preenchimento da ficha por tempo suficiente para serem aproveitáveis. Isso é importante, pois possibilita o Profissional interromper sem o risco de voltar à estaca zero, a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda lhe faltar dados de alguns indicadores para preencher nas respectivas células da ficha.
-                                </dd>
-            
-                                <dt id="tres">Salvar preferências</dt>
-            
-                                <dd>
-                                    Por exemplo, quando o usuário marca a opção <b>“Destacar o fundo dos totais"</b>, essa escolha é salva na Web Storage para manter nas suas próximas visitas à plataforma.
-                                </dd>
-                            </dl>
-
-                            <h2>Destino dos dados</h2>  
-
-                            <p>Todos os dados são salvos localmente (no navegador do usuário). O armazenamento local é para fins de memorização e com isso tornar os dados suficientemente duráveis.</p>
-
-                            <h2>Gerenciamento dos dados pelo usuário</h2>  
-
-                            <p>No menu do Totalizador, existe a opção <strong>“Esvaziar a ficha”</strong>, que permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador na Web Storage</b>.</p>
-
-                            <div class="consentimento">
-                                <p class="destaque">
-                                    A aceitação dos termos de armazenamento apresentados neste bloco é dada pela utilização utilização do Totalizador de Resumo Mensal de SAAJ.
-                                </p>
-                            </div>
-                                            
-                            <button class="fechar-artigo" title="Fechar">
-                                &times;
-                            </button>
-                        </section>
-                    </article>
-                    
-                    <!-- Referência -->
-                    <div class="linha-de-referencia">
-                        <div class="coluna-de-referencia">      
-                            <div>
-                                <span>Linha:</span>
-                                <output class="ref-de-linha"></output>
-                            </div>
-            
-                            <div>
-                                <span>Faixa&nbsp;etária:</span>
-                                <output class="ref-de-faixa-etaria"></output>
-                            </div>
-            
-                            <div>
-                                <span>Sexo:</span>
-                                <output class="ref-de-sexo"></output>
-                            </div>
+                <!-- Referência -->
+                <div class="linha-de-referencia">
+                    <div class="coluna-de-referencia">      
+                        <div>
+                            <span>Linha:</span>
+                            <output class="ref-de-linha"></output>
+                        </div>
+        
+                        <div>
+                            <span>Faixa&nbsp;etária:</span>
+                            <output class="ref-de-faixa-etaria"></output>
+                        </div>
+        
+                        <div>
+                            <span>Sexo:</span>
+                            <output class="ref-de-sexo"></output>
                         </div>
                     </div>
-            
-                    <!-- Caixa de pesquisa "Ir para" -->
-                    <div class="pesquisa">
-                        <div class="caixa-de-pesquisa">
-                            <input type="number" placeholder="Introduza o número da linha" min="1" max="63" class="pesquisar-linha">    
-                            <button class="fechar" title="Fechar">&times;</button>
-                        </div>
-                        
-                        <div class="caixa-de-alerta query-out-of-range">
-                            <p>O número <b class="entered-num"></b> está fora do intervalo das linhas, pois a ficha tem no máximo 63 linhas a partir de 1.</p>
-                            
-                            <button>OK</button>
-                        </div>
-                    </div> 
-    
-                    <!-- Esvaziamento da ficha -->
-                    <div class="esvaziamento">
-                        <div class="caixa-de-confirmacao">
-                            <h3>Esvaziar a ficha</h3>
-        
-                            <p>Tem certeza de que pretende esvaziar a ficha?</p>
-        
-                            <div class="alerta">
-                                <svg style="width: 40px; height: 40px; ">
-        
-                                    <linearGradient id="meuGradiente" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color: gray" />
-                                        <stop offset="100%" style="stop-color: yellow" />
-                                    </linearGradient>>
-        
-                                    <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"/>
-        
-                                    <text x="15.335" y="35.5" style="font-weight: bold; font-size: 28px">!</text>
-                                </svg>
-        
-                                <p>Esta acção não pode ser desfeita.</p>
-        
-                            </div>
-        
-                            <h4>Dados adicionais</h4>
-                            <ul class="limpadores-de-dados-adicionais">
-                                <li>
-                                    <input type="checkbox" id="nome-da-provincia" checked data-for="provincia"/>
-                                    <label for="nome-da-provincia">Província</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="nome-do-distrito" checked data-for="distrito"/>
-                                    <label for="nome-do-distrito">Distrito</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="nome-da-us" checked data-for="us"/>
-                                    <label for="mome-da-us">US</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="month" checked data-for="mes"/>
-                                    <label for="month">Mês</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="nome-do-dc" checked data-for="dc"/>
-                                    <label for="nome-do-dc">Nome do Director Clínico</label>
-                                </li>
-                                
-                                <li>
-                                    <input type="checkbox" id="data-de-elaboracao" checked data-for="data"/>
-                                    <label for="data-de-elaboracao">Data de elaboração</label>
-                                </li>
-        
-                                <li>
-                                    <input type="checkbox" id="nome-do-compilador" checked data-for="compilador"/>
-                                    <label for="nome-do-compilador">Nome do Responsável pelo <br/> compilamento</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="assinatura-do-compilador" checked data-for="assinatura"/>
-                                    <label for="assinatura-do-compilador">Assinatura do Responsável pelo <br/> compilamento</label>
-                                </li>
-                            </ul>
-        
-                            <div class="botoes-de-confirmacao">
-                                <button class="cancelar">Cancelar</button>
-                                <button class="confirmar">Confirmar</button>
-                            </div>
-                        </div>
-                        <div class="caixa-de-alerta ficha-vazia">
-                            <p>A ficha não está preenchida.</p>                    
-                            <button>OK</button>
-                        </div>
-                    </div>
-    
-                    <!-- Restrição à readonly cels -->
-                    <div class="caixa-de-alerta restricao-de-acesso-celular">
-                        <p>Para prevenir possíveis alterações acidentais dos resultados, as células dos totais têm o acesso interdito.</p>               
-                        <button>OK</button>
-                    </div>
-    
-                    <div class="caixa-de-alerta indicador-nao-aplicavel">
-                        <p>Indicador não aplicável para o sexo <span class="sexo-output"></span>.</p>               
-                        <button>OK</button>
-                    </div>
-    
-                     <!-- Razão pelas células com fundo vermelho  -->
-                     <div class="razao-pelas-celulas-com-fundo-vermelho">
-                        <h2>Por que algumas células ficaram com o fundo vermelho?</h2>
-                        <p class="destaque obs">
-                            Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.
-                        </p>
-                        <p>
-                            As células de entrada de dados do Totalizador têm uma largura cabível para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da viewport (área visível) da célula.
-                        </p>
-                        <p class="destaque suposicao">
-                             Acreditamos que actualmente não haja nenhuma Unidade Sanitária em Moçambique com um número de consultas do SAAJ próximo, equivalente ou maior que 999 999.
-                        </p>
-                        <div class="seccao-de-interatividade">
-                            <div>
-                                <input type="checkbox" id="nao-mostrar-mais" />
-                                <label for="nao-mostrar-mais">Não mostrar mais esta mensagem</label>
-                            </div>
-                            <button class="close-redcels-obs">Fechar</button>
-                        </div>
-                    </div>
-
-                    <!-- AVISO DE USO DE COOKIES -->
-                    <div class="aviso-de-uso-de-cookies">
-                        <p>                    
-                            A fim de melhorar a sua experiência de utilização, uso tecnologias de armazenamento local de acordo com a minha <a href="totalizadorderesumomensaldeconsultas/politica-de-cookies-e-web-storage.html">Política de armazenamento de dados</a>.
-                        </p>
-            
-                        <button class="aceitar-cookies">Prosseguir</button>
-                    </div> 
-                </aside>
+                </div>
             </div>
+
+            <aside class="manipulacao-do-menu">    
+                <!-- Caixa de pesquisa "Ir para" -->
+                <div class="pesquisa">
+                    <div class="caixa-de-pesquisa">
+                        <input type="number" placeholder="Introduza o número da linha" min="1" max="63" class="pesquisar-linha">    
+                        <button class="fechar" title="Fechar">&times;</button>
+                    </div>
+                    
+                    <div class="caixa-de-alerta query-out-of-range">
+                        <p>O número <b class="entered-num"></b> está fora do intervalo das linhas, pois a ficha tem no máximo 63 linhas a partir de 1.</p>
+                        
+                        <button>OK</button>
+                    </div>
+                </div> 
+    
+                <!-- Esvaziamento da ficha -->
+                <div class="esvaziamento">
+                    <div class="caixa-de-confirmacao">
+                        <h3>Esvaziar a ficha</h3>
+    
+                        <p>Tem certeza de que pretende esvaziar a ficha?</p>
+    
+                        <div class="alerta">
+                            <svg style="width: 40px; height: 40px; ">
+    
+                                <linearGradient id="meuGradiente" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color: gray" />
+                                    <stop offset="100%" style="stop-color: yellow" />
+                                </linearGradient>>
+    
+                                <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"/>
+    
+                                <text x="15.335" y="35.5" style="font-weight: bold; font-size: 28px">!</text>
+                            </svg>
+    
+                            <p>Esta acção não pode ser desfeita.</p>
+    
+                        </div>
+    
+                        <h4>Dados adicionais</h4>
+                        <ul class="limpadores-de-dados-adicionais">
+                            <li>
+                                <input type="checkbox" id="nome-da-provincia" checked data-for="provincia"/>
+                                <label for="nome-da-provincia">Província</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="nome-do-distrito" checked data-for="distrito"/>
+                                <label for="nome-do-distrito">Distrito</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="nome-da-us" checked data-for="us"/>
+                                <label for="mome-da-us">US</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="month" checked data-for="mes"/>
+                                <label for="month">Mês</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="nome-do-dc" checked data-for="dc"/>
+                                <label for="nome-do-dc">Nome do Director Clínico</label>
+                            </li>
+                            
+                            <li>
+                                <input type="checkbox" id="data-de-elaboracao" checked data-for="data"/>
+                                <label for="data-de-elaboracao">Data de elaboração</label>
+                            </li>
+    
+                            <li>
+                                <input type="checkbox" id="nome-do-compilador" checked data-for="compilador"/>
+                                <label for="nome-do-compilador">Nome do Responsável pelo <br/> compilamento</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="assinatura-do-compilador" checked data-for="assinatura"/>
+                                <label for="assinatura-do-compilador">Assinatura do Responsável pelo <br/> compilamento</label>
+                            </li>
+                        </ul>
+    
+                        <div class="botoes-de-confirmacao">
+                            <button class="cancelar">Cancelar</button>
+                            <button class="confirmar">Confirmar</button>
+                        </div>
+                    </div>
+                    <div class="caixa-de-alerta ficha-vazia">
+                        <p>A ficha não está preenchida.</p>                    
+                        <button>OK</button>
+                    </div>
+                </div>
+    
+                <!-- Restrição à readonly cels -->
+                <div class="caixa-de-alerta restricao-de-acesso-celular">
+                    <p>Para prevenir possíveis alterações acidentais dos resultados, as células dos totais têm o acesso interdito.</p>               
+                    <button>OK</button>
+                </div>
+    
+                <div class="caixa-de-alerta indicador-nao-aplicavel">
+                    <p>Indicador não aplicável para o sexo <span class="sexo-output"></span>.</p>               
+                    <button>OK</button>
+                </div>
+    
+                 <!-- Razão pelas células com fundo vermelho  -->
+                 <div class="razao-pelas-celulas-com-fundo-vermelho">
+                    <h2>Por que algumas células ficaram com o fundo vermelho?</h2>
+                    <p class="destaque obs">
+                        Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.
+                    </p>
+                    <p>
+                        As células de entrada de dados do Totalizador têm uma largura cabível para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da viewport (área visível) da célula.
+                    </p>
+                    <p class="destaque suposicao">
+                         Presumo que actualmente (2022) não haja nenhuma Unidade Sanitária em Moçambique com um número de consultas do SAAJ próximo, equivalente ou maior que 999 999.
+                    </p>
+                    <div class="seccao-de-interatividade">
+                        <div>
+                            <input type="checkbox" id="nao-mostrar-mais" />
+                            <label for="nao-mostrar-mais">Não mostrar mais esta mensagem</label>
+                        </div>
+                        <button class="close-redcels-obs">Fechar</button>
+                    </div>
+                </div>
+    
+                <!-- AVISO DE USO DE COOKIES -->
+                <div class="aviso-de-uso-de-cookies">
+                    <p>                    
+                        Pela utilização do Totalizador de Resumo Mensal de SAAJ, o usuário concorda com o armazenamento local de dados a fim de melhorar a sua experiência de utilização. <button class="abrir-artigo-cookies">Saiba mais...</button>
+                    </p>
+        
+                   
+                    <button class="aceitar-cookies">Consentir</button>
+                </div> 
+            </aside>
         </main>
 
+        <!-- Sobre e Cookies  -->
+        <article >
+            <section id="sobre">
+                <h1>Sobre o totalizador</h1>
+                
+                <figure>
+                    <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ"/>
+                </figure>
+
+                <p>O <b>Totalizador de Resumo Mensal de SAAJ</b> é um serviço online gratuito que <b>auxilia na totalização do respectivo resumo a partir dos dados inseridos</b> pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de SAAJ actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</p>
+
+                <p>O propósito é de flexibilizar a elaboração do resumo através do cálculo automático dos totais.</p>
+
+                <p>O Totalizador de Resumo Mensal de SAAJ reúne os seguintes recursos:</p>
+
+                <ul>
+                    <li>Calcula e autopreenche as células dos totais;</li>
+                    <li>Fornece resultados verdadeiros;</li>
+                    <li>Flexibiliza a elaboração do resumo;</li>
+                    <li>Salva os dados no navegador do usuário até que este os exclua;</li>
+                    <li>Pode ser impresso.</li>
+                </ul>
+                
+                <button class="fechar-artigo" title="Fechar">
+                    &times;
+                </button>
+            </section>
+            <section id="cookies">
+                <h1>Política de Armazenamento de dados</h1>
+
+                <p><b>Web Storage</b> é um recurso para armazenamento local (no navegador do usuário) de informações por meio de pequenos arquivos de texto, útil para guardar predefinições.</p>
+
+                <p class="mb-10">Existem 2 tipos de Web Storage:</p>
+
+                <ul>
+                    <li> <b>Session Storage (Armazenamento de Sessão)</b> – elimina os dados gravados quando a janela da página é fechada.</li>
+    
+                    <li> <b>Local Storage (Armazenamento Local)</b> – mantém os dados salvos por um período determinado ou até que o usuário exclua.</li>
+                </ul>
+                
+    
+                <p>
+                    O Totalizador de Resumo Mensal de SAAJ utiliza o primeiro para guardar o consentimento do usuário à Política de Armazenamento e o último pelas razões do subtítulo a seguir.
+                </p>
+
+                <h2>Por que armazeno dados?</h2>
+
+                <p class="mb-10">Por 3 razões, enumeradamente:</p>
+
+                <dl>
+                    <dt id="um">Fazer um backup local</dt>
+
+                    <dd class="mb-10">
+                        Fazer uma cópia de segurança dos dados da ficha no navegador do usuário. Se forem preenchidos, os dados que são salvos incluem:
+                    </dd>
+                    <ul>
+                        <li>
+                            <b>Os dados da ficha propriamente dita.</b>
+                        </li>
+                        <li>
+                            <b>Dados adicionais como:</b>
+                            <ul>
+                                <li>Província;</li>
+                                <li>Distrito;</li>
+                                <li>Unidade Sanitária;</li>
+                                <li>Mês;</li>
+                                <li>Nome do Director da US;</li>
+                                <li>Data de elaboração;</li>
+                                <li>Nome do Responsável pelo compilamento;</li>
+                                <li>Assinatura do Responsável pelo compilamento.</li>
+                            </ul>  
+                        </li>
+                                                
+                    </ul>
+
+                    <dt id="dois">Durabilidade dos dados</dt>
+                    <dd>
+                        Manter salvos os dados previamente inseridos no acto de preenchimento da ficha por tempo suficiente para serem aproveitáveis. Isso é importante, pois possibilita o Profissional interromper sem o risco de voltar à estaca zero, a elaboração do resumo para continuar num outro momento oportuno, sobretudo se ainda lhe faltar dados de alguns indicadores para preencher nas respectivas células da ficha.
+                    </dd>
+
+                    <dt id="tres">Salvar preferências</dt>
+
+                    <dd>
+                        Por exemplo, quando o usuário marca a opção <b>“Destacar o fundo dos totais"</b>, essa escolha é salva na Web Storage para manter nas suas próximas visitas à plataforma.
+                    </dd>
+                </dl>
+
+                <h2>Destino dos dados</h2>  
+
+                <p>Todos os dados são salvos localmente (no navegador do usuário). O armazenamento local é para fins de memorização e com isso tornar os dados suficientemente duráveis.</p>
+
+                <h2>Gerenciamento dos dados pelo usuário</h2>  
+
+                <p>No menu do Totalizador, existe a opção <strong>“Esvaziar a ficha”</strong>, que permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador na Web Storage</b>.</p>
+
+                <div class="consentimento">
+                    <p class="destaque">
+                        A aceitação dos termos de armazenamento apresentados neste bloco é dada pela utilização do Totalizador de Resumo Mensal de SAAJ.
+                    </p>
+                </div>
+                                
+                <button class="fechar-artigo" title="Fechar">
+                    &times;
+                </button>
+            </section>
+        </article>
+        
         <footer>
             <div class="linha do-rodape">
-                <p>Desenvolvido por <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/sobremim.html">Adérito Félix Quinamine</a> em colaboração com Castro Silvestre |&nbsp;&copy; 2022 - Totalizador de Resumo Mensal de SAAJ -&nbsp;Todos os direitos reservados</p>
+                <div class="hiperligacoes">
+                    <h4>Links para outros serviços afins</h4>
+                    <ul>
+                        <li>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-sida/index.html" target="_blank">Totalizador de Resumo Mensal de HIV/SIDA</a>
+                        </li>
+                        <li>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" target="_blank">Totalizador de Resumo Mensal de Consultas</a>
+                        </li>
+                        <li>
+                            <a href="https://quinamine.github.io/tarv-pediatrico/index.html" target="_blank">Doseador Pediátrico de Antirretrovirais</a>
+                        </li>
+                        <li>
+                            <a href="https://quinamine.github.io/abordagem-pediatrica/paginas/calculadora-de-doses.html" target="_blank">Calculadora de Doses Pediátricas</a>
+                        </li>                  
+                    </ul>   
+                </div>
+                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html">Adérito Félix Quinamine</a> |&nbsp;&copy;&nbsp;2022 -&nbsp;Totalizador&nbsp;de&nbsp;Resumo&nbsp;Mensal&nbsp;de&nbsp;SAAJ -&nbsp;Todos&nbsp;os&nbsp;direitos&nbsp;reservados</p>
+
+                <p>
+                   Créditos ao Técnico Castro Silvestre pela sugestão.
+                </p>
 
                 <a href="#ficha" class="voltar">&uarr;</a>
             </div>

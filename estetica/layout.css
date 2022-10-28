@@ -43,7 +43,7 @@ main {
     flex: 1;
 }
 
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 1312px) {
     main {
         max-width: 100%;
         overflow: auto;
@@ -121,12 +121,11 @@ h1, h2, h3, h4, h5, h6 {
     cursor: default;
 }
 
-h1, h2, h3, h4, h5, h6, dt, article li  {
+h1, h2, h3, h4, h5, h6, dt, li  {
     margin-bottom: 10px;
 }
 
-p, dd, figure article ol li:last-child, 
-article ul li:last-child, figure {
+p, dd, figure, li:last-child, figure {
   margin-bottom: 15px;
 }
 
@@ -220,7 +219,7 @@ div.linha.do-cabecalho a.logo {
     } 
 
     div.linha.do-cabecalho::-webkit-scrollbar {
-        height: 4px;
+        height: 6px;
     } 
 
     div.linha.do-cabecalho::-webkit-scrollbar-thumb {
@@ -236,7 +235,13 @@ div.linha.do-cabecalho a.logo {
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 372px) {
+    div.linha.do-cabecalho a.logo {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 340px) {
     div.linha.do-cabecalho a.logo {
         font-size: 15px;
     }
@@ -256,6 +261,11 @@ section.menu {
     margin-right: -10px;
 }
 
+section.menu ul li {
+    /* Reset */
+    margin: 0;
+}
+
 @media screen and (max-width: 1023px) {
     section.menu,
     section.menu ul {
@@ -263,7 +273,7 @@ section.menu {
     } 
 
     section.menu {
-        min-width: 590px;
+        min-width: 680px;
     }
 
     section.menu ul li {
@@ -317,8 +327,6 @@ section.menu button span.print-2-pdf {
     section.menu button span.imprimir {
         display: none;
     }
-    
-    
 }
 /* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 
@@ -336,7 +344,7 @@ section.menu ul li:first-child:active {
 
 body > footer {
     background-color: var(--cor-primaria);
-    padding: 40px 0;
+    padding: 30px 0;
     color: var(--cinza5);
 }
 
@@ -346,7 +354,7 @@ footer div.linha.do-rodape {
 
 footer div.linha.do-rodape a.voltar {
     position: absolute;
-    top: -40px;
+    top: -15px;
     right: 0;
     display: block;
     padding: 10px;
@@ -361,9 +369,15 @@ footer div.linha.do-rodape a.voltar {
     }
 }
 
-body > footer p {
+div.linha.do-rodape > p {
+    margin: 0;
     text-align: center;
     color: var(--cor-de-texto);
+    padding: 15px 0;
+}
+
+div.linha.do-rodape > *:nth-child(2) {
+    border-bottom: 1px solid var(--cor-secundaria);
 }
 
 @media print {

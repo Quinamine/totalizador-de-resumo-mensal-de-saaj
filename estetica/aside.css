@@ -2,8 +2,11 @@ article {
     font-size: 14px;
 }
 
-article section#sobre ul {
-    font-weight: bold;
+@media screen and (max-width: 700px) {
+    article {
+        padding-top: 10px;
+        background-color: var(--cinza13);
+    }
 }
 
 article section {
@@ -24,6 +27,24 @@ article section.on {
     display: block;
 }
 
+article section#sobre ul {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+    li.sobre {
+        display: none;
+    }
+
+    article section#sobre {
+        display: block;
+        min-height: initial;
+        max-height: initial;
+        position: initial;
+        padding: 15px;
+    }
+}
+
 article section button.fechar-artigo {
     font-size: 26px;
     position: fixed;
@@ -40,12 +61,12 @@ article section button.fechar-artigo:hover {
     color: var(--white);
 }
 
-article dl dt {
+article dl dt,
+article dl dt:before {
     font-weight: bold;
 }
 
 article dl dt:before {
-    font-weight: bold;
     margin-right: 6px;
 }
 
@@ -490,7 +511,7 @@ div.aviso-de-uso-de-cookies {
     color: var(--cinza13);
     box-shadow: 0 0 8px var(--cinza8);
     visibility: hidden;
-    z-index: 10;
+    z-index: 19000;
     transition: bottom 150ms ease;
 }
 
@@ -503,18 +524,14 @@ div.aviso-de-uso-de-cookies p {
     margin-bottom: 15px;
 }
 
-div.aviso-de-uso-de-cookies p a {
-    background-color: inherit;
-    text-decoration: underline;
-    color: inherit;
+div.aviso-de-uso-de-cookies p button {
+    padding: 3px 6px;
+    border-radius: 3px;
+    background-color: var(--cor-primaria);
 }
 
-div.aviso-de-uso-de-cookies p a:hover {
-    color: var(--white);
-}
-
-div.aviso-de-uso-de-cookies p a:active {
-    color: var(--cinza10);
+div.aviso-de-uso-de-cookies p button:hover {
+    background-color: var(--white);
 }
 
 div.aviso-de-uso-de-cookies > button {
@@ -522,13 +539,13 @@ div.aviso-de-uso-de-cookies > button {
     margin: auto;
     padding: 7px;
     border: 2px solid var(--cinza10);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--cinza13);
     background-color: var(--fullblack);
     display: block;
 }  
 
-div.aviso-de-uso-de-cookies button:hover {
+div.aviso-de-uso-de-cookies > button:hover {
     border-color: var(--white);
     color: var(--white);
 }
