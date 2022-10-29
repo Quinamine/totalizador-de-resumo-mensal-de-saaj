@@ -127,6 +127,9 @@ const menu = {
     abrirArtigoCookies() {
         document.querySelector("section#cookies").classList.add("on");
         desfoqueDoFundo.on();
+        if(window.innerWidth < 1024) {
+            document.querySelector("body").classList.add("overflow-hidden");
+        }
     }
 }
 
@@ -238,6 +241,7 @@ function eventListeners() {
     btn.addEventListener("click", () => {
         btn.parentElement.classList.remove("on");
         desfoqueDoFundo.off();
+        document.querySelector("body").classList.remove("overflow-hidden");
     })
     });
 

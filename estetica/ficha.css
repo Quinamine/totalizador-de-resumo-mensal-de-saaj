@@ -10,7 +10,7 @@ section div.indicadores span,
 div.situacao-escolar div.titulo,
 section.contracepcao-e-protecao div.subtitulo-2,
 div.input-container input {
-    border-left: 1px solid var(--cinza5);
+    border-left: 1px solid var(--border-color);
 }
 
 .container input,
@@ -23,7 +23,7 @@ div.body div.coluna-de-livro-de-registo span,
 section div.indicadores span,
 section.consultas div.titulo,
 section.contracepcao-e-protecao div.subtitulo-2 span {
-    border-bottom: 1px solid var(--cinza5);
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Display: flex */
@@ -54,8 +54,8 @@ input[type=date] {
 }
 
 .container input[type=number].fundo-vermelho {
-    background-color: var(--red) !important;
-    color: var(--white);
+    background-color: var(--danger-color) !important;
+    color: var(--yt);
 }
 
 .container input[readonly] {
@@ -65,11 +65,11 @@ input[type=date] {
 }
 
 .container input[readonly].bg-gray {
-    background-color: var(--cinza12);
+    background-color: var(--gray-c);
 }
 
 .container input[type=number].nao-aplicavel {
-    background-color: var(--cinza8);
+    background-color: var(--gray);
 }
 
 .container > header {
@@ -138,9 +138,9 @@ div.ficha header span {
 div.ficha header {
     display: grid;
     grid-template-columns: repeat(2, 55px) 1150px 55px;
-    background-color: var(--cor-primaria);
+    background-color: var(--primary-color);
     text-align: center;
-    border: 1px solid var(--cinza5);
+    border: 1px solid var(--border-color);
     border-bottom: none;
     font-weight: bold;
     line-height: 1.4;
@@ -150,13 +150,13 @@ div.ficha header {
 }
 
 div.ficha header > div:first-child {
-    background-color: var(--white);
-    color: var(--cor-de-texto)
+    background-color: var(--yt);
+    color: var(--text-color)
 }
 
 div.ficha header > div:nth-child(2),
 div.linha-de-indicadores {
-    color: var(--white);
+    color: var(--yt);
 }
 
 div.ficha div.linha-de-sexo-e-faixas-etarias {
@@ -205,7 +205,7 @@ div.grade-de-total-parcial span:nth-child(n+2) {
 div.ficha div.body {
     display: grid; 
     grid-template-columns: repeat(2, 55px) 600px repeat(10, 45px) repeat(3, 50px);
-    border: 1px solid var(--cinza5);
+    border: 1px solid var(--border-color);
     border-bottom: none;
 }
 
@@ -221,17 +221,17 @@ div.body div.coluna-de-livro-de-registo span {
 
 div.body div.coluna-de-numeros-das-linhas span.fundo-laranja {
     background-color: var(--orange);
-    color: var(--white);
+    color: var(--yt);
 }
 
 div.body div.coluna-de-livro-de-registo {
     display: grid;
     grid-template-rows: calc(24px*2) calc(24px*5) repeat(11, 24px) calc(24px*3) repeat(8, 24px) calc(24px*3) calc(24px*3)  calc(24px*2) repeat(17, 24px) calc(24px*2) repeat(2, 24px) calc(24px*5);
-    background-color: var(--cinza13);
+    background-color: var(--gray-d);
 }
 
 div.body div.coluna-de-livro-de-registo span:first-child {
-    background-color: var(--cor-de-texto);
+    background-color: var(--text-color);
 }
 
 /* Coluna-de-indicadores */
@@ -244,7 +244,7 @@ div.coluna-de-indicadores {
     div.coluna-de-indicadores {
         position: sticky;
         left: -75px;
-        background-color: var(--white);
+        background-color: var(--yt);
         z-index: 5000;
     }
 }
@@ -398,7 +398,7 @@ div.nota textarea {
     min-width: 880px;
     padding: 5px;
     line-height: 1.5;
-    border: 1px solid var(--cinza5);
+    border: 1px solid var(--border-color);
 }
 
 div.nota textarea.bold {
@@ -407,5 +407,5 @@ div.nota textarea.bold {
 }
 
 div.nota textarea:focus {
-    border-color: var(--azul);
+    border-color: var(--blue);
 }
