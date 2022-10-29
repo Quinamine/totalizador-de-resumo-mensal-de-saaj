@@ -278,7 +278,7 @@ window.addEventListener("keyup", event => {
         srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
         desfoqueDoFundo.off()
     }
-})
+});
 
 window.addEventListener("load", () => {
     init();

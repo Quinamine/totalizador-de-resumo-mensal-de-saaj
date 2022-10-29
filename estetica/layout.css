@@ -291,6 +291,12 @@ section.menu ul li {
     }
 }
 
+@media screen and (max-width: 1023px) {
+    section.menu li.sobre {
+       display: none;
+    }
+}
+
 section.menu li.destacar-as-celulas-automaticas:hover,
 section.menu li.destacar-as-celulas-automaticas label {
     cursor: pointer;
@@ -380,10 +386,35 @@ div.linha.do-rodape > p {
 div.linha.do-rodape > *:nth-child(2) {
     border-bottom: 1px solid var(--secondary-color);
 }
-
+    
+/* PRINT CSS */
 @media print {
     @page {
         margin: 0.5cm;
-        margin-bottom: 1cm;
+    }
+
+    :root {
+        --border-color: var(--fullblack);
+        --text-color: var(--fullblack);
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        visibility: hidden;
+    }
+
+    body > header,
+    body > footer,
+    div.aviso-de-uso-de-cookies {
+        display: none;
+    }
+
+    div.container {
+        margin-top: 0;
+        visibility: visible;
+    } 
+
+    div.ficha header {
+        position: initial !important;
     }
 }

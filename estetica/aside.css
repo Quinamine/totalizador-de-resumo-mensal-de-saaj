@@ -24,11 +24,6 @@ article section {
 }
 
 @media screen and (max-width: 700px) {
-    section#menu li.sobre, 
-    article section#sobre button.fechar-artigo {
-        display: none;
-    }
-
     article section  {
         top: 10vh;
         right: 0;
@@ -40,6 +35,10 @@ article section {
         min-height: initial;
         max-height: initial;
         position: initial;
+    }
+
+    article section#sobre button.fechar-artigo {
+        display: none;
     }
 }
 
@@ -525,7 +524,7 @@ div.aviso-de-uso-de-cookies {
     color: var(--gray-d);
     box-shadow: 0 0 8px var(--gray);
     visibility: hidden;
-    z-index: 19000;
+    z-index: 49000;
     transition: bottom 150ms ease;
 }
 
