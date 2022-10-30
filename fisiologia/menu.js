@@ -89,7 +89,6 @@ const menu = {
             },
 
             limparDados: () => {   
-                const limpadoresDeDadosAdicionais = document.querySelectorAll("ul.limpadores-de-dados-adicionais input");
 
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
@@ -97,6 +96,8 @@ const menu = {
                     celulas[i].classList.remove("fundo-vermelho");
                 };
 
+                const limpadoresDeDadosAdicionais = document.querySelectorAll("ul.limpadores-de-dados-adicionais input");
+                
                 limpadoresDeDadosAdicionais.forEach ( limpador => {
                     if(limpador.checked) {
                         const IdDoDadoAdicional = limpador.dataset.for; 

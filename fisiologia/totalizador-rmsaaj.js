@@ -11,30 +11,31 @@ const storage  = {
     },
 
     salvarDadosAdicionais() {
-        const dadosAdicionais = document.querySelectorAll("div.container input[type=text], input[type=date]");
+        const dadosAdicionais = document.querySelectorAll("div.container input[type=text], input[type=date], textarea#nota");
 
         dadosAdicionais.forEach ( dado => {
             dado.addEventListener("input", () => localStorage.setItem(`trmsaaj-${dado.id}`, `${dado.value}`));
             dado.value = localStorage.getItem(`trmsaaj-${dado.id}`);
-        })
+
+            if(dado.matches("#nota")) {
+                dado.addEventListener("focusout", () => {
+                    dado.value !== "" ? 
+                    dado.classList.add("bold") : 
+                    dado.classList.remove("bold");
+                });
+
+                // NO LOAD DO WINDOWS 
+                dado.value !== "" ? 
+                dado.classList.add("bold") : 
+                dado.classList.remove("bold");
+            }
+        });
     },
 
     salvarDestaqueDeTotais() {
         readonlyCelsDarker.checked ?
             localStorage.setItem("trmsaaj-destaque", "on") : 
             localStorage.removeItem("trmsaaj-destaque");
-    }, 
-
-    salvarNota() {
-        textArea.addEventListener("input", () => {
-            localStorage.setItem(`trmsaaj-nota`, `${textArea.value}`);
-            if(textArea.value === "") {
-                localStorage.removeItem("trmsaaj-nota");
-                textArea.classList.remove("bold");
-            } else {
-                textArea.classList.add("bold");
-            }
-        })
     }
 }
 
@@ -101,12 +102,7 @@ window.addEventListener("load", () => {
     // INVOCAÇÃO DAS FUNÇÕES
     storage.salvarFicha();
     storage.salvarDadosAdicionais();
-    storage.salvarNota();
     escutarEventos();
-    
-    // RETORNAR NOTA NO LOAD DO WINDOWS
-    textArea.value = localStorage.getItem("trmsaaj-nota");
-    textArea.value !== "" && textArea.classList.add("bold");
 
     // DESTAQUE DE CÉLULAS NO LOAD DO WINDOWS
     if(localStorage.getItem("trmsaaj-destaque")) {

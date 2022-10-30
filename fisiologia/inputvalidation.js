@@ -63,6 +63,9 @@ function eventos() {
                 }
             }
         });
+        
+        // VALIDAR INPUT - NO LOAD DO WINDOWS
+        validacao.validarInput();
     });
 
     // FECHAR ALERTA VERMELHO
@@ -74,8 +77,6 @@ function eventos() {
 }
 
 window.addEventListener("load", () => {
-    // VALIDAR INPUT - NO LOAD DO WINDOWS
     inicializacao();
     eventos();
-    validacao.validarInput();
-})
+});

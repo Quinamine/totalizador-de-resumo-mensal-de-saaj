@@ -378,6 +378,7 @@ div.ficha footer div.assinatura {
 div.nota {
     margin-bottom: 20px;
 }
+
 @media screen and (max-width: 1312px) {
     div.linha.nota {
         padding-left: 0px;
@@ -400,6 +401,7 @@ div.nota textarea {
     line-height: 1.5;
     border: 1px solid var(--border-color);
 }
+
 
 div.nota textarea.bold {
     font-weight: bold;
