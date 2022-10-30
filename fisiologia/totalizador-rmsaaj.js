@@ -18,95 +18,69 @@ const storage  = {
             dado.value = localStorage.getItem(`trmsaaj-${dado.id}`);
 
             if(dado.matches("#nota")) {
-                dado.addEventListener("focusout", () => {
-                    dado.value !== "" ? 
-                    dado.classList.add("bold") : 
-                    dado.classList.remove("bold");
-                });
-
-                // NO LOAD DO WINDOWS 
-                dado.value !== "" ? 
-                dado.classList.add("bold") : 
-                dado.classList.remove("bold");
+                let denegrirNota = () => dado.value !== "" ? dado.classList.add("bold") : dado.classList.remove("bold");
+                dado.addEventListener("focusout", () => denegrirNota());
+                denegrirNota(); // NO LOAD DO WINDOWS 
             }
         });
     },
 
     salvarDestaqueDeTotais() {
-        readonlyCelsDarker.checked ?
+        readonlyCelsDarker.addEventListener("change", () => {
+            readonlyCelsDarker.checked ?
             localStorage.setItem("trmsaaj-destaque", "on") : 
             localStorage.removeItem("trmsaaj-destaque");
+        });
+
+        // NO LOAD DO WINDOWS
+        if(localStorage.getItem("trmsaaj-destaque")) {
+            readonlyCelsDarker.setAttribute("checked", "");
+            menu.destacarFundoDeTotais();
+        }; 
     }
 }
 
-function totalizar(celulasPorTotalizar, celulaDeSaida) {
-    let total = 0;
-    for (const cel of celulasPorTotalizar) {
-        total+=Number(cel.value);
+const totalizacao = {
+    filtrarCelulas(cel) {
+        if((cel.dataset.totalparcial) && (cel.dataset.totalgeral)) {
+            cel.classList.add(`${cel.dataset.totalparcial}`);
+            cel.classList.add(`${cel.dataset.totalgeral}`);
+            
+            let totalParcial = document.querySelectorAll(`.${cel.dataset.totalparcial}`),
+            totalParcialOutput = document.querySelector(`.${cel.dataset.totalparcialoutput}`),
+            totalGeral = document.querySelectorAll(`.${cel.dataset.totalgeral}`),
+            totalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
+
+            this.totalizarCelulas(totalParcial, totalParcialOutput);
+            this.totalizarCelulas(totalGeral, totalGeralOutput);
+        }
+
+        if(cel.dataset.totalparcialnaoaplicaveloutput) {
+            let totalParcialNaoAplicavelOutput = document.querySelector(`.${cel.dataset.totalparcialnaoaplicaveloutput}`);
+            totalParcialNaoAplicavelOutput.value = 0;
+        }
+    },
+
+    totalizarCelulas(celulasPorTotalizar, celulaDeSaida) {
+        let total = 0;
+        for (const cel of celulasPorTotalizar) {
+            total+=Number(cel.value);
+        }
+        celulaDeSaida.value = total;
     }
-    celulaDeSaida.value = total;
 }
 
 function escutarEventos() {
-    // A variável 'readonlyCelsDarker' está declarada globalmente no arquivo 'menu.js'
-    readonlyCelsDarker.addEventListener("change", () => storage.salvarDestaqueDeTotais());
-
-    // TOTALIZAÇÃO
-    // A variável 'inputCels' está declarada globalmente no arquivo 'inputValidation.js'
+    // TOTALIZACAO
     inputCels.forEach( cel => {
-        cel.addEventListener("input", () => {
-
-            if((cel.dataset.totalparcial) && (cel.dataset.totalgeral)) {
-                cel.classList.add(`${cel.dataset.totalparcial}`);
-                cel.classList.add(`${cel.dataset.totalgeral}`);
-                
-                let totalParcial = document.querySelectorAll(`.${cel.dataset.totalparcial}`),
-                totalParcialOutput = document.querySelector(`.${cel.dataset.totalparcialoutput}`),
-                totalGeral = document.querySelectorAll(`.${cel.dataset.totalgeral}`),
-                totalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
-    
-                totalizar(totalParcial, totalParcialOutput);
-                totalizar(totalGeral, totalGeralOutput);
-            }
-
-            if(cel.dataset.totalparcialnaoaplicaveloutput) {
-                let totalParcialNaoAplicavelOutput = document.querySelector(`.${cel.dataset.totalparcialnaoaplicaveloutput}`);
-                totalParcialNaoAplicavelOutput.value = 0;
-            }
-        });
-
-        // No Load do Windows
-        if (cel.value != "") {
-            if((cel.dataset.totalparcial) && (cel.dataset.totalgeral)) {
-                cel.classList.add(`${cel.dataset.totalparcial}`);
-                cel.classList.add(`${cel.dataset.totalgeral}`);
-                
-                let totalParcial = document.querySelectorAll(`.${cel.dataset.totalparcial}`),
-                totalParcialOutput = document.querySelector(`.${cel.dataset.totalparcialoutput}`),
-                totalGeral = document.querySelectorAll(`.${cel.dataset.totalgeral}`),
-                totalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
-    
-                totalizar(totalParcial, totalParcialOutput);
-                totalizar(totalGeral, totalGeralOutput);
-            }
-
-            if(cel.dataset.totalparcialnaoaplicaveloutput) {
-                let totalParcialNaoAplicavelOutput = document.querySelector(`.${cel.dataset.totalparcialnaoaplicaveloutput}`)
-                totalParcialNaoAplicavelOutput.value = 0;
-            }
-        }
+        cel.addEventListener("input", () => totalizacao.filtrarCelulas(cel)); // T
+        cel.value != "" && totalizacao.filtrarCelulas(cel); // No Load do Windows
     });
 }
 
 window.addEventListener("load", () => {
-    // INVOCAÇÃO DAS FUNÇÕES
     storage.salvarFicha();
     storage.salvarDadosAdicionais();
+    storage.salvarDestaqueDeTotais();
     escutarEventos();
-
-    // DESTAQUE DE CÉLULAS NO LOAD DO WINDOWS
-    if(localStorage.getItem("trmsaaj-destaque")) {
-        readonlyCelsDarker.setAttribute("checked", "");
-        menu.destacarFundoDeTotais();
-    };
 });

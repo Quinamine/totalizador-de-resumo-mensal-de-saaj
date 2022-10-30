@@ -46,7 +46,6 @@ const referencia = {
             ref.textContent = "";
         }
     }
-
 }
 
 window.addEventListener("load", () => {
