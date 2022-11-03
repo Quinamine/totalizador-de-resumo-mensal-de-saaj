@@ -61,10 +61,10 @@ const menu = {
         }
     },
 
-    // ESVAZIAMENTO
+    // ESVAZIAR A FICHA
     esvaziamento() {
         const confirmacao = document.querySelector("div.caixa-de-confirmacao");
-        const celulas = document.querySelectorAll("div.input-container input");
+        const celulas = document.querySelectorAll("div.inputs-container input");
         return {
             mostrarCaixaDeConfirmacao: () => {
                 let celulasPreenchidas = 0;
@@ -120,16 +120,28 @@ const menu = {
         window.print();
     },
 
+    // SOBRE
     abrirArtigoSobre() {
         document.querySelector("section#sobre").classList.add("on");
         desfoqueDoFundo.on();
     },
 
+    // COOKIES
     abrirArtigoCookies() {
         document.querySelector("section#cookies").classList.add("on");
         desfoqueDoFundo.on();
         if(window.innerWidth < 1024) {
             document.querySelector("body").classList.add("overflow-hidden");
+        }
+    },
+
+    // SALVAR COMO PDF
+    salvarComoPdf() {
+        if(window.innerWidth < 1024) {
+            this.imprimirFicha();
+        } else {
+            document.querySelector("section#conversao-pdf").classList.add("on");
+            desfoqueDoFundo.on();
         }
     }
 }
@@ -162,7 +174,7 @@ function init() {
     srcContainer = document.querySelector("div.caixa-de-pesquisa");
     srcInput = document.querySelector("div.caixa-de-pesquisa input.pesquisar-linha");
     rowNumbers = document.querySelectorAll("div.coluna-de-numeros-das-linhas span")
-    textArea = document.querySelector("textarea#campo-de-nota");
+    textArea = document.querySelector("textarea#nota");
     divDesfocante = document.querySelector("div.desfoque");
 }
 
@@ -220,7 +232,7 @@ function eventListeners() {
     });
 
     // IMPRIMIR 
-    const btnImprimir = document.querySelector("button.imprimir-ficha");
+    const btnImprimir = document.querySelector("button.imprimir");
     btnImprimir.addEventListener("click", () => menu.imprimirFicha());
 
     // ABRIR CONTEÚDO SOBRE
@@ -229,7 +241,7 @@ function eventListeners() {
 
     // ABRIR CONTEÚDO SOBRE NO LOAD DO WINDOWS
     if(location.hash === "#sobre") {
-    menu.abrirArtigoSobre();
+        menu.abrirArtigoSobre();
     }
 
     // ABRIR CONTEÚDO DE COOKIES
@@ -239,12 +251,15 @@ function eventListeners() {
     // FECHAR CONTEÚDO SOBRE E COOKIES
     const btnsFecharArtigo = document.querySelectorAll("button.fechar-artigo");
     btnsFecharArtigo.forEach ( btn => {
-    btn.addEventListener("click", () => {
-        btn.parentElement.classList.remove("on");
-        desfoqueDoFundo.off();
-        document.querySelector("body").classList.remove("overflow-hidden");
-    })
+        btn.addEventListener("click", () => {
+            btn.parentElement.classList.remove("on");
+            desfoqueDoFundo.off();
+            document.querySelector("body").classList.remove("overflow-hidden");
+        })
     });
+
+    // SALVAR COMO PDF
+    document.querySelector("button.salvar-como-pdf").addEventListener("click", () => menu.salvarComoPdf());
 
     // PARTILHAR
     let conteudo = {

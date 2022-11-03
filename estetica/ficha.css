@@ -1,3 +1,41 @@
+/* FORMATACAO GERAL */
+
+input, textarea {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    color: var(--text-color);
+    font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
+    font-size: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=text], input[type=date],
+input[readonly] {
+    font-weight: bold;
+}
+
+input[readonly] {
+    cursor: context-menu;
+    transition: background-color 400ms ease-out;
+}
+
+input[readonly].bg-gray {
+    background-color: var(--gray-c) !important;
+}
+
+div.container input:focus {
+    border-bottom: 1px solid var(--blue);
+}
 
 /* CSS REUTILIZÁVEL */ 
 
@@ -9,11 +47,11 @@ div.body div.coluna-de-livro-de-registo span,
 section div.indicadores span,
 div.situacao-escolar div.titulo,
 section.contracepcao-e-protecao div.subtitulo-2,
-div.input-container input {
+div.inputs-container input {
     border-left: 1px solid var(--border-color);
 }
 
-.container input,
+div.container input, div.container input[readonly]:focus,
 div.ficha div.linha-de-indicadores,
 div.grade-de-sexo span.sexo,
 div.grade-de-total-parcial span.total,
@@ -37,50 +75,78 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
     align-items: center;
 }
 
+@media print {
+    div.emblema-e-republica,
+    div.ficha, div.nota {
+        visibility: visible;
+    }
+}
+
 div.container {
     max-width: 1312px;
     min-width: 1312px;
     margin: 30px auto 10px auto;
 }
 
-.container input[type=text],
+div.container input[type=text],
 input[type=date] {
     font-weight: bold;
 }
 
-.container input[type=number] {
+div.container input[type=number] {
     text-align: center;
     padding: 1px 2px;
 }
 
-.container input[type=number].fundo-vermelho {
+div.container input[type=number].fundo-vermelho {
     background-color: var(--danger-color) !important;
     color: var(--yt);
 }
 
-.container input[readonly] {
+div.container input[readonly] {
     font-weight: bold;
     cursor: default;
     transition: background-color 400ms ease-out;
 }
 
-.container input[readonly].bg-gray {
+div.container input[readonly].bg-gray {
     background-color: var(--gray-c);
 }
 
-.container input[type=number].nao-aplicavel {
-    background-color: var(--gray);
+div.container input[type=number].nao-aplicavel {
+    background-color: var(--gray) !important;
 }
 
-.container > header {
+div.container > header {
     display: grid;
-    grid-template-columns: 300px 335px 1fr;
+    grid-template-columns: 335px 1fr;
     text-transform: uppercase;
-    margin-left: 50px;
+    margin-left: 55px;
 }
 
 header div.emblema-e-republica {
-    display: flex;
+    display: none;
+}
+
+@media print {
+    div.container > header {
+        grid-template-columns: 300px 335px 1fr;
+        margin-left: 50px;
+    }
+
+    header div.emblema-e-republica {
+        display: flex;
+    }
+}
+
+div.emblema-e-republica figure {
+    margin: 0;
+    width: 65px;
+    height: 65px;
+}
+
+div.emblema-e-republica figure img {
+    height: 100%;
 }
 
 header div.republica {
@@ -124,9 +190,15 @@ header div.visto input {
 
 header h1 {
     grid-column: 1/4;
-    margin: 20px 0 10px 62px;
+    margin: 20px 0 10px 56px;
     font-size: inherit;
     font-weight: bold;
+}
+
+@media print {
+    header h1 {
+        margin-left: 62px;
+    }
 }
 
 /* FICHA */
@@ -147,6 +219,12 @@ div.ficha header {
     position: sticky;
     top: 0;
     z-index: 10000;
+}
+
+@media print {
+    div.ficha header {
+        position: initial;
+    }
 }
 
 div.ficha header > div:first-child {
@@ -249,6 +327,12 @@ div.coluna-de-indicadores {
     }
 }
 
+@media print {
+    div.coluna-de-indicadores {
+        position: initial;
+    }
+}
+
 /* SECTIONS */
 div.coluna-de-indicadores section:nth-child(n+4) {
     display: grid;
@@ -313,6 +397,7 @@ div.situacao-escolar {
 /* Parceiros presentes */
 section.parceiros-presentes div.titulo {
     height: 100%;
+    font-weight: initial;
 } 
 
 /* Rastreio de Ca do colo */
@@ -343,17 +428,17 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 }
 
 /* INPUT CONTAINER */
-div.input-container {
+div.inputs-container {
     display: grid;
     grid-template-columns: 45px;
     grid-template-rows: 24px;
 }
 
-div.input-container.total {
+div.inputs-container.total {
     grid-template-columns: 50px;
 }
 
-div.input-container input {
+div.inputs-container input {
     max-width: 100%;
     max-height: 100%;
 }
@@ -386,22 +471,23 @@ div.nota {
     }
 }
 
-@media print {
-    div.nota.no-print {
-        display: none;
-    }
-}
-
 div.nota textarea {
     font: 14px Arial, Helvetica, san-serif;
-    outline: none;
-    border: none;
     min-width: 880px;
     padding: 5px;
     line-height: 1.5;
     border: 1px solid var(--border-color);
 }
 
+@media print {
+    div.nota.no-print {
+        display: none;
+    }
+
+    div.nota textarea {
+        padding: 0;
+    }
+}
 
 div.nota textarea.bold {
     font-weight: bold;

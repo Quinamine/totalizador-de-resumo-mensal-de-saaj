@@ -17,7 +17,7 @@ const referencia = {
     retornarSexoEIdade(celulaFocada) {
         const celulaFocadaParent = celulaFocada.parentElement;
         const celulaFocadaGrandParent = celulaFocadaParent.parentElement;
-        const celulaFocadaParent_n_siblings = celulaFocadaGrandParent.querySelectorAll("div.input-container");
+        const celulaFocadaParent_n_siblings = celulaFocadaGrandParent.querySelectorAll("div.inputs-container");
 
         let celulaFocadaParentIndex;
         for (let i = 0; i < celulaFocadaParent_n_siblings.length; i++) {
@@ -62,4 +62,16 @@ window.addEventListener("load", () => {
             });
         }
     });
+});
+
+
+// MOSTRAR OU OMITIR LINHA DE REFERENCIA
+window.addEventListener("scroll", () => {
+    const referencia = document.querySelector("div.linha-de-referencia");
+    const boundingReference = document.querySelector(".bounding-reference");
+    let PosicaoDaFicha = boundingReference.getBoundingClientRect().bottom;
+
+    PosicaoDaFicha < 0 ?
+        referencia.classList.add("off") : 
+        referencia.classList.remove("off");
 });

@@ -6,20 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Totalizador de Resumo Mensal de SAAJ</title>
         <meta name="robots" content="index, follow"/>
-        <meta name="description" content="Serviço online gratuito que auxilia na totalização do respectivo resumo a partir dos dados preenchidos pelo usuário (Profissional de Saúde)." />
+        <meta name="description" content="Serviço online gratuito que auxilia na elaboração do respectivo resumo totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde)." />
+		<meta name="keywords" content="Totalizador de Resumo Mensal de SAAJ, Totalizador de Relatório Mensal de SAAJ, Ficha de Resumo Mensal de SAAJ, Serviço Amigo do Adolescente e Jovem." />
+		<meta name="author" content="Adérito Félix Quinamine" />
 
         <!-- PARTILHA NAS REDES SOCIAIS -->
         <meta property="og:url" content="https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"/>
         <meta property="og:title" content="Totalizador de Resumo Mensal de SAAJ" />
-        <meta property="og:description" content="Serviço online gratuito que auxilia na totalização do respectivo resumo a partir dos dados preenchidos pelo usuário (Profissional de Saúde)." />
+        <meta property="og:description" content="Serviço online gratuito que auxilia na elaboração do respectivo resumo totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde)." />
         <meta property="og:image" content="https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/imagens/totalizador-de-resumo-mensal-de-saaj.png"/>
        
         <!-- DESIGN -->
-        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
         <link rel="stylesheet" href="estetica/reset.css" />
         <link rel="stylesheet" href="estetica/layout.css" />
         <link rel="stylesheet" href="estetica/ficha.css" />
         <link rel="stylesheet" href="estetica/aside.css" />
+		<link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
 
         <!-- SCRIPTS -->
         <script src="fisiologia/menu.js"></script>
@@ -37,38 +39,32 @@
             <div class="linha do-cabecalho">
                 <a href="index.html" class="logo">
                     Totalizador de Resumo Mensal de SAAJ
-                </a>
-                                        
+                </a>                                        
                 <section class="menu" role="navigation">
                     <ul>
                         <li class="destacar-as-celulas-automaticas" title="Adicionar um fundo opaco às celulas dos totais">
                             <input type="checkbox" id="readonlyinputs-darker"/> 
                             <label for="readonlyinputs-darker">Destacar&nbsp;o&nbsp;fundo&nbsp;dos&nbsp;totais</label>
                         </li>
-
                         <li title="Migrar até uma determinada linha">
-                            <button class="ir-para">Ir&nbsp;para&nbsp;linha...</button>
-                        </li>  
-                            
+                            <button class="ir-para">Ir&nbsp;para&nbsp;a&nbsp;linha...</button>
+                        </li>                             
                         <li title="Limpar os dados da ficha">
                             <button class="esvaziar-ficha">Esvaziar&nbsp;a&nbsp;ficha</button>
                         </li>
-
-                        <li title="Imprimir a ficha">
-                            <button class="imprimir-ficha">
-                                <span class="imprimir">Imprimir</span>
-                                <span class="print-2-pdf">Converter&nbsp;para&nbsp;PDF</span>
+                        <li title="Imprimir a ficha" class="impressao">
+                            <button class="imprimir">Imprimir</button>
+                        </li>
+                        <li title="Tutorial">
+                            <button class="salvar-como-pdf">
+                                Salvar&nbsp;como&nbsp;PDF <span class="question-mark">?</span>
                             </button>
                         </li>
                         <li title="Sobre o totalizador" class="sobre">
-                            <button class="abrir-artigo-sobre">
-                                Sobre
-                            </button>
+                            <button class="abrir-artigo-sobre">Sobre</button>
                         </li>
-                        <li title="Partilhar o endereço do totalizador">
-                            <button class="partilhar">
-                                Partilhar...
-                            </button>
+                        <li title="Partilhar o endereço do totalizador" class="partilha">
+                            <button class="partilhar">Partilhar...</button>
                         </li>
                     </ul>
                 </section>
@@ -80,7 +76,7 @@
                 <header>
                    <div class="emblema-e-republica">
                         <figure>
-                            <img src="imagens/emblema.png" alt="Emblema da República de Moçambique" srcset="" />
+                            <img src="imagens/emblema.png" alt="Emblema da República de Moçambique" />
                         </figure>
                         <div class="republica">
                             <span>República de Moçambique</span>
@@ -158,7 +154,7 @@
                         </div>
                     </header>
                     <div class="body">
-                        <div class="coluna-de-numeros-das-linhas">
+                        <div class="coluna-de-numeros-das-linhas bounding-reference">
                             <span>1</span>
                             <span>2</span>
                             <span>3</span>
@@ -287,7 +283,7 @@
                                     <span>Nº de adolescentes encaminhados por Activistas</span>
                                     <span>Nº de adolescentes encaminhados por Profissional de Saúde</span>
                                     <span>Nº de adolescentes encaminhados por Professor na Escola</span>
-                                    <span>Nº de adolescentes encaminhados por outros</span>
+                                    <span>Nº de adolescentes encaminhados por Outros</span>
                                 </div>
                                 <div class="situacao-escolar">
                                     <div class="titulo">
@@ -403,7 +399,7 @@
                                     <span>Contracepção</span>
                                 </div>
                                 <div class="indicadores">
-                                    <span>Nº de adolescentes e jovens novos utentes</span>
+                                    <span>Nº de adolescentes e jovens que são Novos Utentes</span>
                                     <span>Nº de adolescentes e jovens que continuam no método</span>
                                 </div> 
                             </section>
@@ -417,7 +413,7 @@
                                         <span>DIU</span>
                                         <span>Injectável</span>
                                         <span>Implante</span>
-                                        <span> Contr. de Emergência</span>
+                                        <span> Contracepção de Emergência</span>
                                         <span>Preservativos</span>
                                     </div>
                                 </div>
@@ -472,7 +468,7 @@
                         </div>
   
                         <!-- SEXO MASCULINO -->
-                        <div class="input-container coluna-0-a-10-anos sexo-m">
+                        <div class="inputs-container coluna-0-a-10-anos sexo-m">
                             <input type="number" min="0" data-totalparcial="l1-c1c2c3c4c5" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c11" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c1c2c3c4c5" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c11" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c1c2c3c4c5" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c11" data-totalgeraloutput="l3-c13"/>
@@ -537,7 +533,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c1c2c3c4c5" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c11" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c1c2c3c4c5" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c11" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-10-a-14-anos sexo-m">
+                        <div class="inputs-container coluna-10-a-14-anos sexo-m">
                             <input type="number" min="0" data-totalparcial="l1-c1c2c3c4c5" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c11" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c1c2c3c4c5" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c11" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c1c2c3c4c5" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c11" data-totalgeraloutput="l3-c13"/>
@@ -602,7 +598,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c1c2c3c4c5" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c11" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c1c2c3c4c5" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c11" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-15-a-19-anos sexo-m">
+                        <div class="inputs-container coluna-15-a-19-anos sexo-m">
                             <input type="number" min="0" data-totalparcial="l1-c1c2c3c4c5" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c11" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c1c2c3c4c5" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c11" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c1c2c3c4c5" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c11" data-totalgeraloutput="l3-c13"/>
@@ -667,7 +663,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c1c2c3c4c5" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c11" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c1c2c3c4c5" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c11" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-20-a-24-anos sexo-m">
+                        <div class="inputs-container coluna-20-a-24-anos sexo-m">
                             <input type="number" min="0" data-totalparcial="l1-c1c2c3c4c5" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c11" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c1c2c3c4c5" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c11" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c1c2c3c4c5" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c11" data-totalgeraloutput="l3-c13"/>
@@ -732,7 +728,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c1c2c3c4c5" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c11" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c1c2c3c4c5" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c11" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-25-anos-ou-mais sexo-m">
+                        <div class="inputs-container coluna-25-anos-ou-mais sexo-m">
                             <input type="number" min="0" data-totalparcial="l1-c1c2c3c4c5" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c11" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c1c2c3c4c5" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c11" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c1c2c3c4c5" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c11" data-totalgeraloutput="l3-c13"/>
@@ -799,7 +795,7 @@
                         </div>
 
                         <!-- SEXO FEMININO -->
-                        <div class="input-container coluna-0-a-10-anos sexo-f">
+                        <div class="inputs-container coluna-0-a-10-anos sexo-f">
                             <input type="number" min="0" data-totalparcial="l1-c6c7c8c9c10" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c12" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c6c7c8c9c10" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c12" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c6c7c8c9c10" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c12" data-totalgeraloutput="l3-c13"/>
@@ -864,7 +860,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c6c7c8c9c10" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c12" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c6c7c8c9c10" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c12" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-10-a-14-anos sexo-f">
+                        <div class="inputs-container coluna-10-a-14-anos sexo-f">
                             <input type="number" min="0" data-totalparcial="l1-c6c7c8c9c10" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c12" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c6c7c8c9c10" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c12" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c6c7c8c9c10" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c12" data-totalgeraloutput="l3-c13"/>
@@ -929,7 +925,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c6c7c8c9c10" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c12" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c6c7c8c9c10" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c12" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-15-a-19-anos sexo-f">
+                        <div class="inputs-container coluna-15-a-19-anos sexo-f">
                             <input type="number" min="0" data-totalparcial="l1-c6c7c8c9c10" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c12" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c6c7c8c9c10" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c12" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c6c7c8c9c10" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c12" data-totalgeraloutput="l3-c13"/>
@@ -994,7 +990,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c6c7c8c9c10" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c12" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c6c7c8c9c10" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c12" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-20-a-24-anos sexo-f">
+                        <div class="inputs-container coluna-20-a-24-anos sexo-f">
                             <input type="number" min="0" data-totalparcial="l1-c6c7c8c9c10" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c12" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c6c7c8c9c10" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c12" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c6c7c8c9c10" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c12" data-totalgeraloutput="l3-c13"/>
@@ -1059,7 +1055,7 @@
                             <input type="number" min="0" data-totalparcial="l62-c6c7c8c9c10" data-totalgeral="l62-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l62-c12" data-totalgeraloutput="l62-c13"/>
                             <input type="number" min="0" data-totalparcial="l63-c6c7c8c9c10" data-totalgeral="l63-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l63-c12" data-totalgeraloutput="l63-c13"/>
                         </div>
-                        <div class="input-container coluna-25-anos-ou-mais sexo-f">
+                        <div class="inputs-container coluna-25-anos-ou-mais sexo-f">
                             <input type="number" min="0" data-totalparcial="l1-c6c7c8c9c10" data-totalgeral="l1-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l1-c12" data-totalgeraloutput="l1-c13"/>
                             <input type="number" min="0" data-totalparcial="l2-c6c7c8c9c10" data-totalgeral="l2-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l2-c12" data-totalgeraloutput="l2-c13"/>
                             <input type="number" min="0" data-totalparcial="l3-c6c7c8c9c10" data-totalgeral="l3-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l3-c12" data-totalgeraloutput="l3-c13"/>
@@ -1126,7 +1122,7 @@
                         </div>
 
                         <!-- TOTAL PARCIAL -->
-                        <div class="input-container total total-m">
+                        <div class="inputs-container total total-m">
                             <input type="number" readonly class="l1-c11"/>
                             <input type="number" readonly class="l2-c11"/>
                             <input type="number" readonly class="l3-c11"/>
@@ -1191,7 +1187,7 @@
                             <input type="number" readonly class="l62-c11"/>
                             <input type="number" readonly class="l63-c11"/>
                         </div>
-                        <div class="input-container total total-f">
+                        <div class="inputs-container total total-f">
                             <input type="number" readonly class="l1-c12"/>
                             <input type="number" readonly class="l2-c12"/>
                             <input type="number" readonly class="l3-c12"/>
@@ -1258,7 +1254,7 @@
                         </div>
 
                         <!-- TOTAL -->
-                        <div class="input-container total total-geral">
+                        <div class="inputs-container total total-geral">
                             <input type="number" readonly class="l1-c13"/>
                             <input type="number" readonly class="l2-c13"/>
                             <input type="number" readonly class="l3-c13"/>
@@ -1417,7 +1413,7 @@
                             </li>
                             <li>
                                 <input type="checkbox" id="nome-da-us" checked data-for="us"/>
-                                <label for="mome-da-us">US</label>
+                                <label for="nome-da-us">US</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="month" checked data-for="mes"/>
@@ -1493,7 +1489,7 @@
                 <!-- AVISO DE USO DE COOKIES -->
                 <div class="aviso-de-uso-de-cookies">
                     <p>                    
-                        Pela utilização do Totalizador de Resumo Mensal de SAAJ, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class="abrir-artigo-cookies">Saiba mais...</button>
+                        Ao utilizar do Totalizador de Resumo Mensal de SAAJ, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class="abrir-artigo-cookies">Saiba mais...</button>
                     </p>
         
                    
@@ -1511,7 +1507,7 @@
                     <img src="imagens/totalizador-de-resumo-mensal-de-saaj.png" alt="Totalizador de Resumo Mensal de SAAJ"/>
                 </figure>
 
-                <p>O <b>Totalizador de Resumo Mensal de SAAJ</b> é um serviço online gratuito que <b>auxilia na totalização do respectivo resumo a partir dos dados inseridos</b> pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de SAAJ actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</p>
+                <p>O <b>Totalizador de Resumo Mensal de SAAJ</b> é um serviço online gratuito que auxilia na elaboração do respectivo resumo totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de SAAJ actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</p>
 
                 <p>O propósito é de flexibilizar a elaboração do resumo através do cálculo automático dos totais.</p>
 
@@ -1603,6 +1599,25 @@
                     </p>
                 </div>
                                 
+                <button class="fechar-artigo" title="Fechar">
+                    &times;
+                </button>
+            </section>
+            <section id="conversao-pdf">
+                <h1>Como salvar a ficha em PDF?</h1>
+            
+                <ol>
+                    <li>Clique na opção "<b>Imprimir</b>".</li>
+            
+                    <li>Na janela que abrirá, no campo de <b>Impressora</b> ou <b>Destino</b> selecione a opção “<b>Salvar como PDF</b>”.</li>
+            
+                    <li>No campo de <b>Layout</b> ou <b>Orientação</b>, selecione "<b>Paisagem</b>". Isso é para que toda ficha caiba no papel A4 e não haja omissão das últimas colunas.</li>
+            
+                    <li>Por fim, clique em <b>salvar</b> e escolha o destino no seu computador.</li>
+                </ol>
+            
+                <p class="destaque">Se no navegador Firefox haver omissão das últimas colunas no modo paisagem, teste no modo retrato.</p>
+
                 <button class="fechar-artigo" title="Fechar">
                     &times;
                 </button>

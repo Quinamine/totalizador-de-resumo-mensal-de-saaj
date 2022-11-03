@@ -21,7 +21,15 @@
     --gray-light: #f0f0f0;
     --blue: #0060EE; 
     --purple: rgb(116, 116, 235);
+    --btn-hover-bgc: var(--purple);
     --orange: #faa032;
+}
+
+@media print {
+    :root {
+        --border-color: var(--fullblack);
+        --text-color: var(--fullblack);
+    }
 }
 
 html {
@@ -35,6 +43,17 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+@media print {
+    @page {
+        margin: 0.5cm;
+    }
+    
+    body {
+        -webkit-print-color-adjust: exact;
+        visibility: hidden;
+    }
 }
 
 body.overflow-hidden {
@@ -60,7 +79,7 @@ main {
 
 a {
     text-decoration: none;
-    color: var(--anchor-color)
+    color: var(--anchor-color);
 }
 
 button {
@@ -78,43 +97,6 @@ a:active, button:active {
     opacity: 0.7;
 }
 
-input {
-    border: none;
-    outline: none;
-    color: var(--text-color);
-    font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
-    font-size: 12px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-input:focus {
-    border-bottom: 1px solid var(--blue) !important;
-}
-
-input[readonly]:focus {
-    border-color: var(--border-color) !important;
-}
-
-input[readonly] {
-    font-weight: bold;
-    cursor: context-menu;
-    transition: background-color 400ms ease-out;
-}
-
-input[readonly].gray {
-    color: var(--text-color);
-    background-color: var(--gray-c) !important;
-}
-
 /* Tags de texto */
 p, li, dt, dd, article span,
 h1, h2, h3, h4, h5, h6 {
@@ -127,7 +109,7 @@ h1, h2, h3, h4, h5, h6, dt, li  {
 }
 
 p, dd, figure, li:last-child, figure {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 dd.mb-10, p.mb-10 {
@@ -139,7 +121,7 @@ ul, ol, dl {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--fullblack);
+    color: var(--fullblack);
 }
 
 h1 {
@@ -147,40 +129,57 @@ h1 {
 }
 
 h2 {
-  font-size: 22px;
+    font-size: 22px;
 }
 
 h3 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 h4 {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 h5, dt {
     font-size: 16px;
-  }
-
-img {
-  max-width: 100%;
 }
 
-b, strong {
+h6 {
+    font-size: 14px;
+}
+
+b, strong,.destaque {
     font-weight: bold;
 }
 
 .destaque {
-    padding-left: 10px;
-    border-left: 6px solid var(--secondary-color);
-    font-weight: bold;
+    padding: 5px 5px 5px 10px;
+    border-left: 6px solid var(--primary-color);
+    background-color: var(--important-text-bgc);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* CSS REUTILIZAVEL */
+section.menu li.destacar-as-celulas-automaticas:hover,
+section.menu li.destacar-as-celulas-automaticas label,
+section.menu li input[type=checkbox] {
+    cursor: pointer;
 }
 
 /* CABEÇALHO */
-
 body > header, 
 body > footer {
     width: 100%;
+}
+
+@media print {
+    body > header,
+    body > footer {
+        display: none;
+    }
 }
 
 body > header {
@@ -207,8 +206,8 @@ div.linha.do-cabecalho {
 
 div.linha.do-cabecalho a.logo {
     font-size: 1.125rem;
-    font-weight: bold;
     color: var(--fullblack);
+    font-weight: bold;
     cursor: default;
 }
 
@@ -263,8 +262,12 @@ section.menu {
 }
 
 section.menu ul li {
-    /* Reset */
+/* Reset */
     margin: 0;
+}
+
+section.menu ul li.partilha {
+    display: none;
 }
 
 @media screen and (max-width: 1023px) {
@@ -291,15 +294,14 @@ section.menu ul li {
     }
 }
 
-@media screen and (max-width: 1023px) {
-    section.menu li.sobre {
-       display: none;
+@media screen and (max-width: 700px) {
+    section.menu {
+        min-width: 506px;
     }
-}
 
-section.menu li.destacar-as-celulas-automaticas:hover,
-section.menu li.destacar-as-celulas-automaticas label {
-    cursor: pointer;
+    section.menu li.sobre {
+        display: none;
+    }
 }
 
 section.menu li label {
@@ -310,11 +312,9 @@ section.menu li input[type=checkbox] {
     width: 12px;
     height: 11px;
     margin: 1px 4px 3px 4px;
-    cursor: pointer;
 }
 
 /* BOTÕES DO MENU */
-
 section.menu li button {
     background-color: inherit;
     font-size: 12px;
@@ -322,21 +322,29 @@ section.menu li button {
     padding: 12px;
 }
 
-section.menu button span.print-2-pdf {
-    display: none;
+section.menu button {
+    background-color: inherit;
+    font-size: 12px;
+    display: inline-block;
+    padding: 12px;
+}
+
+section.menu button.salvar-como-pdf span.question-mark {
+    font-weight: bold;
+    padding: 2px 4px 1px 4px;
+    border: thin dotted var(--border-color);
+    border-radius: 50%;
+    cursor: help;
 }
 
 @media screen and (max-width: 1023px) {
-    section.menu button span.print-2-pdf {
-        display: block;
-    }
-
-    section.menu button span.imprimir {
+    section.menu li.impressao,
+    section.menu button.salvar-como-pdf span.question-mark {
         display: none;
     }
 }
-/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 
+/* ESTADOS DOS ELEMENTOS DO MENU (HOVERS E ACTIVES) */
 section.menu li:first-child:hover,
 section.menu li button:hover,
 section.menu li a:hover {
@@ -348,7 +356,6 @@ section.menu ul li:first-child:active {
 }
 
 /* RODAPÉ */
-
 body > footer {
     background-color: var(--footer-bgc);
     padding: 30px 0;
@@ -367,7 +374,7 @@ footer div.linha.do-rodape a.voltar {
     padding: 10px;
     margin-right: -10px;
     font-size: 24px;
-    color: var(--text-color);
+    color: var(--gray);
 }
 
 @media screen and (max-width: 1312px) {
@@ -384,7 +391,7 @@ div.linha.do-rodape > p {
 }
 
 div.linha.do-rodape > *:nth-child(2) {
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px dotted var(--secondary-color);
 }
     
 /* PRINT CSS */
@@ -414,7 +421,8 @@ div.linha.do-rodape > *:nth-child(2) {
         visibility: visible;
     } 
 
-    div.ficha header {
+    div.ficha header,
+    div.coluna-de-indicadores {
         position: initial !important;
     }
 }

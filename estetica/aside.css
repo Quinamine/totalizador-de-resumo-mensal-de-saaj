@@ -15,8 +15,8 @@ article section {
     overflow: auto;
     max-width: 700px;
     position: fixed;
-    top: calc(50vh - 90vh/2);
-    right: calc(50vw - 700px/2);
+    top: calc(50vh - 90vh / 2);
+    right: calc(50vw - 700px / 2);
     z-index: 50000;
     padding: 20px;
     background-color: var(--yt);
@@ -46,7 +46,6 @@ article section.on {
     display: block;
 }
 
-
 article section#sobre ul {
     font-weight: bold;
 }
@@ -54,8 +53,8 @@ article section#sobre ul {
 article section button.fechar-artigo {
     font-size: 26px;
     position: fixed;
-    top: calc(50vh - 90vh/2);
-    right: calc(50vw - 700px/2);
+    top: calc(50vh - 90vh / 2);
+    right: calc(50vw - 700px / 2);
     width: 40px;
     height: 40px;
     background-color: var(--yt);
@@ -99,9 +98,13 @@ article li {
     padding-left: 3px;
 }
 
+article ul,
+article ol {
+    margin-left: 30px;
+}
+
 article ul {
     list-style-type: disc;
-    margin-left: 30px;
 }
 
 article li ul {
@@ -119,7 +122,7 @@ article div.consentimento {
 }
 
 article div.consentimento p {
-    background-color: var(--cinzaf4);
+    background-color: var(--important-text-bgc);
     padding: 5px 5px 5px 10px;
 }
 
@@ -163,17 +166,13 @@ div.caixa-de-pesquisa button {
 div.caixa-de-pesquisa button {
     background-color: inherit;
     color: var(--yt);
-    font-size: 1rem;
+    font-size: 16px;
     margin-left: 2px;
 }
 
 div.caixa-de-pesquisa button:hover {
     background-color: var(--danger-color);
     border-radius: 2px;
-}
-
-div.caixa-de-pesquisa button:active {
-    opacity: .8;
 }
 
 div.caixa-de-alerta {
@@ -184,11 +183,14 @@ div.caixa-de-alerta {
     font-size: 14px;
     background-color: var(--yt);
     position: fixed;
-    top: calc(50vh - 113px / 2);
+    top: calc(50vh - 115px / 2);
     left: calc(50vw - 450px / 2);
-    margin: 0 auto;
     z-index: 25000;
     display: none;
+}
+
+div.caixa-de-alerta.ficha-vazia {
+    top: calc(50vh - 94px / 2);
 }
 
 @media screen and (max-width: 450px) {
@@ -205,7 +207,6 @@ div.caixa-de-alerta.on {
 
 div.caixa-de-alerta p {
     line-height: 1.5;
-    margin-bottom: 18px;
 }
 
 div.caixa-de-alerta button {
@@ -220,21 +221,21 @@ div.caixa-de-alerta button {
 }
 
 div.caixa-de-alerta button:hover {
-    background-color: var(--purple);
+    background-color: var(--btn-hover-bgc);
 }
 
 /* CONFIRMAÇÃO DE ESVAZIAMENTO DA FICHA */
-
 div.caixa-de-confirmacao {
     min-width: 375px;
     max-height: 100vh;
     overflow: auto;
+    font-size: 13px;
     padding: 20px;
     border-radius: 10px;
     background: var(--yt);
     position: fixed;
-    top: calc(50vh - 397px * 1/2);
-    right: calc(50vw - 375px *  1/2);
+    top: calc(50vh - 443px / 2);
+    right: calc(50vw - 375px / 2);
     z-index: 30000;
     display: none;
 }
@@ -247,8 +248,18 @@ div.caixa-de-confirmacao {
     }
 }
 
+@media screen and (max-height: 443px) {
+    div.caixa-de-confirmacao {
+        top: calc(50vh - 90vh / 2);
+    }
+}
+
 div.caixa-de-confirmacao.on {
     display: block;
+}
+
+div.caixa-de-confirmacao p {
+    margin-bottom: 10px;
 }
 
 div.caixa-de-confirmacao div.alerta {
@@ -257,8 +268,12 @@ div.caixa-de-confirmacao div.alerta {
     align-items: center;
     border: 1px solid var(--gray-a);
     padding: 10px;
-    margin-top: 10px;
     border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+div.caixa-de-confirmacao div.alerta p {
+    margin: 10px 0 0 0;
 }
 
 div.caixa-de-confirmacao h3,
@@ -267,19 +282,8 @@ div.caixa-de-confirmacao h4 {
     font-weight: bold;
 }
 
-div.caixa-de-confirmacao h4 {
-    margin-top: 20px;
-}
-
-div.caixa-de-confirmacao p,
-div.caixa-de-confirmacao ul,
-div.caixa-de-confirmacao li {
-    font-size: 13px;
-    margin-top: 10px;
-}
-
 div.caixa-de-confirmacao ul {
-    max-height: 142px;
+    max-height: 164px;
     overflow-y: auto;
 }
 
@@ -304,10 +308,15 @@ div.caixa-de-confirmacao ul li {
     display: flex;
 }
 
+div.caixa-de-confirmacao ul li:last-child {
+    margin: 0;
+}
+
 div.caixa-de-confirmacao li label {
     align-self: center;
     margin-left: 4px;
     cursor: pointer;
+    flex: 1;
 }
 
 div.caixa-de-confirmacao li input {
@@ -317,13 +326,13 @@ div.caixa-de-confirmacao li input {
 
 div.caixa-de-confirmacao div.botoes-de-confirmacao {
     display: flex;
-    justify-content: space-around;
-    margin: 20px auto auto auto;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 div.botoes-de-confirmacao button {
     width: calc(50% - 5px);
-    font-size: 0.8125rem;
+    font-size: 13px;
     padding: 6px 0;
     border-radius: 4px;
 }
@@ -344,7 +353,6 @@ button.confirmar:hover {
     background-color: var(--danger-color-alpha-8);
 }
 
-
 /* RAZÃO PELAS CÉLULAS COM FUNDO VERMELHO */
 
 div.razao-pelas-celulas-com-fundo-vermelho {
@@ -364,7 +372,7 @@ div.razao-pelas-celulas-com-fundo-vermelho {
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho.on {
-    top: calc(50vh - 320px / 2);
+    top: calc(50vh - 353px / 2);
     visibility: visible;
 }
 
@@ -389,6 +397,8 @@ div.razao-pelas-celulas-com-fundo-vermelho p {
 
 div.razao-pelas-celulas-com-fundo-vermelho p.destaque {
     margin-left: 0;
+    padding: 0 0 0 10px;
+    background-color: var(--yt);
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho p.obs {
@@ -446,7 +456,7 @@ div.seccao-de-interatividade > button {
 }
 
 div.seccao-de-interatividade > button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--gray-light);
 }
 
 /* LINHA DE REFERÊNCIA DE SEXO E IDADE */
@@ -462,13 +472,16 @@ div.linha-de-referencia {
         left: 0;
         bottom: 0;
         z-index: 10000 !important;
-        background-color: var(--primary-color);
-        box-shadow: 0 -1px 5px var(--cinza14);
-        z-index: 1;
+        background-color: var(--footer-bgc);
+        transition: bottom 250ms ease;
+    }
+
+    div.linha-de-referencia.off {
+        bottom: -30px;
     }
     
     div.coluna-de-referencia  {
-        max-width: 1150px;
+        max-width: 1312px;
         margin: 0 auto;
         padding: 4px 8px;
         display: flex;
@@ -510,7 +523,6 @@ div.desfoque.on {
 }
 
 /* AVISO DE USO DE COOKIES  */
-
 div.aviso-de-uso-de-cookies {
     width: 100%;
     max-width: 1312px;
@@ -518,7 +530,7 @@ div.aviso-de-uso-de-cookies {
     position: fixed;
     right: calc(50vw - 1326px / 2);
     bottom: -132px;
-    font-size: 0.8125rem;
+    font-size: 13px;
     line-height: 1.5;
     background: var(--black-alpha-8); 
     color: var(--gray-d);
@@ -547,7 +559,7 @@ div.aviso-de-uso-de-cookies p {
 div.aviso-de-uso-de-cookies p button {
     padding: 3px 6px;
     border-radius: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--footer-bgc);
 }
 
 div.aviso-de-uso-de-cookies p button:hover {
@@ -568,4 +580,11 @@ div.aviso-de-uso-de-cookies > button {
 div.aviso-de-uso-de-cookies > button:hover {
     border-color: var(--yt);
     color: var(--yt);
+}
+
+/* NO-PRINT para todos elementos com class on e que tenham visibility: visible.*/
+@media print {
+    .on {
+        visibility: hidden !important;
+    }
 }
