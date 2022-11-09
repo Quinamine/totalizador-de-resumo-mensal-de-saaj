@@ -1,74 +1,68 @@
 "use strict";
 
-const validacao = {
+const inputValidation = {
 
-    validarInput: () => {
+    contarAlgarismosPorCelula(){
+        let numeroDeCelulasVermelhas = 0;
         for (const cel of inputCels) {
-            let numAlgarismos = cel.value.length;        
-                numAlgarismos > 6 ? 
-                cel.classList.add("fundo-vermelho") :
-                cel.classList.remove("fundo-vermelho");
+            this.adicionarOuRemoverFundoVermelho(cel, "-");
+            let numAlgarismos = cel.value.length;
+
+            if(!cel.matches("[readonly") && (numAlgarismos > 6) || 
+            cel.matches("[readonly") && (numAlgarismos > 7)) {
+                this.adicionarOuRemoverFundoVermelho(cel, "+");
+                numeroDeCelulasVermelhas++;
+            }
+        }
+        
+        if(numeroDeCelulasVermelhas > 0) {
+            setTimeout(() => this.mostrarMotivoPelasCelulasVermelhas(), 1500);
         }
     },
 
-    mostrarAlertaVermelho: () => {
-        if(!sessionStorage.getItem("trmsaaj-alertaVermelho")) {
+    adicionarOuRemoverFundoVermelho(cel, accao) {
+        accao === "+" ? cel.classList.add("fundo-vermelho") : cel.classList.remove("fundo-vermelho");
+    },
+    
+    mostrarMotivoPelasCelulasVermelhas() {
+        if(!sessionStorage.getItem("trmsaaj-naoMostrarMaisMotivoDeRedCels")) {
             alertaVermelho.classList.add("on");
-            desfoqueDoFundo.on()
+            desfoqueDoFundo.on();
         }
     },
-
-    fecharAlertaVermelho: () => {
+    
+    omitirMotivoPelasCelulasVermelhas() {
         alertaVermelho.classList.remove("on");
-        desfoqueDoFundo.off()
+        desfoqueDoFundo.off();
     },
 
     salvarPreferenciaNaoMostrarMais: () => {
-        const checkboxPreference = document.querySelector("#nao-mostrar-mais");
-        if(checkboxPreference.checked) {
-            sessionStorage.setItem("trmsaaj-alertaVermelho", "nao-mostrar-mais");
+        const checkboxNaoMostrarMais = document.querySelector("#nao-mostrar-mais");
+        if(checkboxNaoMostrarMais.checked) {
+            sessionStorage.setItem("trmsaaj-naoMostrarMaisMotivoDeRedCels", "checked");
         } else {
-            sessionStorage.removeItem("trmsaaj-alertaVermelho");
+            sessionStorage.removeItem("trmsaaj-naoMostrarMaisMotivoDeRedCels");
         }
     }
 }
 
 // VARIÁVEIS GLOBAIS
 let inputCels, alertaVermelho;
-function inicializacao() {
+window.addEventListener("load", () => {
     inputCels = document.querySelectorAll("div.inputs-container input");
     alertaVermelho = document.querySelector("div.razao-pelas-celulas-com-fundo-vermelho");
-}
 
-function eventos() {
-
-    // VALIDAR INPUT NO EVENTO DE ENTRADA DE DADOS
-    inputCels.forEach ( cel => {
-       cel.addEventListener("input", () => {
-            validacao.validarInput();
-           // Mostrar alerta se a 'cel' ficar vermelha ou a sua celula de saida de total parcial ou geral
-           let celTotalParcialOutput = document.querySelector(`.${cel.dataset.totalparcialoutput}`);
-           let celTotalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
-
-           if (cel.matches(".fundo-vermelho") || celTotalParcialOutput.matches(".fundo-vermelho") 
-           || celTotalGeralOutput.matches(".fundo-vermelho"))  {
-               setTimeout(() => {
-                   validacao.mostrarAlertaVermelho();
-               }, 2500);
-           }
-       });
+    inputCels.forEach( cel => {
+        cel.addEventListener("input", () => {
+            setTimeout(() => inputValidation.contarAlgarismosPorCelula(), 250);
+        });
     });
 
-    // FECHAR ALERTA VERMELHO
-    const btnFecharAlertaVermelho = document.querySelector("button.close-redcels-obs");
-    btnFecharAlertaVermelho.addEventListener("click", () => {
-        validacao.fecharAlertaVermelho();
-        validacao.salvarPreferenciaNaoMostrarMais();
-    });
-}
+    setTimeout(() => inputValidation.contarAlgarismosPorCelula(), 1000);
 
-window.addEventListener("load", () => {
-    inicializacao();
-    eventos();
-    validacao.validarInput();
+    const btnFecharAlerta = document.querySelector("button.close-redcels-obs");
+    btnFecharAlerta.addEventListener("click", () => {
+        inputValidation.omitirMotivoPelasCelulasVermelhas();
+        inputValidation.salvarPreferenciaNaoMostrarMais();
+    });
 });

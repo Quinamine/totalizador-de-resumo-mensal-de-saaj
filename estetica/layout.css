@@ -43,12 +43,19 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--gray-d);
 }
 
 @media print {
     @page {
-        margin: 0.5cm;
+        margin: 0.5cm 0.5cm 1cm 0.5cm;
+        size: landscape;
     }
+
+    @page :first {
+        margin-bottom: 0.5cm;
+    }
+    
     
     body {
         -webkit-print-color-adjust: exact;
@@ -62,6 +69,7 @@ body.overflow-hidden {
 
 main {
     flex: 1;
+    background-color: var(--yt);
 }
 
 @media screen and (max-width: 1312px) {
@@ -185,6 +193,8 @@ body > footer {
 body > header {
     line-height: 2;
     box-shadow: 0 0 10px var(--gray-d);
+    background-color: var(--yt);
+    z-index: 1;
 }
 
 div.linha {
@@ -205,7 +215,7 @@ div.linha.do-cabecalho {
 }
 
 div.linha.do-cabecalho a.logo {
-    font-size: 1.125rem;
+    font-size: 18px;
     color: var(--fullblack);
     font-weight: bold;
     cursor: default;
@@ -228,8 +238,8 @@ div.linha.do-cabecalho a.logo {
     } 
 
     div.linha.do-cabecalho a.logo {
-        line-height: 1.5;
-        margin-top: 5px;
+        line-height: 1.2;
+        margin-top: 8px;
         position: sticky;
         left: 0;
     }
@@ -241,9 +251,9 @@ div.linha.do-cabecalho a.logo {
     }
 }
 
-@media screen and (max-width: 340px) {
-    div.linha.do-cabecalho a.logo {
-        font-size: 15px;
+@media screen and (max-width: 358px) {
+    div.linha.do-cabecalho a.logo span {
+        display: none;
     }
 }
 
@@ -271,6 +281,10 @@ section.menu ul li.partilha {
 }
 
 @media screen and (max-width: 1023px) {
+    section.menu ul li.partilha {
+        display: initial;
+    }
+
     section.menu,
     section.menu ul {
         width: 100%;
@@ -289,6 +303,10 @@ section.menu ul li.partilha {
         justify-content: center;
     }
 
+    section.menu li.sobre {
+        display: none;
+    }
+
     section.menu li button {
         width: 100%;
     }
@@ -297,10 +315,6 @@ section.menu ul li.partilha {
 @media screen and (max-width: 700px) {
     section.menu {
         min-width: 506px;
-    }
-
-    section.menu li.sobre {
-        display: none;
     }
 }
 
@@ -394,35 +408,3 @@ div.linha.do-rodape > *:nth-child(2) {
     border-bottom: 1px dotted var(--secondary-color);
 }
     
-/* PRINT CSS */
-@media print {
-    @page {
-        margin: 0.5cm;
-    }
-
-    :root {
-        --border-color: var(--fullblack);
-        --text-color: var(--fullblack);
-    }
-
-    body {
-        -webkit-print-color-adjust: exact;
-        visibility: hidden;
-    }
-
-    body > header,
-    body > footer,
-    div.aviso-de-uso-de-cookies {
-        display: none;
-    }
-
-    div.container {
-        margin-top: 0;
-        visibility: visible;
-    } 
-
-    div.ficha header,
-    div.coluna-de-indicadores {
-        position: initial !important;
-    }
-}

@@ -93,7 +93,7 @@ const menu = {
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
                     localStorage.removeItem(`trmsaaj-cel${i}`);
-                    celulas[i].classList.remove("fundo-vermelho");
+                    inputValidation.adicionarOuRemoverFundoVermelho(celulas[i], "-");
                 };
 
                 const limpadoresDeDadosAdicionais = document.querySelectorAll("ul.limpadores-de-dados-adicionais input");
@@ -196,7 +196,7 @@ function eventListeners() {
         btn.addEventListener("click", () => {
             btn.parentElement.classList.remove("on");
             srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
-            desfoqueDoFundo.off()
+            desfoqueDoFundo.off();
         })
     }
 
@@ -256,6 +256,23 @@ function eventListeners() {
             desfoqueDoFundo.off();
             document.querySelector("body").classList.remove("overflow-hidden");
         })
+    });
+
+    // ADICIONAR POSITION STICKY AO H1 DO ARTIGO DE COOKIES
+    const artigoCookies = document.querySelector("section#cookies");
+    const h1DoArtigoCookies = artigoCookies.querySelector("h1");
+    const btnVoltar = artigoCookies.querySelector("button.fechar-artigo");
+    
+    artigoCookies.addEventListener("scroll", () => {
+        let posicaoDoH1 = h1DoArtigoCookies.getBoundingClientRect().top;
+
+        if(posicaoDoH1 <= 0) {
+            h1DoArtigoCookies.classList.add("sticky");
+            btnVoltar.classList.add("with-h1-sticky");
+        } else {
+            h1DoArtigoCookies.classList.remove("sticky");
+            btnVoltar.classList.remove("with-h1-sticky");
+        }
     });
 
     // SALVAR COMO PDF

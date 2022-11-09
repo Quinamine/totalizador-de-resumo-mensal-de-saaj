@@ -1,11 +1,11 @@
 const sessaoWeb = {
-    verDisponiilidade: () => sessionStorage.getItem("trmsaaj-session") ? "defined" : "undefined",
+    verDisponiilidade: () => sessionStorage.getItem("user-consente-o-armazenamentoLocal") ? "defined" : "undefined",
 
     mostrarAviso: () => aviso.classList.add("on"),
 
     omitirAviso: () => aviso.classList.remove("on"),
 
-    criarSessao: () => sessionStorage.setItem("trmsaaj-session", "on")
+    guardarConsentimento: () => sessionStorage.setItem("user-consente-o-armazenamentoLocal", true)
 }
 
 let aviso;
@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
         setTimeout(sessaoWeb.mostrarAviso, 2000);
 
         btnAceitar.addEventListener("click", () => {
-            sessaoWeb.criarSessao();
+            sessaoWeb.guardarConsentimento();
             sessaoWeb.omitirAviso();
         })
     }

@@ -19,7 +19,7 @@ const storage  = {
 
             if(dado.matches("#nota")) {
                 let denegrirNota = () => dado.value !== "" ? dado.classList.add("bold") : dado.classList.remove("bold");
-                dado.addEventListener("focusout", () => denegrirNota());
+                dado.addEventListener("input", () => denegrirNota());
                 denegrirNota(); // NO LOAD DO WINDOWS 
             }
         });

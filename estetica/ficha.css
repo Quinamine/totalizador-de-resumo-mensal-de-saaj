@@ -24,6 +24,10 @@ input[readonly] {
     font-weight: bold;
 }
 
+input[type=text], input[type=date] {
+    font-size: 14px;
+}
+
 input[readonly] {
     cursor: context-menu;
     transition: background-color 400ms ease-out;
@@ -75,12 +79,7 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
     align-items: center;
 }
 
-@media print {
-    div.emblema-e-republica,
-    div.ficha, div.nota {
-        visibility: visible;
-    }
-}
+/* INIT */
 
 div.container {
     max-width: 1312px;
@@ -88,14 +87,16 @@ div.container {
     margin: 30px auto 10px auto;
 }
 
-div.container input[type=text],
-input[type=date] {
-    font-weight: bold;
+@media print {
+    div.container {
+        margin-top: 20px;
+        visibility: visible;
+    }
 }
 
 div.container input[type=number] {
     text-align: center;
-    padding: 1px 2px;
+    padding: 1px;
 }
 
 div.container input[type=number].fundo-vermelho {
@@ -289,7 +290,7 @@ div.ficha div.body {
 
 div.body div.coluna-de-numeros-das-linhas {
     display: grid;
-    grid-template-rows: 24px;
+    grid-template-rows: repeat(63, 24px)
 }
 
 div.body div.coluna-de-numeros-das-linhas span,

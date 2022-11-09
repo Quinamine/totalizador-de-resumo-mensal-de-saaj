@@ -38,7 +38,7 @@
         <header>
             <div class="linha do-cabecalho">
                 <a href="index.html" class="logo">
-                    Totalizador de Resumo Mensal de SAAJ
+                    Totalizador de <span>Resumo</span> Mensal de SAAJ
                 </a>                                        
                 <section class="menu" role="navigation">
                     <ul>
@@ -546,7 +546,7 @@
                             <input type="number" min="0" data-totalparcial="l10-c1c2c3c4c5" data-totalgeral="l10-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l10-c11" data-totalgeraloutput="l10-c13"/>
                             <input type="number" min="0" data-totalparcial="l11-c1c2c3c4c5" data-totalgeral="l11-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l11-c11" data-totalgeraloutput="l11-c13"/>
                             <input type="number" min="0" data-totalparcial="l12-c1c2c3c4c5" data-totalgeral="l12-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l12-c11" data-totalgeraloutput="l12-c13" />
-                            <input type="number" min="0" data-totalparcial="l13-c1c2c3c4c5" data-totalgeral="l13-c1c2c3c4c5c6c7c8c9c10"data-totalparcialoutput="l13-c11" data-totalgeraloutput="l13-c13" />
+                            <input type="number" min="0" data-totalparcial="l13-c1c2c3c4c5" data-totalgeral="l13-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l13-c11" data-totalgeraloutput="l13-c13" />
                             <input type="number" min="0" data-totalparcial="l14-c1c2c3c4c5" data-totalgeral="l14-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l14-c11" data-totalgeraloutput="l14-c13"/>
                             <input type="number" min="0" data-totalparcial="l15-c1c2c3c4c5" data-totalgeral="l15-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l15-c11" data-totalgeraloutput="l15-c13"/>
                             <input type="number" min="0" data-totalparcial="l16-c1c2c3c4c5" data-totalgeral="l16-c1c2c3c4c5c6c7c8c9c10" data-totalparcialoutput="l16-c11" data-totalgeraloutput="l16-c13"/>
@@ -1388,11 +1388,11 @@
                             <svg style="width: 40px; height: 40px; ">
     
                                 <linearGradient id="meuGradiente" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color: gray" />
-                                    <stop offset="100%" style="stop-color: yellow" />
-                                </linearGradient>>
+                                    <stop offset="0%" style="stop-color: gray"></stop>
+                                    <stop offset="100%" style="stop-color: yellow"></stop>
+                                </linearGradient>
     
-                                <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"/>
+                                <polygon points="20,0 40,40, 0,40" fill="url(#meuGradiente)" stroke-width="1" stroke="#333"></polygon>
     
                                 <text x="15.335" y="35.5" style="font-weight: bold; font-size: 28px">!</text>
                             </svg>
@@ -1456,7 +1456,7 @@
     
                 <!-- Restrição à readonly cels -->
                 <div class="caixa-de-alerta restricao-de-acesso-celular">
-                    <p>Para prevenir possíveis alterações acidentais dos resultados, as células dos totais têm o acesso interdito.</p>               
+                    <p>As células dos totais têm o acesso interdito para evitar que os resultados sejam acidentalmente modificados.</p>               
                     <button>OK</button>
                 </div>
     
@@ -1472,10 +1472,10 @@
                         Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.
                     </p>
                     <p>
-                        As células de entrada de dados do Totalizador têm uma largura cabível para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da viewport (área visível) da célula.
+                        As células de entrada de dados do Totalizador têm uma largura para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999 999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da área visível da célula, com excepção das dos totais, que mostram até 7 algarismos (<strong>9 999 999</strong>).
                     </p>
                     <p class="destaque suposicao">
-                         Presumo que actualmente (2022) não haja nenhuma Unidade Sanitária em Moçambique com um número de consultas do SAAJ próximo, equivalente ou maior que 999 999.
+                         Presumo que actualmente (2022) não haja uma Unidade Sanitária em Moçambique com um número de consultas do SAAJ maior que 999 999.
                     </p>
                     <div class="seccao-de-interatividade">
                         <div>
@@ -1489,7 +1489,7 @@
                 <!-- AVISO DE USO DE COOKIES -->
                 <div class="aviso-de-uso-de-cookies">
                     <p>                    
-                        Ao utilizar do Totalizador de Resumo Mensal de SAAJ, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class="abrir-artigo-cookies">Saiba mais...</button>
+                        Ao utilizar o Totalizador de Resumo Mensal de SAAJ, o usuário concorda com o armazenamento local de dados, a fim de melhorar a sua experiência de utilização. <button class="abrir-artigo-cookies">Saiba mais...</button>
                     </p>
         
                    
@@ -1517,7 +1517,7 @@
                     <li>Calcula e autopreenche as células dos totais;</li>
                     <li>Fornece resultados verdadeiros;</li>
                     <li>Flexibiliza a elaboração do resumo;</li>
-                    <li>Salva os dados no navegador do usuário até que este os exclua;</li>
+                    <li>Salva os dados no navegador do usuário até este excluí-los;</li>
                     <li>Pode ser impresso.</li>
                 </ul>
                 
@@ -1591,7 +1591,7 @@
 
                 <h2>Gerenciamento dos dados pelo usuário</h2>  
 
-                <p>No menu do Totalizador, existe a opção <strong>“Esvaziar a ficha”</strong>, que permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador na Web Storage</b>.</p>
+                <p>No menu do Totalizador, existe a opção <strong>“Esvaziar a ficha”</strong>, que permite ao usuário apagar todos os dados da ficha salvos pelo Totalizador na Web Storage.</p>
 
                 <div class="consentimento">
                     <p class="destaque">
@@ -1600,7 +1600,16 @@
                 </div>
                                 
                 <button class="fechar-artigo" title="Fechar">
-                    &times;
+                    <span class="times">
+                        &times;
+                    </span>
+                   
+
+                    <svg style="width: 16px; height: 16px; ">
+                        <line x1="0%" x2="50%" y1="50%" y2="0" stroke-width="2px" stroke="#333"></line>
+                        <line x1="0%" x2="50%" y1="50%" y2="100%" stroke-width="2px" stroke="#333"></line>
+                        <line x1="-1" x2="100%" y1="50%" y2="50%" stroke-width="2px" stroke="#333"></line>
+                    </svg>
                 </button>
             </section>
             <section id="conversao-pdf">

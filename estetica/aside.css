@@ -1,15 +1,13 @@
-article {
-    font-size: 14px;
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1023px) {
     article {
-        padding-top: 10px;
-        background-color: var(--gray-d);
+        margin-top: 10px;
+        background-color: var(--yt);
+        border-top: thin solid var(--gray-c);
     }
 }
 
 article section {
+    font-size: 14px;
     min-height: 90vh;
     max-height: 90vh;
     overflow: auto;
@@ -23,22 +21,50 @@ article section {
     display: none;
 }
 
-@media screen and (max-width: 700px) {
-    article section  {
-        top: 10vh;
-        right: 0;
-        padding: 15px;
-    }
-
+@media screen and (max-width: 1023px) {
     article section#sobre  {
         display: block;
         min-height: initial;
         max-height: initial;
         position: initial;
+        margin: 0 auto;
     }
 
-    article section#sobre button.fechar-artigo {
-        display: none;
+    article section#cookies  {
+        max-width: 100vw;
+        width: 100vw;
+        max-height: 100vh;
+        padding: 20px 0;
+        top: 0;
+        right: 0;
+    }
+
+    article section#cookies > *  {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    article section#cookies > h1  {
+        max-width: 100%;
+        padding: 10px 20px 10px 50px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        transition-duration: 150ms;
+    }
+
+    article section#cookies > h1.sticky  {
+        position: sticky;
+        top: -20px;
+        background-color: var(--yt);
+        box-shadow: 0 7px 8px var(--gray-d);
+    }
+
+
+    article section#cookies > ul li  {
+        margin-left: 15px;
     }
 }
 
@@ -58,19 +84,43 @@ article section button.fechar-artigo {
     width: 40px;
     height: 40px;
     background-color: var(--yt);
-    transition-duration: 250ms;
+    transition-duration: 150ms;
 }
 
-@media screen and (max-width: 700px) {
-    article section button.fechar-artigo {
-        right: 0;
-        top: calc(10vh - 39px);
+@media screen and (max-width: 1023px) {
+    article section#sobre button.fechar-artigo {
+        display: none;
     }
+
+    article section#cookies button.fechar-artigo {
+        top: 25px;
+        right: initial;
+        left: 0;
+    }
+
+    article section#cookies button.fechar-artigo.with-h1-sticky {
+        top: 6px;
+    }  
 }
 
 article section button.fechar-artigo:hover {
     background-color: var(--danger-color);
     color: var(--yt);
+}
+
+section#cookies button.fechar-artigo svg {
+    display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    section#cookies button.fechar-artigo svg {
+        display: initial;
+    }
+
+    section#cookies button.fechar-artigo > span {
+        display: none;
+    }
+    
 }
 
 article dl dt,
@@ -227,7 +277,7 @@ div.caixa-de-alerta button:hover {
 /* CONFIRMAÇÃO DE ESVAZIAMENTO DA FICHA */
 div.caixa-de-confirmacao {
     min-width: 375px;
-    max-height: 100vh;
+    max-height: 90vh;
     overflow: auto;
     font-size: 13px;
     padding: 20px;
@@ -372,7 +422,7 @@ div.razao-pelas-celulas-com-fundo-vermelho {
 }
 
 div.razao-pelas-celulas-com-fundo-vermelho.on {
-    top: calc(50vh - 353px / 2);
+    top: calc(50vh - 374px / 2);
     visibility: visible;
 }
 
@@ -584,7 +634,8 @@ div.aviso-de-uso-de-cookies > button:hover {
 
 /* NO-PRINT para todos elementos com class on e que tenham visibility: visible.*/
 @media print {
-    .on {
+    .on,
+    div.linha-de-referencia {
         visibility: hidden !important;
     }
 }
