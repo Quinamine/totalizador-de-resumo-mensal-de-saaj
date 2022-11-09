@@ -62,7 +62,6 @@ article section {
         box-shadow: 0 7px 8px var(--gray-d);
     }
 
-
     article section#cookies > ul li  {
         margin-left: 15px;
     }
@@ -119,8 +118,7 @@ section#cookies button.fechar-artigo svg {
 
     section#cookies button.fechar-artigo > span {
         display: none;
-    }
-    
+    }    
 }
 
 article dl dt,

@@ -38,7 +38,7 @@ input[readonly].bg-gray {
 }
 
 div.container input:focus {
-    border-bottom: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue) !important;
 }
 
 /* CSS REUTILIZÁVEL */ 

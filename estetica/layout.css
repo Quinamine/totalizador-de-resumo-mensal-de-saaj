@@ -12,6 +12,7 @@
     --black-alpha-5: rgba(0, 0, 0, .5);
     --black-alpha-8: rgba(0, 0, 0, .8);
     --btn-bgc: var(--secondary-color);
+    --btn-hover-bgc: rgb(116, 116, 235);
     --footer-bgc: var(--primary-color);
     --important-text-bgc: #f4f4f4;
     --gray: #888888;
@@ -20,8 +21,6 @@
     --gray-d: #dddddd;
     --gray-light: #f0f0f0;
     --blue: #0060EE; 
-    --purple: rgb(116, 116, 235);
-    --btn-hover-bgc: var(--purple);
     --orange: #faa032;
 }
 
@@ -60,6 +59,7 @@ body {
     body {
         -webkit-print-color-adjust: exact;
         visibility: hidden;
+        background-color: var(--yt);
     }
 }
 
@@ -289,11 +289,7 @@ section.menu ul li.partilha {
     section.menu ul {
         width: 100%;
     } 
-
-    section.menu {
-        min-width: 680px;
-    }
-
+    
     section.menu ul li {
         flex: 1;
         text-align: center;
