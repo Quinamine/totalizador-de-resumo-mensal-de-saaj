@@ -29,7 +29,7 @@ input[type=text], input[type=date] {
 }
 
 input[readonly] {
-    cursor: context-menu;
+    cursor: default;
     transition: background-color 400ms ease-out;
 }
 
@@ -55,7 +55,7 @@ div.inputs-container input {
     border-left: 1px solid var(--border-color);
 }
 
-div.container input, div.container input[readonly]:focus,
+div.container input, div.container input:focus,
 div.ficha div.linha-de-indicadores,
 div.grade-de-sexo span.sexo,
 div.grade-de-total-parcial span.total,
@@ -290,7 +290,7 @@ div.ficha div.body {
 
 div.body div.coluna-de-numeros-das-linhas {
     display: grid;
-    grid-template-rows: repeat(63, 24px)
+    grid-template-rows: repeat(63, 24px);
 }
 
 div.body div.coluna-de-numeros-das-linhas span,
@@ -432,7 +432,7 @@ section.contracepcao-e-protecao div.subtitulo-2 span {
 div.inputs-container {
     display: grid;
     grid-template-columns: 45px;
-    grid-template-rows: 24px;
+    grid-template-rows: repeat(63, 24px);
 }
 
 div.inputs-container.total {

@@ -1,5 +1,5 @@
 const sessaoWeb = {
-    verDisponiilidade: () => sessionStorage.getItem("user-consente-o-armazenamentoLocal") ? "defined" : "undefined",
+    verDisponibilidade: () => sessionStorage.getItem("user-consente-o-armazenamentoLocal") ? "defined" : "undefined",
 
     mostrarAviso: () => aviso.classList.add("on"),
 
@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
     aviso = document.querySelector("div.aviso-de-uso-de-cookies");
     const btnAceitar = document.querySelector("button.aceitar-cookies");
 
-    if(sessaoWeb.verDisponiilidade() === "undefined") {
+    if(sessaoWeb.verDisponibilidade() === "undefined") {
         setTimeout(sessaoWeb.mostrarAviso, 2000);
 
         btnAceitar.addEventListener("click", () => {

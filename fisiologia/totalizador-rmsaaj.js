@@ -79,8 +79,10 @@ function escutarEventos() {
 }
 
 window.addEventListener("load", () => {
-    storage.salvarFicha();
-    storage.salvarDadosAdicionais();
-    storage.salvarDestaqueDeTotais();
+    if(typeof(Storage) !== "undefined") {
+        storage.salvarFicha();
+        storage.salvarDadosAdicionais();
+        storage.salvarDestaqueDeTotais();
+    }
     escutarEventos();
 });
