@@ -372,6 +372,12 @@ body > footer {
     color: var(--border-color);
 }
 
+@media screen and (max-width: 1023px) {
+    body > footer {
+        padding: 20px 0;
+    }
+}
+
 footer div.linha.do-rodape {
     position: relative;
 }

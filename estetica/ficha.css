@@ -55,7 +55,7 @@ div.inputs-container input {
     border-left: 1px solid var(--border-color);
 }
 
-div.container input, div.container input:focus,
+div.container input, div.container input[readonly]:focus,
 div.ficha div.linha-de-indicadores,
 div.grade-de-sexo span.sexo,
 div.grade-de-total-parcial span.total,
@@ -65,7 +65,7 @@ div.body div.coluna-de-livro-de-registo span,
 section div.indicadores span,
 section.consultas div.titulo,
 section.contracepcao-e-protecao div.subtitulo-2 span {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color) !important;
 }
 
 /* Display: flex */
