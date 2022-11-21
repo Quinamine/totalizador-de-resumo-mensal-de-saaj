@@ -287,7 +287,7 @@ function eventListeners() {
     // PARTILHAR
     let conteudo = {
         title: "Totalizador de Resumo Mensal de SAAJ",
-        text: "Serviço online gratuito que auxilia na elaboração do resumo mensal de SAAJ, através do cálculo automático dos totais a partir dos dados inseridos pelo usuário (Profissional de Saúde).",
+        text: "O Totalizador de Resumo Mensal de SAAJ é um serviço online gratuito que auxilia na elaboração do resumo mensal de SAAJ, através do cálculo automático dos totais a partir dos dados inseridos pelo usuário (Profissional de Saúde).",
         url: "https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
     }
 
