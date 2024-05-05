@@ -1,1 +1,265 @@
-"use strict";const menu={destacarFundoDeTotais(){for(let e of readonlyCels)readonlyCelsDarker.checked?e.classList.add("bg-gray"):e.classList.remove("bg-gray")},mostrarCaixaDePesquisa(){srcContainer.classList.add("on"),srcInput.focus(),srcInput.select()},omitirCaixaDePesquisa(){srcContainer.classList.remove("on"),srcInput.value="",this.resetarFundoDoNumeroDaLinha()},pesquisarLinha(e){if(""===e)return this.resetarFundoDoNumeroDaLinha(),!1;if(e<1||e>63){let o=document.querySelector("div.caixa-de-alerta.query-out-of-range");o.querySelector("b.entered-num").textContent=e,o.classList.add("on"),srcInput.setAttribute("readonly",""),desfoqueDoFundo.on(),this.resetarFundoDoNumeroDaLinha()}else{let t=e-1;if(rowNumbers[t].getBoundingClientRect().bottom<0||rowNumbers[t].getBoundingClientRect().top>window.innerHeight){if(t<3){let r=document.querySelector("body");r.scrollIntoView()}else rowNumbers[t-3].scrollIntoView()}this.resetarFundoDoNumeroDaLinha(),rowNumbers[t].classList.add("fundo-laranja")}},resetarFundoDoNumeroDaLinha(){for(let e of rowNumbers)e.classList.remove("fundo-laranja")},esvaziamento(){let e=document.querySelector("div.caixa-de-confirmacao"),o=document.querySelectorAll("div.inputs-container input");return{mostrarCaixaDeConfirmacao(){let t=0;for(let r of o)""!=r.value&&t++;if(t>0)e.classList.add("on"),desfoqueDoFundo.on();else{let a=document.querySelector("div.caixa-de-alerta.ficha-vazia");a.classList.add("on"),desfoqueDoFundo.on()}},omitirCaixaDeConfirmacao(){e.classList.remove("on"),desfoqueDoFundo.off()},limparDados(){for(let e=0;e<o.length;e++)o[e].value="","undefined"!=typeof Storage&&localStorage.removeItem(`trmsaaj-cel${e}`),inputValidation.adicionarOuRemoverFundoVermelho(o[e],"-");let t=document.querySelectorAll("ul.limpadores-de-dados-adicionais input");t.forEach(e=>{if(e.checked){let o=e.dataset.for,t=document.querySelector(`#${o}`);t.value="","undefined"!=typeof Storage&&localStorage.removeItem(`trmsaaj-${o}`),"nota"===o&&t.classList.remove("bold")}}),desfoqueDoFundo.off()}}},imprimirFicha(){""===textArea.value?textArea.parentElement.classList.add("no-print"):textArea.parentElement.classList.remove("no-print"),window.print()},abrirArtigoSobre(){document.querySelector("section#sobre").classList.add("on"),desfoqueDoFundo.on()},abrirArtigoCookies(){document.querySelector("section#cookies").classList.add("on"),desfoqueDoFundo.on(),window.innerWidth<1024&&document.querySelector("body").classList.add("overflow-hidden")},salvarComoPdf(){window.innerWidth<1024?this.imprimirFicha():(document.querySelector("section#conversao-pdf").classList.add("on"),desfoqueDoFundo.on())}},desfoqueDoFundo={on(){divDesfocante.classList.add("on")},off(){let e=document.querySelectorAll("div.caixa-de-confirmacao, div.caixa-de-alerta, div.hamburguer"),o=0;for(let t of e)t.classList.contains("on")&&o++;if(o>0)return!1;divDesfocante.classList.remove("on")}};let readonlyCelsDarker,readonlyCels,srcContainer,srcInput,rowNumbers,textArea,divDesfocante;function init(){readonlyCelsDarker=document.querySelector("#readonlyinputs-darker"),readonlyCels=document.querySelectorAll("input[readonly]"),srcContainer=document.querySelector("div.caixa-de-pesquisa"),srcInput=document.querySelector("div.caixa-de-pesquisa input.pesquisar-linha"),rowNumbers=document.querySelectorAll("div.coluna-de-numeros-das-linhas span"),textArea=document.querySelector("textarea#nota"),divDesfocante=document.querySelector("div.desfoque")}function eventListeners(){readonlyCelsDarker.addEventListener("change",()=>menu.destacarFundoDeTotais());let e=document.querySelector("button.ir-para"),o=document.querySelector("div.caixa-de-pesquisa button.fechar");e.addEventListener("click",()=>menu.mostrarCaixaDePesquisa()),o.addEventListener("click",()=>menu.omitirCaixaDePesquisa()),srcInput.addEventListener("keyup",()=>menu.pesquisarLinha(srcInput.value));let t=document.querySelectorAll("div.caixa-de-alerta button");for(let r of t)r.addEventListener("click",()=>{r.parentElement.classList.remove("on"),srcInput.removeAttribute("readonly"),srcInput.select(),desfoqueDoFundo.off()});readonlyCels.forEach(e=>{e.addEventListener("click",()=>{if(e.matches(".nao-aplicavel")){let o=document.querySelector("div.caixa-de-alerta.indicador-nao-aplicavel"),t=o.querySelector("span.sexo-output");o.classList.add("on"),e.parentElement.matches(".sexo-m")?t.textContent="masculino":t.textContent="feminino"}else document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");desfoqueDoFundo.on()})});let a=document.querySelector("button.esvaziar-ficha");a.addEventListener("click",()=>menu.esvaziamento().mostrarCaixaDeConfirmacao());let i=document.querySelector("button.cancelar");i.addEventListener("click",()=>menu.esvaziamento().omitirCaixaDeConfirmacao());let s=document.querySelector("button.confirmar");s.addEventListener("click",()=>{menu.esvaziamento().limparDados(),menu.esvaziamento().omitirCaixaDeConfirmacao()});let n=document.querySelector("button.imprimir");n.addEventListener("click",()=>menu.imprimirFicha());let l=document.querySelector("button.abrir-artigo-sobre");l.addEventListener("click",()=>menu.abrirArtigoSobre()),"#sobre"===location.hash&&menu.abrirArtigoSobre();let d=document.querySelector("button.abrir-artigo-cookies");d.addEventListener("click",()=>menu.abrirArtigoCookies());let c=document.querySelectorAll("button.fechar-artigo");c.forEach(e=>{e.addEventListener("click",()=>{e.parentElement.classList.remove("on"),desfoqueDoFundo.off(),document.querySelector("body").classList.remove("overflow-hidden")})});let u=document.querySelector("section#cookies"),m=u.querySelector("h1"),f=u.querySelector("button.fechar-artigo");u.addEventListener("scroll",()=>{m.getBoundingClientRect().top<=0?(m.classList.add("sticky"),f.classList.add("with-h1-sticky")):(m.classList.remove("sticky"),f.classList.remove("with-h1-sticky"))}),document.querySelector("button.salvar-como-pdf").addEventListener("click",()=>menu.salvarComoPdf());let v={title:"Totalizador de Resumo Mensal de SAAJ",text:"O Totalizador de Resumo Mensal de SAAJ \xe9 um servi\xe7o online gratuito que auxilia na elabora\xe7\xe3o do resumo mensal de SAAJ, atrav\xe9s do c\xe1lculo autom\xe1tico dos totais a partir dos dados inseridos pelo usu\xe1rio (Profissional de Sa\xfade).",url:"https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"},y=document.querySelector("button.partilhar");y.addEventListener("click",()=>{try{navigator.share(v).then(()=>{console.log("Endere\xe7o do totalizador partilhado com sucesso.")}).catch(e=>{console.log(`N\xe3o foi poss\xedvel partilhar devido ao erro: ${e}.`)})}catch(e){console.log("O seu navegador n\xe3o tem suporte ao m\xe9todo 'navigator.share()'.")}})}window.addEventListener("keyup",e=>{if("enter"===e.key.toLowerCase()){let o=document.querySelectorAll("div.caixa-de-alerta");o.forEach(e=>{e.matches(".on")&&(e.classList.remove("on"),srcInput.removeAttribute("readonly"),srcInput.select(),desfoqueDoFundo.off())})}}),window.addEventListener("load",()=>{init(),eventListeners()});
+"use strict"
+const menu = {
+    realcarTotaisSe(condicao) {
+        const totais = document.querySelectorAll("[readonly]");
+        for (const t of totais) {
+            if(condicao) {
+                t.classList.add("--realcar-totais");
+                localStorage.setItem(`${keyPrefix}-realcarTotais`, "true");
+            } else {
+                t.classList.remove("--realcar-totais");
+                localStorage.removeItem(`${keyPrefix}-realcarTotais`);
+            }
+        }
+    },
+
+    irParaLinha() {
+        return {
+            dialogBox: document.querySelector(".dialog-box-ir-para"),
+            inputNumLinha: document.querySelector(".dialog-box-ir-para__input-linha"),
+            numerosDeLinha: document.querySelectorAll(".ficha__col-nums-de-linhas span"),
+
+            abrirDialogBox() { 
+                menu.irParaLinha().dialogBox.classList.add("--open");
+                menu.irParaLinha().inputNumLinha.value = "";
+                menu.irParaLinha().inputNumLinha.focus();
+            },
+
+            fecharDialogBox() {
+                menu.irParaLinha().dialogBox.classList.remove("--open");
+                menu.irParaLinha().removeLnHighlight();
+            },
+
+            goToLn(numLinha) {
+                if(numLinha < 1 || numLinha > 63) {
+                    const lnNoFound = "Nenhuma linha corresponde ao número digitado."
+                    alertarSobre(lnNoFound);
+                    this.removeLnHighlight();
+
+                } else {
+                    numLinha = Number(numLinha) - 1;
+
+                    this.highlightLnFound(this.numerosDeLinha[numLinha]);
+
+                    if(window.innerWidth > 1304) {
+                        numLinha -= 3;
+                     }
+                   
+                    numLinha > 3 ? 
+                        this.numerosDeLinha[numLinha].scrollIntoView() 
+                        : document.body.scrollIntoView();
+                    
+                }
+            },
+
+            highlightLnFound(lnFound) {
+                this.removeLnHighlight();
+                lnFound.classList.add("--highlight");
+            },
+
+            removeLnHighlight() {
+                for(const num of this.numerosDeLinha) {
+                    num.classList.remove("--highlight");
+                }
+            }
+        }
+    },
+
+    esvaziarFicha() {
+        return {  
+            dialogBox: document.querySelector(".dialog-box-esvaziar-ficha"),
+            abrirDialogBox() { 
+                const gridInputs  = document.querySelectorAll("[data-totalgeral], [readonly]");
+
+                let inputFilled = 0;
+                for(const input of gridInputs) {
+                    input.value.length > 0 && inputFilled++;
+                }
+
+                if(inputFilled === 0) {
+                    const noInputFilledMsg = "A ficha encontra-se vazia actualmente."
+                    alertarSobre(noInputFilledMsg);
+                    return false;
+                } 
+
+                menu.esvaziarFicha().dialogBox.classList.add("--open");
+                desfoqueDoFundo("desfocar");
+            },
+
+            fecharDialogBox() {
+                menu.esvaziarFicha().dialogBox.classList.remove("--open");
+                desfoqueDoFundo("focar");
+                removerDestaqueDeRedCells();
+            },
+
+            confirmar() {
+                const gridInputs  = document.querySelectorAll("[data-totalgeral], [readonly]");
+                const dadosAdicionais__checkboxes = document.querySelectorAll("[data-inputadicionalid]");
+       
+                for (let i = 0; i < gridInputs.length; i++) {
+                    gridInputs[i].value = "";
+                    localStorage.removeItem(`${keyPrefix}-input${i}`);
+                }
+
+                for (const cb of dadosAdicionais__checkboxes) {                    
+                    if(cb.checked) {
+                        let id = cb.dataset.inputadicionalid;
+                        let inputAdicional = document.getElementById(`${id}`);
+                        inputAdicional.value = "";
+                        localStorage.removeItem(`${keyPrefix}-${inputAdicional.id}`);
+                    }
+                }
+                menu.esvaziarFicha().fecharDialogBox();
+            }
+        }
+    },
+
+    imprimirFicha() {
+        const comentarios = document.querySelector(".main__campo-de-nota");
+        comentarios.value === "" ? comentarios.parentElement.classList.add("--no-print") : comentarios.classList.remove("--no-print");
+        window.print()
+    },
+
+    abrirArtigo(artigo) {
+        const artigoSobre = document.querySelector(".artigo--sobre");
+        const artigoAjuda = document.querySelector(".artigo--ajuda");
+        const body = document.querySelector(".body");
+
+        artigo === "sobre" ? 
+        artigoSobre.classList.add("--open") : 
+        artigoAjuda.classList.add("--open");
+
+        body.classList.add("--overflow-h");
+        desfoqueDoFundo("desfocar");
+    },
+
+    fecharArtigo(artigo) {
+        const artigoSobre = document.querySelector(".artigo--sobre");
+        const artigoAjuda = document.querySelector(".artigo--ajuda");
+        const body = document.querySelector(".body");
+
+        artigo === "sobre" && artigoSobre.classList.remove("--open");
+
+        if(artigo === "ajuda") {
+            const details = document.getElementsByTagName("details");
+            for (const d of details) {
+                d.removeAttribute("open");
+            }
+            artigoAjuda.classList.remove("--open");
+        }
+
+        body.classList.remove("--overflow-h");
+        desfoqueDoFundo("focar");
+    }
+}
+
+function eventos() {
+    // REALCAR TOTAIS
+    const checkboxRealcarTotais = document.getElementById("checkbox-realcar-totais");
+    const cRt = checkboxRealcarTotais;
+    cRt.addEventListener("change", () => cRt.checked ? menu.realcarTotaisSe(1) : menu.realcarTotaisSe(0));
+
+    // Realcar totais no load do windows 
+    if(localStorage.getItem(`${keyPrefix}-realcarTotais`)) {
+        checkboxRealcarTotais.setAttribute("checked", "checked");
+        menu.realcarTotaisSe(1);
+    }
+
+    // IR PARA LINHA
+    const btnAbrirIrPara = document.querySelector(".header__nav__btn--ir-para");
+    btnAbrirIrPara.addEventListener("click", menu.irParaLinha().abrirDialogBox);
+
+    const btnFecharIrPara = document.querySelector(".dialog-box-ir-para__btn-fechar");
+    btnFecharIrPara.addEventListener("click", menu.irParaLinha().fecharDialogBox);
+
+    const inputNumLinha = document.querySelector(".dialog-box-ir-para__input-linha");
+    inputNumLinha.addEventListener("input", () => {
+        inputNumLinha.value !== "" ? 
+            menu.irParaLinha().goToLn(inputNumLinha.value) 
+            : menu.irParaLinha().removeLnHighlight();
+    });
+
+    // Fechar dialog-boxes-default
+    const btnsFecharDialogBox = document.querySelectorAll(".dialog-box-default__btn");
+    btnsFecharDialogBox.forEach( btn => {
+        btn.addEventListener("click", () => {
+            let btnParent = btn.parentElement;
+            btnParent.parentElement.classList.remove("--open");
+            clearInterval(btnAutoCloseLoop);
+        });
+    });
+
+    // ESVAZIAR FICHA 
+    const btnEsvaziarFicha = document.querySelector(".header__nav__btn--esvaziar-ficha");
+    btnEsvaziarFicha.addEventListener("click", menu.esvaziarFicha().abrirDialogBox);
+
+    const btnCancelar = document.querySelector(".dialog-box-esvaziar-ficha__btn--cancelar");
+    btnCancelar.addEventListener("click", menu.esvaziarFicha().fecharDialogBox);
+
+    const btnConfirmar = document.querySelector(".dialog-box-esvaziar-ficha__btn--confirmar");
+    btnConfirmar.addEventListener("click", menu.esvaziarFicha().confirmar);
+
+    // IMPRIMIR 
+    const btnImprimir = document.querySelector(".header__nav__btn--imprimir");
+    btnImprimir.addEventListener("click", menu.imprimirFicha);
+
+    // Artigos
+    const btnAbrirSobre = document.querySelector(".header__nav__btn--sobre");
+    btnAbrirSobre.addEventListener("click", () => menu.abrirArtigo("sobre"));
+
+    const btnFecharSobre = document.querySelector(".artigo__btn-fechar--sobre")
+    btnFecharSobre.addEventListener("click", () => menu.fecharArtigo("sobre"));
+
+    window.addEventListener("resize", () => {
+        const artigoSobre = document.querySelector(".artigo--sobre");
+
+        const itsMobile = window.innerWidth < 1024;
+        const articleIsOpen = artigoSobre.matches(".--open");
+        const body = document.querySelector(".body");
+
+        if(itsMobile && articleIsOpen) {
+            desfoqueDoFundo("focar");
+            location.href = `index.html#${artigoSobre.id}`;
+            body.classList.remove("--overflow-h");
+            
+        } else if(!itsMobile && articleIsOpen) {
+            desfoqueDoFundo("desfocar");
+            body.classList.add("--overflow-h");
+        }       
+    });
+
+    const btnAbrirAjuda = document.querySelector(".header__nav__btn--ajuda");
+    btnAbrirAjuda.addEventListener("click", () => menu.abrirArtigo("ajuda"));
+
+    const btnFecharAjuda = document.querySelector(".artigo__btn-fechar--ajuda")
+    btnFecharAjuda.addEventListener("click", () => menu.fecharArtigo("ajuda"));
+
+    // PARTILHAR 
+    const data = {
+        title: "Totalizador de Resumo Mensal de SAAJ",
+        text: "O Totalizador de Resumo Mensal de SAAJ é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de SAAJ (Serviço Amigo do Adolescente e Jovem), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de SAAJ actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
+        url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
+    }
+
+    const btnPartilhar = document.querySelector(".header__nav__btn--partilhar");
+    btnPartilhar.addEventListener("click", () => {
+        try {
+            navigator.share(data).then(()=>console.log("Totalizador partilhado com sucesso."))
+            .catch(e=> console.log(`Não foi possivel partilhar o totalizador devido ao erro: ${e}.`))
+        } catch (e) {
+            console.log("O seu navegador não tem suporte ao método 'navigator.share()'.")
+        }
+    })
+
+};
+
+window.addEventListener("load", eventos);
+
+window.addEventListener("keydown", event => {
+
+    // CONTROL = 17 && p = 80
+    if(event.ctrlKey && event.keyCode === 80) {
+        event.preventDefault();
+        menu.imprimirFicha();
+    }
+})

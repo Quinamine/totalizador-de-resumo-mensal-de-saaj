@@ -91,7 +91,7 @@ img {
 }
 
 ::selection {
-    background-color: var(--cor-secundaria);
-    color: var(--yt)
+    background-color: var(--cor-primaria);
+    color: var(--cor-de-texto)
 }
 

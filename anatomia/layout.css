@@ -470,7 +470,7 @@ input[data-totalgeraleixox]:focus,
 }
 
 .--font-small {
-    font-size: 12px
+    font-size: 11px
 }
 
 /* Artigos comuns */
@@ -564,7 +564,7 @@ input[data-totalgeraleixox]:focus,
 }
 
 .artigo__titulo--border-b-thick {
-    border-bottom: 8px solid var(--cor-primaria);
+    border-bottom: 8px solid var(--gray--4);
 }
 
 @media screen and (max-width: 1023px) {
@@ -801,7 +801,7 @@ details mark {
 .dialog-box-ir-para {
     justify-content: space-between;
     padding: 4px;
-    background-color: var(--cor-primaria);
+    background-color: var(--gray--4);
     position: fixed;
     top: -35px;
     right: calc(50vw - 257px / 2);
@@ -1005,5 +1005,9 @@ details mark {
     @page {
         margin: .5cm .5cm .62cm .5cm;
         size: A4 landscape;
+    }
+
+    .--no-print {
+        display: none;
     }
 }

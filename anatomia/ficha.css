@@ -3,6 +3,13 @@
     margin: 30px auto 10px
 }
 
+@media print {
+    .ficha {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+}
+
 .ficha__linha-de-emblema-endereco-e-visto {
     display: grid;
     grid-template-columns: 257px 800px 270px;
@@ -80,10 +87,15 @@
     background-color: var(--cor-primaria);
     text-align: center;
     line-height: 1.4;
-    position: sticky;
-    top: 0;
-    z-index: 10000;
     font-weight: 700;
+}
+
+@media screen {
+    .ficha__body__header {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+    }
 }
 
 .ficha__col-linha-do-resumo {
@@ -146,6 +158,11 @@
     border-bottom: 1px solid var(--cor-de-borda);
 }
 
+.ficha__col-nums-de-linhas span.--highlight {
+    background-color:var(--orange);
+    color: var(--cor-de-texto);
+}
+
 .ficha__col-nums-do-livro-de-registo span:first-child {
     background-color: var(--fullblack);
 }
@@ -155,7 +172,7 @@
     grid-template-rows: calc(24px*2) calc(24px*7) 24px calc(24px*8) calc(24px*4) calc(24px*2) calc(24px*5) calc(24px*3) calc(24px*5) calc(24px*3) repeat(2,calc(24px*2)) calc(24px*12) repeat(2,24px) calc(24px*5)
 }
 
-@media screen and (min-width: 670px) and (max-width:1312px) {
+@media screen and (min-width: 670px) and (max-width:1313px) {
     .ficha__col-de-indicadores {
         position:sticky;
         left: -75px;
@@ -247,4 +264,16 @@
 
 .ficha__rodape input {
     margin-left: 4px;
+}
+
+@media print {
+    .--page-break,
+    .ficha__col-de-inputs input:nth-child(29) {
+        page-break-after: always;
+    }
+
+    .--border-t-on-print,
+    .ficha__col-de-inputs input:nth-child(30) {
+        border-top: var(--border-style)
+    }
 }
