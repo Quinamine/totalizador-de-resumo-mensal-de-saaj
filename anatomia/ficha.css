@@ -1,0 +1,250 @@
+.ficha {
+    width: var(--layout-width);
+    margin: 30px auto 10px
+}
+
+.ficha__linha-de-emblema-endereco-e-visto {
+    display: grid;
+    grid-template-columns: 257px 800px 270px;
+}
+
+.ficha__col-de-emblema {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    justify-items: start;
+}
+
+.ficha__moldura-de-emblema {
+    width: 65px;
+    height: 65px
+}
+
+.ficha__emblema {
+    height: 100%
+}
+
+.ficha__box-descricao-de-emblema {
+    margin-top: 3px;
+}
+
+.ficha__span-descricao-de-emblema {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.ficha__col-de-endereco {
+    display: grid;
+    grid-template-columns: 410px;
+}
+
+.ficha__col-de-endereco__linha  {
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+    margin-bottom: 6px;
+}
+
+.ficha__col-de-endereco__linha label {
+    text-transform: uppercase;
+}
+
+.ficha__col-de-endereco__linha input {
+    width: 100%;
+    margin-left: 4px;
+}
+
+.ficha__col-visto-de-dc {
+    margin-top: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ficha__col-visto-de-dc__input {
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.ficha__titulo {
+    margin: 20px 0 10px 64px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ficha__body__header {
+    display: grid;
+    grid-template-columns: repeat(2,55px) 1150px 50px;
+    background-color: var(--cor-primaria);
+    text-align: center;
+    line-height: 1.4;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    font-weight: 700;
+}
+
+.ficha__col-linha-do-resumo {
+    background-color: var(--yt);
+}
+
+.header__linha-indicadores {
+    display: grid;
+    grid-template-rows: 24px;
+    align-items: center;
+}
+
+.header__linha-de-sexo-e-idade {
+    display: grid;
+    grid-template-columns: 599px repeat(2,calc(45px*5)) 100px;
+}
+
+.header__linha-de-sexo,
+.header__linha-de-idade {
+    grid-column: 2;
+    font-size: 11px;
+    display: grid;
+    grid-template-rows: 24px;
+}
+
+.header__linha-de-sexo {
+    grid-template-columns: repeat(2, 225px) 100px;
+}
+
+.header__linha-de-idade {
+    grid-template-columns: repeat(10,45px) repeat(2, 50px);
+}
+
+.header__linha-de-idade__span--fs-9 {
+    font-size: 9.5px;
+}
+
+.ficha__body__body {
+    display: grid;
+    grid-template-columns: repeat(2,55px) 600px repeat(10,45px) repeat(3,50px);
+    border-bottom: none
+}
+
+.ficha__col-nums-de-linhas {
+    display: grid;
+    grid-template-rows: repeat(63,24px)
+}
+
+.ficha__col-nums-do-livro-de-registo {
+    display: grid;
+    grid-template-rows: calc(24px*2) calc(24px*5) repeat(11,24px) calc(24px*3) repeat(8,24px) calc(24px*3) calc(24px*3) calc(24px*2) repeat(17,24px) calc(24px*2) repeat(2,24px) calc(24px*5);
+    background-color: var(--gray--d)
+}
+
+.ficha__col-nums-de-linhas span,
+.ficha__col-nums-do-livro-de-registo span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-de-borda);
+}
+
+.ficha__col-nums-do-livro-de-registo span:first-child {
+    background-color: var(--fullblack);
+}
+
+.ficha__col-de-indicadores {
+    display: grid;
+    grid-template-rows: calc(24px*2) calc(24px*7) 24px calc(24px*8) calc(24px*4) calc(24px*2) calc(24px*5) calc(24px*3) calc(24px*5) calc(24px*3) repeat(2,calc(24px*2)) calc(24px*12) repeat(2,24px) calc(24px*5)
+}
+
+@media screen and (min-width: 670px) and (max-width:1312px) {
+    .ficha__col-de-indicadores {
+        position:sticky;
+        left: -75px;
+        background-color: var(--yt);
+        z-index: 5000
+    }
+}
+
+.col-de-indicadores__sessao {
+    display: grid;
+    grid-template-columns: 150px 1fr
+}
+
+.col-de-indicadores__sessao--grid-cols-60-1fr {
+    grid-template-columns: 60px 1fr;
+}
+
+.col-de-indicadores__sessao__col-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.col-de-indicadores__sessao__col-titulo--flex-dir-col {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.col-de-indicadores__sessao__col-titulo--display-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+}
+
+.col-de-indicadores__sessao__titulo--rotate {
+    transform: rotate(-90deg);
+}
+
+.col-de-indicadores__sessao__col-indicadores {
+    display: grid;
+    grid-template-rows: 24px
+}
+
+.col-de-indicadores__sessao__col-indicadores span {
+    min-height: 24px;
+    max-height: 24px;
+    padding: 1px 4px;
+    display: flex;
+    align-items: center;
+}
+
+.col-de-indicadores__sessao__col-metodos-pf {
+    display: grid;
+    grid-template-rows: calc(24px* 3) repeat(3, calc(24px* 2)) 24px calc(24px* 2);
+}
+
+.col-de-indicadores__sessao__col-metodos-pf span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-align: center;
+}
+
+.ficha__col-de-inputs {
+    display: grid;
+    grid-template-columns: 45px;
+    grid-template-rows: repeat(63,24px)
+}
+
+.ficha__col-de-inputs--col-width-50 {
+    grid-template-columns: 50px
+}
+
+.ficha__col-de-inputs input {
+    max-width: 100%;
+    max-height: 100%;
+    border-bottom: var(--border-style);
+}
+
+.ficha__rodape {
+    min-height: 43px;
+    display: grid;
+    grid-template-columns: 115px 290px repeat(2,367px);
+    margin-top: 20px;
+}
+
+.ficha__rodape input {
+    margin-left: 4px;
+}
