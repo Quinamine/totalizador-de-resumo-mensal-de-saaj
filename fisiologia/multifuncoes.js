@@ -124,6 +124,16 @@ window.addEventListener("load", () => {
     gridInputs.forEach (gi => gi.addEventListener("input", destacarCelulasSaturadas));
     destacarCelulasSaturadas();
 
+    // Indicador nao aplicavel para APEs
+    const celulasNaoAplicaveis = document.querySelectorAll(".celula-n-a");  
+    celulasNaoAplicaveis.forEach( celula => {
+        celula.addEventListener("click", () => {
+            let sexo = celula.parentElement.dataset.sexo;
+            const msg = `O indicador não se aplica ao sexo ${sexo.toLocaleLowerCase()}.`;
+            alertarSobre(msg);
+        })
+    })
+
     
     aqd.mostrarAviso();
     const dialogBoxAQD__btn = document.querySelector(".dialog-box-default__btn--aqd");

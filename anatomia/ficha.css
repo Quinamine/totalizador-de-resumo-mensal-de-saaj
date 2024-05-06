@@ -147,7 +147,7 @@
 .ficha__col-nums-do-livro-de-registo {
     display: grid;
     grid-template-rows: calc(24px*2) calc(24px*5) repeat(11,24px) calc(24px*3) repeat(8,24px) calc(24px*3) calc(24px*3) calc(24px*2) repeat(17,24px) calc(24px*2) repeat(2,24px) calc(24px*5);
-    background-color: var(--gray--d)
+    background-color: var(--cor-primaria)
 }
 
 .ficha__col-nums-de-linhas span,

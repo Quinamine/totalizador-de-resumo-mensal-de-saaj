@@ -100,7 +100,7 @@
 }
 
 .celula-n-a {
-    background-color: var(--gray);
+    background-color: var(--cor-de-texto) !important;
 }
 
 .--hide-on-desktop {
@@ -403,7 +403,7 @@ input[data-totalgeraleixox]:focus,
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--reference-bgc);
+    background-color: var(--blue--light);
     z-index: 999;
 }
 
@@ -415,7 +415,7 @@ input[data-totalgeraleixox]:focus,
 
 .reference-row {
     display: grid;
-    grid-template-columns: 53px 320px 68px 100px 33px 35px;
+    grid-template-columns: 53px 500px 68px 99px 33px 102px;
     align-items: center;
     min-height: 28px;
     font-size: 12px;
@@ -438,7 +438,7 @@ input[data-totalgeraleixox]:focus,
 
 @media screen and (max-width: 630px) {
     .reference-row {
-        grid-template-columns: 1fr 85px 35px;
+        grid-template-columns: 1fr 58px 70px;
         grid-column-gap: 3px;
         padding-left: 0;
         padding-right: 0;
