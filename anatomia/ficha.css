@@ -12,7 +12,7 @@
 
 .ficha__linha-de-emblema-endereco-e-visto {
     display: grid;
-    grid-template-columns: 257px 800px 270px;
+    grid-template-columns: 257px 1fr 170px;
 }
 
 .ficha__col-de-emblema {
