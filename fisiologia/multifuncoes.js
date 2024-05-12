@@ -86,7 +86,7 @@ function actualizarAno() {
     currentYearOutput.textContent = anoActual;
 }
 
-function sugerMesActual() {
+function sugerirMesActual() {
     const mesDatalist = document.getElementById("datalist-meses");
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     const tempo = new Date();
@@ -141,7 +141,7 @@ window.addEventListener("load", () => {
 
     // Actualizar o ano 
     actualizarAno();
-    sugerMesActual();
+    sugerirMesActual();
     formatarNumeros();
 
     // Animar Janela Aberta
