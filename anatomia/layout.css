@@ -24,7 +24,7 @@
     --purple: rgb(116, 116, 235);
     --orange: #faa032;
     --brown: brown;
-    --reference-bgc: var(--black--alpha-8);
+    --reference-bgc: var(--blue--light);
 
     /* Tamanhos */
     --layout-width: 1313px;
@@ -102,13 +102,14 @@ body.--overflow-h {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        max-width: calc(var(--layout-width) + 24px);
+        padding-left: 12px;
     }
 }
 
 .header {
     line-height: 2;
     box-shadow: 0 0 10px var(--gray--d);
-    z-index: 1;
 }
 
 .header__logo {
@@ -130,12 +131,6 @@ body.--overflow-h {
 }
 
 /* MENU */
-@media screen and (min-width: 1313px) {
-    .header__menu {
-        margin-right: -10px;
-    }
-}
-
 .header__menu__ul {
     width: 100%;
     display: flex;
@@ -195,6 +190,7 @@ body.--overflow-h {
 .header__menu__label {
     padding: 7.5px 12px 7.5px 0;
     font-size: 12px;
+    min-height: 44px;
 }
 
 .header__menu__btn {
@@ -203,6 +199,7 @@ body.--overflow-h {
     background-color: inherit;
     color: var(--cor-de-texto);
     font-size: 12px;
+    min-height: 44px;
 }
 
 
@@ -225,7 +222,7 @@ main {
     }
 }
 
-input[data-totalgeraleixox]:focus,
+input[data-totalgeral]:focus,
 .input-nao-celular:focus {
     border-bottom: 2px solid var(--blue);
 }
@@ -356,14 +353,8 @@ input[data-totalgeraleixox]:focus,
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--blue--light);
-    z-index: 999;
-}
-
-@media print {
-    .reference-container {
-        display: none;
-    }
+    background-color: var(--reference-bgc);
+    z-index: 666;
 }
 
 .reference-row {
@@ -400,10 +391,6 @@ input[data-totalgeraleixox]:focus,
     .reference-row__output {
         margin: 0px;
     }
-
-    .reference-row__output--indicador {
-        padding-left: 15px;
-    }
     
     .reference-row__label {
         display: none;
@@ -427,22 +414,6 @@ input[data-totalgeraleixox]:focus,
 }
 
 /* Artigos comuns */
-.artigo {
-    width: 700px;
-    height: 90vh;
-    padding: 20px;
-    overflow-y: scroll;
-    position: fixed;
-    top: calc(50vh - 90vh / 2);
-    right: calc(50vw - 700px / 2);
-    z-index: 50000;
-    background-color: var(--yt);
-    font-size: 13.5px;
-    line-height: 1.5;
-    display: none;
-}
-
-/* Artigos comuns */
 @media screen and (max-width: 1023px) {
     .sessao-de-artigos {
         border-top: 10px solid var(--gray--d);
@@ -461,7 +432,7 @@ input[data-totalgeraleixox]:focus,
     right: 0;
     top: 42px;
     overflow-y: scroll;
-    z-index: 1000;
+    z-index: 999;
     padding-bottom: 100px;
     display: none;
 }
@@ -475,7 +446,7 @@ input[data-totalgeraleixox]:focus,
         top: calc(50vh - 90vh / 2);
         right: calc(50vw - 700px / 2);
         overflow-y: auto;
-        z-index: 1000;
+        z-index: 999;
         display: none;
     }
 }
@@ -493,7 +464,8 @@ input[data-totalgeraleixox]:focus,
     padding: 0 10px;
     position: fixed;
     top: 56px;
-    right: 2px;
+    right: 3px;
+    z-index: 1000;
     background-color: transparent;
 }
 
@@ -536,6 +508,7 @@ input[data-totalgeraleixox]:focus,
         top: 0;
         background-color: var(--yt);
         width: 100%;
+        z-index: 999;
     }
 
     .artigo--ajuda details {
@@ -672,10 +645,8 @@ details mark {
 
 .details__moldura__legenda {
     font-size: 12px;
-    font-style: italic;
-    margin-top: 5px;
+    margin-top: 15px;
 }
-
 .details-salvar-ficha-como-pdf li {
     line-height: 2;
 }
@@ -692,7 +663,7 @@ details mark {
     position: fixed;
     right: calc(50vw - (var(--layout-width) + 15px) / 2);
     bottom: -164px;
-    z-index: 50000;
+    z-index: 999;
     visibility: hidden;
     transition: bottom 150ms;
 }
@@ -720,12 +691,6 @@ details mark {
 .dialog-box-default.--open {
     bottom: 20px;
     visibility: visible
-}
-
-@media print {
-    .dialog-box-default.--open {
-        visibility: hidden;
-    }
 }
 
 .dialog-box-default--small.--open {
@@ -779,10 +744,16 @@ details mark {
     background-color: var(--gray--4);
     position: fixed;
     top: -35px;
-    right: calc(50vw - 234px / 2);
+    right: calc(50vw - 230px / 2);
     visibility: hidden;
     transition: top .2s linear;
-    z-index: 999;
+    z-index: 666;
+}
+
+@media screen and (max-width: 1023px) {
+    .dialog-box-ir-para {
+        right: calc(50vw - 241px / 2);
+    }
 }
 
 .dialog-box-ir-para.--open {
@@ -791,9 +762,9 @@ details mark {
 }
 
 .dialog-box-ir-para__input-linha {
-    min-width: 188px;
+    width: 188px;
     padding: 2px 0 2px 5px;
-    border: 2px solid var(--cor-primaria);
+    border: 2px solid var(--gray--4);
     background-color: var(--gray--d);
     text-align: left;
     font-size: 12px;
@@ -803,21 +774,42 @@ details mark {
     border-color: var(--purple);
 }
 
-.dialog-box-ir-para__btn-fechar {
+.dialog-box-ir-para__btn {
     width: 24px;
-    height: 20px;
+    margin: 0 2px;
     font-weight: 700;
+}
+
+@media screen and (max-width: 1023px) {
+    .dialog-box-ir-para__btn {
+        width: 35px;
+    }
+}
+
+.dialog-box-ir-para__btn:active {
+    opacity: .7;
+}
+
+.dialog-box-ir-para__btn:hover {
+    border-radius: 2px;
+    background-color: var(--yt);
+}
+
+.dialog-box-ir-para__btn--ir {
+    font-size: 14px;
+    border-radius: 1px;
+}
+
+.dialog-box-ir-para__btn--fechar {
+    height: 20px;
+    font-size: 16px;
     background-color: inherit;
     color: var(--yt);
-    font-size: 16px;
-    margin-left: 2px
 }
 
-.dialog-box-ir-para__btn-fechar:hover {
+.dialog-box-ir-para__btn--fechar:hover {
     background-color: var(--cor-de-risco);
-    border-radius: 2px
 }
-
 .dialog-box-esvaziar-ficha {
     min-width: 375px;
     max-height: 90vh;
@@ -828,7 +820,7 @@ details mark {
     background: var(--yt);
     top: calc(50vh - 443px / 2);
     right: calc(50vw - 375px / 2);
-    z-index: 50000;
+    z-index: 999;
     position: fixed;
     overflow: auto;
     display: none;
@@ -959,12 +951,12 @@ details mark {
     position: fixed;
     top: 0;
     background-color: var(--black--alpha-5);
-    z-index: 5000;
+    z-index: 888;
 }
 
 @media print {
     @page {
-        margin: .5cm .5cm .62cm .5cm;
+        margin: .5cm;
         size: A4 landscape;
     }
 
@@ -974,6 +966,10 @@ details mark {
 }
 
 /* Classes Reutilizaveis */
+.celula-n-a {
+    background-color: var(--cor-de-texto);
+}
+
 .--display-flex-xy-center {
     display: flex;
     justify-content: center;
@@ -1009,6 +1005,6 @@ details mark {
     font-weight: bold;
 }
 
-.celula-n-a {
-    background-color: var(--cor-de-texto) !important;
+.--display-none {
+    display: none;
 }

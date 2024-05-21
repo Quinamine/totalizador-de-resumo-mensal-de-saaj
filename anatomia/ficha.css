@@ -76,7 +76,7 @@
 }
 
 .ficha__titulo {
-    margin: 20px 0 10px 64px;
+    margin: 18px 0 10px 64px;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -94,7 +94,7 @@
     .ficha__body__header {
         position: sticky;
         top: 0;
-        z-index: 99;
+        z-index: 333;
     }
 }
 
@@ -133,7 +133,7 @@
     font-size: 9.5px;
 }
 
-.ficha__body__body {
+.grid-default {
     display: grid;
     grid-template-columns: repeat(2,55px) 600px repeat(10,45px) repeat(3,50px);
     border-bottom: none
@@ -177,7 +177,7 @@
         position:sticky;
         left: -75px;
         background-color: var(--yt);
-        z-index: 5000
+        z-index: 333;
     }
 }
 
