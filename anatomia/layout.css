@@ -874,11 +874,11 @@ details mark {
     margin-bottom: 10px;
 }
 
-.dialog-box-esvaziar-ficha p {
+.dialog-box-esvaziar-ficha__p--first {
     margin-bottom: 10px;
 }
 
-.dialog-box-esvaziar-ficha__last-p {
+.dialog-box-esvaziar-ficha__p--last {
     margin-top: 10px;
 }
 
