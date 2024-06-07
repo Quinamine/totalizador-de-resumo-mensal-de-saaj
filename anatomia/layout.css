@@ -7,7 +7,7 @@
     --cor-de-realce: #dce4f4;
     --cor-do-rodape: #c0c5da;
     --cor-de-risco: #dd0000;
-    --cor-de-risco-alfa-8: rgba(238, 0, 0, .8);
+    --fullred: #ff0000;
     --fullblack: #000000;
     --black--alpha-5: rgba(0, 0, 0, .5);
     --black--alpha-8: rgba(0, 0, 0, .8);
@@ -948,7 +948,7 @@ details mark {
 }
 
 .dialog-box-esvaziar-ficha__btn--confirmar:hover {
-    background-color: var(--cor-de-risco-alfa-8)
+    background-color: var(--fullred)
 }
 
 .desfoque.on {

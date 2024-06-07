@@ -31,24 +31,23 @@ const menu = {
             },
 
             goToLn(numLinha) {
-                if(numLinha < 1 || numLinha > 63) {
-                    const lnNoFound = "Nenhuma linha corresponde ao número digitado."
-                    alertarSobre(lnNoFound);
-                    this.removeLnHighlight();
+                this.removeLnHighlight(); 
+                let nL = this.numerosDeLinha;
 
-                } else {
-                    numLinha = Number(numLinha) - 1;
-
-                    this.highlightLnFound(this.numerosDeLinha[numLinha]);
-
-                    if(window.innerWidth > 1304) {
-                        numLinha -= 3;
-                     }
-                   
-                    numLinha > 3 ? 
-                        this.numerosDeLinha[numLinha].scrollIntoView() 
-                        : document.body.scrollIntoView();
-                    
+                let numLinhaMatches = false;
+                for(let i = 0; i < nL.length; i++) {
+                    if(nL[i].textContent === numLinha) {
+                        numLinhaMatches = true;
+                        let newIndex = i;
+                        if(window.innerWidth > 1313) newIndex -= 3;
+                        i > 3 ? nL[newIndex].scrollIntoView() : document.body.scrollIntoView(); 
+                        this.highlightLnFound(nL[i]);        
+                    }
+                }  
+              
+                if(!numLinhaMatches) {
+                    const msg = "Nenhuma linha corresponde ao número digitado.";
+                    alertarSobre(msg);
                 }
             },
 
