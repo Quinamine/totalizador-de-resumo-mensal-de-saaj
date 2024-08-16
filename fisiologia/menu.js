@@ -236,7 +236,7 @@ function eventos() {
     // PARTILHAR 
     const data = {
         title: "Totalizador de Resumo Mensal de SAAJ",
-        text: "O Totalizador de Resumo Mensal de SAAJ é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de SAAJ (Serviço Amigo do Adolescente e Jovem), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de SAAJ actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
+        text: "Totaliza automaticamente o resumo mensal do Serviço Amigo do Adolescente e Jovem com base nos dados inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da respectiva ficha de resumo mensal actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
         url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
     }
 
