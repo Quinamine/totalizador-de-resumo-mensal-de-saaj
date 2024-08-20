@@ -35,20 +35,20 @@ function destacarCelulasComConteudoOmisso() {
 
     let celulasSaturadas = 0;
     for(const c of celulas) {
-        c.classList.remove("--font-small");
-        c.classList.remove("celula-saturada");
+        c.classList.remove("input--font-small");
+        c.classList.remove("input--bg-color-danger");
         
         if(c.value.length === 7) {
-            c.classList.add("--font-small");
+            c.classList.add("input--font-small");
         } else if(c.value.length > 7) {
-            c.classList.add("celula-saturada");
+            c.classList.add("input--bg-color-danger");
             celulasSaturadas++;
         }
     }
     
     if(celulasSaturadas > 0) {
         setTimeout(() => {
-            const motivoDeSaturacao = document.querySelector(".artigo__details-motivo-de-red-cells");
+            const motivoDeSaturacao = document.querySelector(".artigo__details--motivo-de-celulas-vermelhas");
 
             menu.abrirArtigo("ajuda");
             motivoDeSaturacao.setAttribute("open", "");
@@ -60,7 +60,7 @@ function destacarCelulasComConteudoOmisso() {
 function removerDestaqueDeRedCells() {
     const celulas = document.querySelectorAll("[data-totalgeral], [readonly]");
 
-    for (const c of celulas) c.classList.remove("celula-saturada");
+    for (const c of celulas) c.classList.remove("input--bg-color-danger");
 }
 
 const aqd = {
@@ -125,16 +125,15 @@ window.addEventListener("load", () => {
     destacarCelulasComConteudoOmisso();
 
     // Indicador nao aplicavel para APEs
-    const celulasNaoAplicaveis = document.querySelectorAll(".celula-n-a");  
+    const celulasNaoAplicaveis = document.querySelectorAll(".input--bg-color-dark");  
     celulasNaoAplicaveis.forEach( celula => {
         celula.addEventListener("click", () => {
             let sexo = celula.parentElement.dataset.sexo;
-            const msg = `O indicador não se aplica ao sexo ${sexo.toLocaleLowerCase()}.`;
+            const msg = `O indicador não é aplicável para o sexo ${sexo.toLocaleLowerCase()}.`;
             alertarSobre(msg);
         })
     })
 
-    
     aqd.mostrarAviso();
     const dialogBoxAQD__btn = document.querySelector(".dialog-box-default__btn--aqd");
     dialogBoxAQD__btn.addEventListener("click", aqd.salvarCiencia);

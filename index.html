@@ -33,18 +33,18 @@
         </script>
         <noscript>O seu navegador está com o JavaScript desabilitado e isso bloqueia as funcionalidades do totalizador. Habilite-o nas configurações do navegador e recarregue a página.</noscript>
     </head>
-    <body ontouchstart="">
+    <body id="body" ontouchstart="">
         <header class="header --no-print">
-            <div class="layout-row layout-row--header">
-                <a href=index.html class=header__logo>
-                    Totalizador de Resumo <span class="logo__span--hide-on-screen-s">Mensal</span>
+            <div class="layout-row layout-row--of-header layout-row--no-padding">
+                <a href="index.html" id="logo">
+                    Totalizador de Resumo <span class="logo__snippet--hide-on-screen-til-360">Mensal</span>
                     de SAAJ
                 </a>
                 <div role="navigation" class="header__menu --display-flex-y-center">
                     <ul class="header__menu__ul --display-flex-y-center">
-                        <li class="header__menu__li header__menu__li--realcar-totais header__menu__li--first-child">
-                            <input type=checkbox id="checkbox-realcar-totais" class="header__menu__checkbox header__child--cursor">
-                            <label for="checkbox-realcar-totais" class="header__menu__label --display-flex-y-center header__child--cursor">
+                        <li class="header__menu__li header__menu__li--realcar-totais">
+                            <input type=checkbox id="checkbox-realcar-totais" class="header__menu__checkbox --cursor-pointer">
+                            <label for="checkbox-realcar-totais" class="header__menu__label --display-flex-y-center --cursor-pointer">
                                 Realçar&nbsp;totais
                             </label>
                         <li class="header__menu__li">
@@ -53,22 +53,22 @@
                             <button class="header__menu__btn header__menu__btn--esvaziar-ficha">Esvaziar ficha</button>
                         <li class="header__menu__li">
                             <button class="header__menu__btn header__menu__btn--imprimir">
-                                <span class="header__menu__item--desktop header__child--cursor">Imprimir</span>
-                                <span class="header__menu__item--mobile header__child--cursor">Salvar&nbsp;como&nbsp;PDF</span>
+                                <span class="header__menu__item--hide-on-mobile --cursor-pointer">Imprimir</span>
+                                <span class="header__menu__item--hide-on-desktop --cursor-pointer">Salvar&nbsp;como&nbsp;PDF</span>
                             </button>
-                        <li class="header__menu__li header__menu__item--desktop">
+                        <li class="header__menu__li header__menu__item--hide-on-mobile">
                             <button class="header__menu__btn header__menu__btn--sobre">Sobre</button>
                         <li class="header__menu__li">
                             <button class="header__menu__btn header__menu__btn--ajuda">
                                 Ajuda
                             </button>
-                        <li class="header__menu__li header__menu__item--mobile">
+                        <li class="header__menu__li header__menu__item--hide-on-desktop">
                             <button class="header__menu__btn header__menu__btn--partilhar">Partilhar...</button>
                     </ul>
                 </div>
             </div>
         </header>
-        <main>
+        <main id="main">
             <div class=ficha>
                 <header class="ficha__header">
                     <div class="ficha__linha-de-emblema-endereco-e-visto">
@@ -270,44 +270,44 @@
                             <span>71</span>
                         </div>
                         <div class="ficha__col-de-indicadores --border-l">
-                            <div class="col-de-indicadores__sessao consultas col-de-indicadores__sessao--grid-cols-60-1fr --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao consultas col-de-indicadores__seccao--grid-cols-60-1fr --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Consultas</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Total de Primeiras Consultas</span>
                                     <span class="ficha__indicador">Total de Consultas Seguintes</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao encaminhamento col-de-indicadores__sessao--grid-cols-60-1fr --border-b">
+                            <div class="col-de-indicadores__seccao encaminhamento col-de-indicadores__seccao--grid-cols-60-1fr --border-b">
                                 <div></div>
                                 <div class="--border-l">
-                                    <div class="col-de-indicadores__sessao__col-indicadores">
+                                    <div class="col-de-indicadores__seccao__col-indicadores">
                                         <span class="ficha__indicador --border-b">Nº de adolescentes e jovens que vieram espontaneamente</span>
                                         <span class="ficha__indicador --border-b">Nº de adolescentes encaminhados por Activistas</span>
                                         <span class="ficha__indicador --border-b">Nº de adolescentes encaminhados por Profissional de Saúde</span>
                                         <span class="ficha__indicador --border-b">Nº de adolescentes encaminhados por Professor na Escola</span>
                                         <span class="ficha__indicador --border-b">Nº de adolescentes encaminhados por Outros</span>
                                     </div>
-                                    <div class="col-de-indicadores__sessao situacao-escolar col-de-indicadores__sessao--grid-cols-60-1fr">
-                                        <div class="col-de-indicadores__sessao__col-titulo">
+                                    <div class="col-de-indicadores__seccao situacao-escolar col-de-indicadores__seccao--grid-cols-60-1fr">
+                                        <div class="col-de-indicadores__seccao__col-titulo">
                                             <span>Situação Escolar</span>
                                         </div>
-                                        <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                        <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                             <span class="ficha__indicador --border-b" data-prefixo="Situação Escolar">Dentro</span>
                                             <span class="ficha__indicador" data-prefixo="Situação Escolar">Fora</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao__col-indicadores parceiros-presentes --border-b">
+                            <div class="col-de-indicadores__seccao__col-indicadores parceiros-presentes --border-b">
                                 <span class="ficha__indicador --display-flex-xy-center">Nº de Parceiros presentes no SAAJ</span>
                             </div>
-                            <div class="col-de-indicadores__sessao aconselhamento --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao aconselhamento --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Aconselhamento</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens aconselhados sobre Sexualidade</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens que receberam aconselhamento em ITS/HIV-SIDA</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens que receberam aconselhamento em VBG</span>
@@ -318,32 +318,32 @@
                                     <span class="ficha__indicador">Nº de adolescentes e jovens que receberam outros aconselhamentos</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao rastreio-e-tto-de-its --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao rastreio-e-tto-de-its --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Rastreio e Tratamento de ITS</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens rastreados para ITS</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens rastreados para Sífilis</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes tratados para ITS</span>
                                     <span class="ficha__indicador">Nº de adolescentes tratados para Sífilis</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao rastreio-e-tto-de-vbg --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao rastreio-e-tto-de-vbg --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Rastreio e Tratamento de VBG</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens rastreados em VBG</span>
                                     <span class="ficha__indicador">Nº de adolescentes e jovens em seguimento de VBG</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao rastreio-de-ca-do-colo --border-b --page-break">
-                                <div class="col-de-indicadores__sessao__col-titulo col-de-indicadores__sessao__col-titulo--flex-dir-col">
+                            <div class="col-de-indicadores__seccao rastreio-de-ca-do-colo --border-b --page-break">
+                                <div class="col-de-indicadores__seccao__col-titulo col-de-indicadores__seccao__col-titulo--flex-dir-col">
                                     <span>Rastreio, Prevenção e Encaminhamento do Cancro do Colo do Útero </span>
                                     <span>Transferida</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens que fizeram vacina contra HPV</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens testadas com VIA</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens testadas com VIA Positivo</span>
@@ -351,21 +351,21 @@
                                     <span class="ficha__indicador">Suspeita de Cancro do colo do útero</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao estado-serologico --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo --border-t-on-print">
+                            <div class="col-de-indicadores__seccao estado-serologico --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo --border-t-on-print">
                                     <span>Estado Serológico</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b --border-t-on-print" data-prefixo="Estado Serológico">Nº de adolescentes e jovens com seroestado desconhecido à entrada </span>
                                     <span class="ficha__indicador --border-b" data-prefixo="Estado Serológico">Nº de adolescentes e jovens com seroestado positivo à entrada</span>
                                     <span class="ficha__indicador" data-prefixo="Estado Serológico">Nº de adolescentes e jovens com seroestado negativo à entrada</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao testagem-para-hiv --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao testagem-para-hiv --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Testagem para HIV</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b" data-prefixo="Testagem para HIV">Nº de adolescentes e jovens com resultado de HIV positivo (HIV+) à entrada</span>
                                     <span class="ficha__indicador --border-b" data-prefixo="Testagem para HIV">Nº de adolescentes e jovens testados</span>
                                     <span class="ficha__indicador --border-b" data-prefixo="Testagem para HIV">Nº de adolescentes e jovens testados positivo</span>
@@ -373,40 +373,40 @@
                                     <span class="ficha__indicador" data-prefixo="Testagem para HIV">Nº de parceiros testados positivo</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao tarv --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao tarv --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>TARV</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens em TARV à entrada</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens que iniciaram TARV</span>
                                     <span class="ficha__indicador">Nº de adolescentes e jovens que continuam o TARV</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao profilaxias --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao profilaxias --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Profilaxias</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b" data-prefixo="Profilaxias">Inicia CTZ</span>
                                     <span class="ficha__indicador" data-prefixo="Profilaxias">Continua CTZ</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao contracepcao --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao contracepcao --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Contracepção</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b" data-prefixo="Contracepção">Nº de adolescentes e jovens que são Novos Utentes</span>
                                     <span class="ficha__indicador" data-prefixo="Contracepção">Nº de adolescentes e jovens que continuam no método</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao contracepcao-e-protecao --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo--display-grid">
-                                    <div class="col-de-indicadores__sessao__col-titulo">
-                                        <span class="col-de-indicadores__sessao__titulo--rotate">Contracepção&nbsp;e Protecção</span>
+                            <div class="col-de-indicadores__seccao contracepcao-e-protecao --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo--display-grid">
+                                    <div class="col-de-indicadores__seccao__col-titulo">
+                                        <span class="col-de-indicadores__seccao__titulo--rotate">Contracepção&nbsp;e Protecção</span>
                                     </div>
-                                    <div class="col-de-indicadores__sessao__col-metodos-pf --border-l">
+                                    <div class="col-de-indicadores__seccao__col-metodos-pf --border-l">
                                         <span class="--border-b">Pílula</span>
                                         <span class="--border-b">DIU</span>
                                         <span class="--border-b">Injectável</span>
@@ -415,7 +415,7 @@
                                         <span class="--display-flex-xy-center">Preservativos</span>
                                     </div>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b" data-prefixo="Pílula">Nº das adolescentes/jovens que iniciam este método</span>
                                     <span class="ficha__indicador --border-b" data-prefixo="Pílula">Nº das adolescentes/jovens que continuam o método</span>
                                     <span class="ficha__indicador --border-b" data-prefixo="Pílula">Nº de ciclos oferecidos às adolescentes/jovens</span>
@@ -430,27 +430,27 @@
                                     <span class="ficha__indicador">Nº das adolescentes/jovens que receberam preservativos femininos</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao sal-ferroso --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao sal-ferroso --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Sal Ferroso</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador">Nº de adolescentes distribuídos Sal Ferroso</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao desparasitacao --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao desparasitacao --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Desparasitação</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador">Nº de adolescentes e jovens desparasitados</span>
                                 </div>
                             </div>
-                            <div class="col-de-indicadores__sessao referencia --border-b">
-                                <div class="col-de-indicadores__sessao__col-titulo">
+                            <div class="col-de-indicadores__seccao referencia --border-b">
+                                <div class="col-de-indicadores__seccao__col-titulo">
                                     <span>Referência</span>
                                 </div>
-                                <div class="col-de-indicadores__sessao__col-indicadores --border-l">
+                                <div class="col-de-indicadores__seccao__col-indicadores --border-l">
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens referidos para Circuncisão</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens referidos para Apoio Psicológico</span>
                                     <span class="ficha__indicador --border-b">Nº de adolescentes e jovens referidos para SAAJ Diferenciado</span>
@@ -484,11 +484,11 @@
                             <input type=number min=0 data-totalgeral=l22-c1-a-c10 data-totalgeraloutput=l22-c13 data-totalparcial=l22-c1c2c3c4c5 data-totalparcialoutput=l22-c11>
                             <input type=number min=0 data-totalgeral=l23-c1-a-c10 data-totalgeraloutput=l23-c13 data-totalparcial=l23-c1c2c3c4c5 data-totalparcialoutput=l23-c11>
                             <input type=number min=0 data-totalgeral=l24-c1-a-c10 data-totalgeraloutput=l24-c13 data-totalparcial=l24-c1c2c3c4c5 data-totalparcialoutput=l24-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l30-c1-a-c10 data-totalgeraloutput=l30-c13 data-totalparcial=l30-c1c2c3c4c5 data-totalparcialoutput=l30-c11>
                             <input type=number min=0 data-totalgeral=l31-c1-a-c10 data-totalgeraloutput=l31-c13 data-totalparcial=l31-c1c2c3c4c5 data-totalparcialoutput=l31-c11>
                             <input type=number min=0 data-totalgeral=l32-c1-a-c10 data-totalgeraloutput=l32-c13 data-totalparcial=l32-c1c2c3c4c5 data-totalparcialoutput=l32-c11>
@@ -502,21 +502,21 @@
                             <input type=number min=0 data-totalgeral=l40-c1-a-c10 data-totalgeraloutput=l40-c13 data-totalparcial=l40-c1c2c3c4c5 data-totalparcialoutput=l40-c11>
                             <input type=number min=0 data-totalgeral=l41-c1-a-c10 data-totalgeraloutput=l41-c13 data-totalparcial=l41-c1c2c3c4c5 data-totalparcialoutput=l41-c11>
                             <input type=number min=0 data-totalgeral=l42-c1-a-c10 data-totalgeraloutput=l42-c13 data-totalparcial=l42-c1c2c3c4c5 data-totalparcialoutput=l42-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l55-c1-a-c10 data-totalgeraloutput=l55-c13 data-totalparcial=l55-c1c2c3c4c5 data-totalparcialoutput=l55-c11>
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c1c2c3c4c5 data-totalparcialoutput=l56-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c1c2c3c4c5 data-totalparcialoutput=l58-c11>
                             <input type=number min=0 data-totalgeral=l59-c1-a-c10 data-totalgeraloutput=l59-c13 data-totalparcial=l59-c1c2c3c4c5 data-totalparcialoutput=l59-c11>
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c1c2c3c4c5 data-totalparcialoutput=l60-c11>
@@ -549,11 +549,11 @@
                             <input type=number min=0 data-totalgeral=l22-c1-a-c10 data-totalgeraloutput=l22-c13 data-totalparcial=l22-c1c2c3c4c5 data-totalparcialoutput=l22-c11>
                             <input type=number min=0 data-totalgeral=l23-c1-a-c10 data-totalgeraloutput=l23-c13 data-totalparcial=l23-c1c2c3c4c5 data-totalparcialoutput=l23-c11>
                             <input type=number min=0 data-totalgeral=l24-c1-a-c10 data-totalgeraloutput=l24-c13 data-totalparcial=l24-c1c2c3c4c5 data-totalparcialoutput=l24-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l30-c1-a-c10 data-totalgeraloutput=l30-c13 data-totalparcial=l30-c1c2c3c4c5 data-totalparcialoutput=l30-c11>
                             <input type=number min=0 data-totalgeral=l31-c1-a-c10 data-totalgeraloutput=l31-c13 data-totalparcial=l31-c1c2c3c4c5 data-totalparcialoutput=l31-c11>
                             <input type=number min=0 data-totalgeral=l32-c1-a-c10 data-totalgeraloutput=l32-c13 data-totalparcial=l32-c1c2c3c4c5 data-totalparcialoutput=l32-c11>
@@ -567,21 +567,21 @@
                             <input type=number min=0 data-totalgeral=l40-c1-a-c10 data-totalgeraloutput=l40-c13 data-totalparcial=l40-c1c2c3c4c5 data-totalparcialoutput=l40-c11>
                             <input type=number min=0 data-totalgeral=l41-c1-a-c10 data-totalgeraloutput=l41-c13 data-totalparcial=l41-c1c2c3c4c5 data-totalparcialoutput=l41-c11>
                             <input type=number min=0 data-totalgeral=l42-c1-a-c10 data-totalgeraloutput=l42-c13 data-totalparcial=l42-c1c2c3c4c5 data-totalparcialoutput=l42-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l55-c1-a-c10 data-totalgeraloutput=l55-c13 data-totalparcial=l55-c1c2c3c4c5 data-totalparcialoutput=l55-c11>
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c1c2c3c4c5 data-totalparcialoutput=l56-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c1c2c3c4c5 data-totalparcialoutput=l58-c11>
                             <input type=number min=0 data-totalgeral=l59-c1-a-c10 data-totalgeraloutput=l59-c13 data-totalparcial=l59-c1c2c3c4c5 data-totalparcialoutput=l59-c11>
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c1c2c3c4c5 data-totalparcialoutput=l60-c11>
@@ -614,11 +614,11 @@
                             <input type=number min=0 data-totalgeral=l22-c1-a-c10 data-totalgeraloutput=l22-c13 data-totalparcial=l22-c1c2c3c4c5 data-totalparcialoutput=l22-c11>
                             <input type=number min=0 data-totalgeral=l23-c1-a-c10 data-totalgeraloutput=l23-c13 data-totalparcial=l23-c1c2c3c4c5 data-totalparcialoutput=l23-c11>
                             <input type=number min=0 data-totalgeral=l24-c1-a-c10 data-totalgeraloutput=l24-c13 data-totalparcial=l24-c1c2c3c4c5 data-totalparcialoutput=l24-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l30-c1-a-c10 data-totalgeraloutput=l30-c13 data-totalparcial=l30-c1c2c3c4c5 data-totalparcialoutput=l30-c11>
                             <input type=number min=0 data-totalgeral=l31-c1-a-c10 data-totalgeraloutput=l31-c13 data-totalparcial=l31-c1c2c3c4c5 data-totalparcialoutput=l31-c11>
                             <input type=number min=0 data-totalgeral=l32-c1-a-c10 data-totalgeraloutput=l32-c13 data-totalparcial=l32-c1c2c3c4c5 data-totalparcialoutput=l32-c11>
@@ -632,21 +632,21 @@
                             <input type=number min=0 data-totalgeral=l40-c1-a-c10 data-totalgeraloutput=l40-c13 data-totalparcial=l40-c1c2c3c4c5 data-totalparcialoutput=l40-c11>
                             <input type=number min=0 data-totalgeral=l41-c1-a-c10 data-totalgeraloutput=l41-c13 data-totalparcial=l41-c1c2c3c4c5 data-totalparcialoutput=l41-c11>
                             <input type=number min=0 data-totalgeral=l42-c1-a-c10 data-totalgeraloutput=l42-c13 data-totalparcial=l42-c1c2c3c4c5 data-totalparcialoutput=l42-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l55-c1-a-c10 data-totalgeraloutput=l55-c13 data-totalparcial=l55-c1c2c3c4c5 data-totalparcialoutput=l55-c11>
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c1c2c3c4c5 data-totalparcialoutput=l56-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c1c2c3c4c5 data-totalparcialoutput=l58-c11>
                             <input type=number min=0 data-totalgeral=l59-c1-a-c10 data-totalgeraloutput=l59-c13 data-totalparcial=l59-c1c2c3c4c5 data-totalparcialoutput=l59-c11>
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c1c2c3c4c5 data-totalparcialoutput=l60-c11>
@@ -679,11 +679,11 @@
                             <input type=number min=0 data-totalgeral=l22-c1-a-c10 data-totalgeraloutput=l22-c13 data-totalparcial=l22-c1c2c3c4c5 data-totalparcialoutput=l22-c11>
                             <input type=number min=0 data-totalgeral=l23-c1-a-c10 data-totalgeraloutput=l23-c13 data-totalparcial=l23-c1c2c3c4c5 data-totalparcialoutput=l23-c11>
                             <input type=number min=0 data-totalgeral=l24-c1-a-c10 data-totalgeraloutput=l24-c13 data-totalparcial=l24-c1c2c3c4c5 data-totalparcialoutput=l24-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l30-c1-a-c10 data-totalgeraloutput=l30-c13 data-totalparcial=l30-c1c2c3c4c5 data-totalparcialoutput=l30-c11>
                             <input type=number min=0 data-totalgeral=l31-c1-a-c10 data-totalgeraloutput=l31-c13 data-totalparcial=l31-c1c2c3c4c5 data-totalparcialoutput=l31-c11>
                             <input type=number min=0 data-totalgeral=l32-c1-a-c10 data-totalgeraloutput=l32-c13 data-totalparcial=l32-c1c2c3c4c5 data-totalparcialoutput=l32-c11>
@@ -697,21 +697,21 @@
                             <input type=number min=0 data-totalgeral=l40-c1-a-c10 data-totalgeraloutput=l40-c13 data-totalparcial=l40-c1c2c3c4c5 data-totalparcialoutput=l40-c11>
                             <input type=number min=0 data-totalgeral=l41-c1-a-c10 data-totalgeraloutput=l41-c13 data-totalparcial=l41-c1c2c3c4c5 data-totalparcialoutput=l41-c11>
                             <input type=number min=0 data-totalgeral=l42-c1-a-c10 data-totalgeraloutput=l42-c13 data-totalparcial=l42-c1c2c3c4c5 data-totalparcialoutput=l42-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l55-c1-a-c10 data-totalgeraloutput=l55-c13 data-totalparcial=l55-c1c2c3c4c5 data-totalparcialoutput=l55-c11>
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c1c2c3c4c5 data-totalparcialoutput=l56-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c1c2c3c4c5 data-totalparcialoutput=l58-c11>
                             <input type=number min=0 data-totalgeral=l59-c1-a-c10 data-totalgeraloutput=l59-c13 data-totalparcial=l59-c1c2c3c4c5 data-totalparcialoutput=l59-c11>
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c1c2c3c4c5 data-totalparcialoutput=l60-c11>
@@ -744,11 +744,11 @@
                             <input type=number min=0 data-totalgeral=l22-c1-a-c10 data-totalgeraloutput=l22-c13 data-totalparcial=l22-c1c2c3c4c5 data-totalparcialoutput=l22-c11>
                             <input type=number min=0 data-totalgeral=l23-c1-a-c10 data-totalgeraloutput=l23-c13 data-totalparcial=l23-c1c2c3c4c5 data-totalparcialoutput=l23-c11>
                             <input type=number min=0 data-totalgeral=l24-c1-a-c10 data-totalgeraloutput=l24-c13 data-totalparcial=l24-c1c2c3c4c5 data-totalparcialoutput=l24-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l30-c1-a-c10 data-totalgeraloutput=l30-c13 data-totalparcial=l30-c1c2c3c4c5 data-totalparcialoutput=l30-c11>
                             <input type=number min=0 data-totalgeral=l31-c1-a-c10 data-totalgeraloutput=l31-c13 data-totalparcial=l31-c1c2c3c4c5 data-totalparcialoutput=l31-c11>
                             <input type=number min=0 data-totalgeral=l32-c1-a-c10 data-totalgeraloutput=l32-c13 data-totalparcial=l32-c1c2c3c4c5 data-totalparcialoutput=l32-c11>
@@ -762,21 +762,21 @@
                             <input type=number min=0 data-totalgeral=l40-c1-a-c10 data-totalgeraloutput=l40-c13 data-totalparcial=l40-c1c2c3c4c5 data-totalparcialoutput=l40-c11>
                             <input type=number min=0 data-totalgeral=l41-c1-a-c10 data-totalgeraloutput=l41-c13 data-totalparcial=l41-c1c2c3c4c5 data-totalparcialoutput=l41-c11>
                             <input type=number min=0 data-totalgeral=l42-c1-a-c10 data-totalgeraloutput=l42-c13 data-totalparcial=l42-c1c2c3c4c5 data-totalparcialoutput=l42-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l55-c1-a-c10 data-totalgeraloutput=l55-c13 data-totalparcial=l55-c1c2c3c4c5 data-totalparcialoutput=l55-c11>
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c1c2c3c4c5 data-totalparcialoutput=l56-c11>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c1c2c3c4c5 data-totalparcialoutput=l58-c11>
                             <input type=number min=0 data-totalgeral=l59-c1-a-c10 data-totalgeraloutput=l59-c13 data-totalparcial=l59-c1c2c3c4c5 data-totalparcialoutput=l59-c11 data-totalparcialnaoaplicaveloutput=l59-c12>
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c1c2c3c4c5 data-totalparcialoutput=l60-c11>
@@ -843,7 +843,7 @@
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c6-a-c10 data-totalparcialoutput=l56-c12>
                             <input type=number min=0 data-totalgeral=l57-c1-a-c10 data-totalgeraloutput=l57-c13 data-totalparcial=l57-c6-a-c10 data-totalparcialoutput=l57-c12>
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c6-a-c10 data-totalparcialoutput=l58-c12>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c6-a-c10 data-totalparcialoutput=l60-c12>
                             <input type=number min=0 data-totalgeral=l61-c1-a-c10 data-totalgeraloutput=l61-c13 data-totalparcial=l61-c6-a-c10 data-totalparcialoutput=l61-c12>
                             <input type=number min=0 data-totalgeral=l62-c1-a-c10 data-totalgeraloutput=l62-c13 data-totalparcial=l62-c6-a-c10 data-totalparcialoutput=l62-c12>
@@ -908,7 +908,7 @@
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c6-a-c10 data-totalparcialoutput=l56-c12>
                             <input type=number min=0 data-totalgeral=l57-c1-a-c10 data-totalgeraloutput=l57-c13 data-totalparcial=l57-c6-a-c10 data-totalparcialoutput=l57-c12>
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c6-a-c10 data-totalparcialoutput=l58-c12>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c6-a-c10 data-totalparcialoutput=l60-c12>
                             <input type=number min=0 data-totalgeral=l61-c1-a-c10 data-totalgeraloutput=l61-c13 data-totalparcial=l61-c6-a-c10 data-totalparcialoutput=l61-c12>
                             <input type=number min=0 data-totalgeral=l62-c1-a-c10 data-totalgeraloutput=l62-c13 data-totalparcial=l62-c6-a-c10 data-totalparcialoutput=l62-c12>
@@ -973,7 +973,7 @@
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c6-a-c10 data-totalparcialoutput=l56-c12>
                             <input type=number min=0 data-totalgeral=l57-c1-a-c10 data-totalgeraloutput=l57-c13 data-totalparcial=l57-c6-a-c10 data-totalparcialoutput=l57-c12>
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c6-a-c10 data-totalparcialoutput=l58-c12>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c6-a-c10 data-totalparcialoutput=l60-c12>
                             <input type=number min=0 data-totalgeral=l61-c1-a-c10 data-totalgeraloutput=l61-c13 data-totalparcial=l61-c6-a-c10 data-totalparcialoutput=l61-c12>
                             <input type=number min=0 data-totalgeral=l62-c1-a-c10 data-totalgeraloutput=l62-c13 data-totalparcial=l62-c6-a-c10 data-totalparcialoutput=l62-c12>
@@ -1038,7 +1038,7 @@
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c6-a-c10 data-totalparcialoutput=l56-c12>
                             <input type=number min=0 data-totalgeral=l57-c1-a-c10 data-totalgeraloutput=l57-c13 data-totalparcial=l57-c6-a-c10 data-totalparcialoutput=l57-c12>
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c6-a-c10 data-totalparcialoutput=l58-c12>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c6-a-c10 data-totalparcialoutput=l60-c12>
                             <input type=number min=0 data-totalgeral=l61-c1-a-c10 data-totalgeraloutput=l61-c13 data-totalparcial=l61-c6-a-c10 data-totalparcialoutput=l61-c12>
                             <input type=number min=0 data-totalgeral=l62-c1-a-c10 data-totalgeraloutput=l62-c13 data-totalparcial=l62-c6-a-c10 data-totalparcialoutput=l62-c12>
@@ -1103,7 +1103,7 @@
                             <input type=number min=0 data-totalgeral=l56-c1-a-c10 data-totalgeraloutput=l56-c13 data-totalparcial=l56-c6-a-c10 data-totalparcialoutput=l56-c12>
                             <input type=number min=0 data-totalgeral=l57-c1-a-c10 data-totalgeraloutput=l57-c13 data-totalparcial=l57-c6-a-c10 data-totalparcialoutput=l57-c12 data-totalparcialnaoaplicaveloutput=l57-c11>
                             <input type=number min=0 data-totalgeral=l58-c1-a-c10 data-totalgeraloutput=l58-c13 data-totalparcial=l58-c6-a-c10 data-totalparcialoutput=l58-c12>
-                            <input type=number min=0 readonly class="celula-n-a">
+                            <input type=number min=0 readonly class="input--bg-color-dark">
                             <input type=number min=0 data-totalgeral=l60-c1-a-c10 data-totalgeraloutput=l60-c13 data-totalparcial=l60-c6-a-c10 data-totalparcialoutput=l60-c12>
                             <input type=number min=0 data-totalgeral=l61-c1-a-c10 data-totalgeraloutput=l61-c13 data-totalparcial=l61-c6-a-c10 data-totalparcialoutput=l61-c12>
                             <input type=number min=0 data-totalgeral=l62-c1-a-c10 data-totalgeraloutput=l62-c13 data-totalparcial=l62-c6-a-c10 data-totalparcialoutput=l62-c12>
@@ -1324,20 +1324,20 @@
                     </div>
                 </footer>
             </div>
-            <div class="main__container-de-campo-de-nota layout-row">
-                <textarea class="main__campo-de-nota input-nao-celular" id="comentarios" placeholder="Comentários sobre o resumo (se necessário)." rows=3></textarea>
+            <div class="layout-row layout-row--report-comments layout-row--no-padding">
+                <textarea class="main__campo-de-comentarios input-nao-celular" id="comentarios" placeholder="Comentários sobre o resumo (se necessário)." rows=3></textarea>
             </div>
 
-            <div class="reference-container --no-print">
-                <div class="layout-row reference-row">
-                    <span class="reference-row__label">Indicador:</span> 
-                    <output class="reference-row__output reference-row__output--indicador --display-flex-y-center"></output>
+            <div class="reference --no-print">
+                <div class="layout-row layout-row--of-reference">
+                    <span class="reference__label">Indicador:</span> 
+                    <output class="reference__output reference__output--indicador --display-flex-y-center"></output>
 
-                    <span class="reference-row__label">Faixa etária:</span> 
-                    <output class="reference-row__output reference-row__output--idade --display-flex-xy-center --fw-700"></output>
+                    <span class="reference__label">Faixa etária:</span> 
+                    <output class="reference__output reference__output--idade --display-flex-xy-center --fw-700"></output>
 
-                    <span class="reference-row__label">Sexo:</span> 
-                    <output class="reference-row__output reference-row__output--sexo --display-flex-xy-center --fw-700"></output>
+                    <span class="reference__label">Sexo:</span> 
+                    <output class="reference__output reference__output--sexo --display-flex-xy-center --fw-700"></output>
                 </div>
             </div>
         </main>
@@ -1422,11 +1422,11 @@
             </div>
         </section>
 
-        <section class="sessao-de-artigos --no-print">
+        <section class="seccao-de-artigos --no-print">
             <article id="sobre" class="artigo artigo--sobre layout-row layout-row--artigo-sobre" >
                 <h2 class="artigo__titulo artigo__titulo--nivel-1">Visão geral sobre o totalizador</h2>
                 <figure>
-                    <img alt="Totalizador de Resumo Mensal de SAAJ" src=imagens/totalizador-de-resumo-mensal-de-saaj.png class="artigo__img artigo__img--sobre-o-tot">
+                    <img alt="Totalizador de Resumo Mensal de SAAJ" src=imagens/totalizador-de-resumo-mensal-de-saaj.png class="artigo__img artigo__img--center">
                 </figure>
                 
                 <p>
@@ -1471,23 +1471,23 @@
                 <ul class="artigo__lista artigo__lista--ul">
                     <li>Não alerta sobre discrepância de dados, portanto, a análise da concordância dos dados é inteiramente dependente do usuário.</li>
                 </ul>
-                <button class="artigo__btn-fechar artigo__btn-fechar--sobre" title="Fechar">&times;</button>
+                <button class="artigo__btn-x artigo__btn-x--fechar-sobre" title="Fechar">&times;</button>
             </article>
 
-            <article class="artigo artigo--ajuda layout-row layout-row--artigo-ajuda">
+            <article class="artigo artigo--ajuda layout-row layout-row--no-padding">
                 <h2 class="artigo__titulo artigo__titulo--nivel-1 artigo__titulo--ajuda-e-procedimentos">Ajuda e Procedimentos</h2>
 
-                <details>
-                    <summary>Realçar totais</summary>
-                    <p>Adiciona cor de fundo cinzenta a todas as células dos totais. Essas têm o acesso interdito e a funcionalidade de realçá-las, permite distinguí-las facilmente das outras células. Muito útil em celulares.</p>
+                <details class="artigo__details">
+                    <summary class="details__summary">Realçar totais</summary>
+                    <p>Adiciona cor de fundo amarela às células dos totais. Essas têm o acesso interdito e a funcionalidade de realçá-las, permite distinguí-las facilmente das outras células. Muito útil em celulares.</p>
                     <p class="artigo__p--destaque --sem-sombra">A cor de realce de fundo  das células não afecta a impressão.</p>
                 </details>
-                <details>
-                    <summary >Ir para a linha...</summary>
+                <details class="artigo__details">
+                     <summary class="details__summary">Ir para a linha...</summary>
                     <p>Abre um campo no qual pode digitar um número de linha no intervalo de 1 à 63 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
                 </details>
-                <details>
-                    <summary>Esvaziar ficha</summary>
+                <details class="artigo__details">
+                    <summary class="details__summary">Esvaziar ficha</summary>
                     <p>Comando para limpar parcial ou totalmente a ficha após confirmação da acção na caixa de diálogo subsequente.</p>
                     <figure class="details__moldura details__moldura--margin-l">
                         <img src="imagens/caixa-de-dialogo-para-esvaziamento-da-ficha.png" alt="Caixa de diálogo para esvaziamento da ficha">
@@ -1495,26 +1495,26 @@
                         <figcaption class="details__moldura__legenda"><b>Legenda:</b> Caixa de diálogo para esvaziamento da ficha. Neste caso, os campos de <b>Província, Distrito e US</b> seriam preservados (por ter suas checkboxes desmarcadas). Todos os outros cujas "checkboxes" estão marcadas seriam esvaziados.</figcaption>
                     </figure>
                 </details>
-                <details class="details-salvar-ficha-como-pdf">
-                    <summary>Salvar ficha como PDF</summary>
+                <details class="artigo__details artigo__details--salvar-ficha-como-pdf">
+                    <summary class="details__summary">Salvar ficha como PDF</summary>
                     <h3 class="artigo__titulo artigo__titulo--nivel-2 artigo__titulo--cor-discreta">No computador:</h3>
                     <ol class="artigo__lista artigo__lista--ol">
                         <li>
-                            Clique na opção <mark>Imprimir</mark> no menu do totalizador.
+                            Clique na opção <mark class="details__mark">Imprimir</mark> no menu do totalizador.
                         <li>
-                            Na janela que abrirá, no campo de <mark>Impressora</mark> ou <mark>Destino</mark>
-                            selecione a opção <mark>Salvar&nbsp;como&nbsp;PDF</mark>.
+                            Na janela que abrirá, no campo de <mark class="details__mark">Impressora</mark> ou <mark class="details__mark">Destino</mark>
+                            selecione a opção <mark class="details__mark">Salvar&nbsp;como&nbsp;PDF</mark>.
                         <li >
-                            Por fim, clique em <mark>Salvar</mark> e escolha um destino no seu computador.
+                            Por fim, clique em <mark class="details__mark">Salvar</mark> e escolha um destino no seu computador.
                     </ol>
 
                     <h3 class="artigo__titulo artigo__titulo--nivel-2 artigo__titulo--cor-discreta">No celular / tablet:</h3>
                     <ol class="artigo__lista artigo__lista--ol">
                         <li>
-                            Toque na opção <mark>Salvar como PDF</mark> no cabeçalho do totalizador.
+                            Toque na opção <mark class="details__mark">Salvar como PDF</mark> no cabeçalho do totalizador.
                         </li>
                         <li>
-                            Na janela seguinte, logo abaixo do rótulo <mark>Tamanho do papel</mark>, toque na seta em forma de <mark>V</mark> para expandir as configurações.
+                            Na janela seguinte, logo abaixo do rótulo <mark class="details__mark">Tamanho do papel</mark>, toque na seta em forma de <mark class="details__mark">V</mark> para expandir as configurações.
                         </li>
 
                         <figure class="details__moldura">
@@ -1522,7 +1522,7 @@
                         </figure>
                            
                         <li>
-                            No campo de <mark>Tamanho do papel</mark>, mantenha <mark>ISO A4</mark> e no de <mark>Orientação</mark>, selecione <mark>Panorama</mark> ou <mark>Paisagem</mark>.
+                            No campo de <mark class="details__mark">Tamanho do papel</mark>, mantenha <mark class="details__mark">ISO A4</mark> e no de <mark class="details__mark">Orientação</mark>, selecione <mark class="details__mark">Panorama</mark> ou <mark class="details__mark">Paisagem</mark>.
                         </li>
 
                         <figure class="details__moldura">
@@ -1536,13 +1536,15 @@
                         </figure>
                     </ol>
                 </details>
-                <details class="artigo__details-motivo-de-red-cells">
-                    <summary>Algumas células mudaram de cor de fundo para vermelho</summary>
-                    <p>As células do totalizador têm um tamanho para conter visivelmente 7 algarismos no máximo, isto é, mostram valores até, no máximo, <span class="number-format">9999999</span>. Quando uma célula recebe um número com mais de 7 algarismos, dá um alerta ficando vermelha e depois abrindo esta mensagem de texto para alertá-lo sobre a omissão dos algarismos e o real motivo.</p>
+                <details class="artigo__details artigo__details--border-b artigo__details--motivo-de-celulas-vermelhas">
+                    <summary class="details__summary">Algumas células mudaram de cor de fundo para vermelho</summary>
+                    <p>As células do totalizador têm um tamanho para conter visivelmente 7 algarismos no máximo, isto é, mostram valores até <span class="number-format">9999999</span>. Quando uma célula recebe um número com mais de 7 algarismos, dá um alerta ficando vermelha e depois abrindo esta mensagem de texto para alertá-lo sobre a omissão dos algarismos e o real motivo.</p>
 
                     <p class="artigo__p--destaque">Para um país como Moçambique, onde o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que nenhuma Unidade Sanitária actualmente tem um número mensal de dados de algum indicador, de qualquer que seja a sua natureza, acima de <span class="number-format">9999999</span>.</p>
                 </details>
-                <button class="artigo__btn-fechar artigo__btn-fechar--ajuda" title="Fechar">&times;</button>
+
+                <p class="artigo-ajuda__p--contactar-suporte">Se os tópicos acima não cobrem a sua dúvida. Pode ainda solicitar suporte por <a href="mailto:quinamine.aderitofelix@gmail.com?subject=Totalizador%20de%20Resumo%20Mensal%20de%20SAAJ">Email</a> ou <a href="https://wa.me/258846709901/?text=Olá%2C+Quinamine!+Sobre+o+*totalizador+de+resumo+mensal+de+SAAJ*%2C+tenho+a+seguinte+dúvida%3A">WhatsApp</a>.</p>
+                <button class="artigo__btn-x artigo__btn-x--fechar-ajuda" title="Fechar">&times;</button>
             </article>
         </section>
 
@@ -1599,7 +1601,7 @@
                     Criado com atenção e 💙 por <a href=https://quinamine.github.io/aderito-felix-quinamine/index.html title="Acessar biografia &raquo;">Adérito Félix Quinamine</a>
                     | © <span class="footer__current-year"></span> - Totalizador de Resumo Mensal de SAAJ
                 </p>
-                <a href=#root class=footer__link-back-to-top>Rolar para o topo</a>
+                <a href=#root class=footer__link--back-to-top>Rolar para o topo</a>
             </div>
             <p class="footer__p footer__p--available-since">Disponível desde <time datetime="2022-10-22">22/10/2022</time>. Última actualização: Agosto/2024.</p>
         </footer>
