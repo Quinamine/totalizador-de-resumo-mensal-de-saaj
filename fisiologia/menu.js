@@ -66,7 +66,7 @@ const menu = {
                     input.value.length > 0 && inputFilled++;
                 }
                 if(inputFilled === 0) {
-                    const noInputFilledMsg = "A ficha já se encontra vazia."
+                    const noInputFilledMsg = "Neste momento, a ficha encontra-se vazia."
                     alertarSobre(noInputFilledMsg);
                     return false;
                 } 
