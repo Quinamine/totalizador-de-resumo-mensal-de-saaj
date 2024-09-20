@@ -80,6 +80,9 @@
         top: 0;
         z-index: 333;
     }
+    .body-com-topo-propaganda .ficha__body__header {
+        top: 36px;
+    }
 }
 .ficha__col-linha-do-resumo {
     background-color: var(--yt);
