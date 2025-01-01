@@ -25,7 +25,7 @@ O **Totalizador de Resumo Mensal de SAAJ** é um serviço online gratuito que au
 
 >[!NOTE]
 >
-> O totalizador garante um resumo mensal correctamente totalizado, porém, um resumo mensal de qualidade não se limita apenas à uma correcta totalização. Outros factores (que não dependem do totalizador) como preenchimento correcto e legível dos livros de registo, colheita de dados de todos os livros de registo com informação do mês em reporte, cruzamento de dados, entre outros, influenciam consideravelmente na qualidade de um resumo mensal.
+> O totalizador garante um resumo mensal correctamente totalizado, porém, um resumo mensal de qualidade não se limita apenas à uma correcta totalização. Outros factores (que não dependem do totalizador) como preenchimento correcto e legível dos livros de registo, colheita de dados de todos os livros de registo com informação do mês em reporte, cruzamento e concordância dos dados, entre outros, influenciam consideravelmente na qualidade de um resumo mensal.
 
 
 ## Qual é o destino dos dados que eu insiro?
