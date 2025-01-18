@@ -41,7 +41,7 @@ const menu = {
                     }
                 }     
                 if(!numLinhaMatches) {
-                    const msg = "Nenhuma linha corresponde ao número digitado.";
+                    const msg = "Sem correspondência.";
                     alertarSobre(msg);
                 }
             },
