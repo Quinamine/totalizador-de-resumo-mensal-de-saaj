@@ -3,8 +3,8 @@ var keyPrefix = "trmsaaj";
 function desfoqueDoFundo(accao) {
     const desfoque = document.querySelector(".desfoque");
     accao === "desfocar" ? 
-    desfoque.classList.add("on") :
-    desfoque.classList.remove("on");
+    desfoque.classList.add("--on") :
+    desfoque.classList.remove("--on");
 }
 function alertarSobre(msg) {
     const dialogBoxDefault = document.querySelector(".dialog-box-default--small");
