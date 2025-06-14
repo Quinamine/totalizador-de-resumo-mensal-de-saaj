@@ -80,7 +80,7 @@
         top: 0;
         z-index: 333;
     }
-    .body-com-topo-propaganda .ficha__body__header {
+    .body-com-topo-info .ficha__body__header {
         top: 36px;
     }
 }
@@ -140,7 +140,7 @@
     }
 }
 .ficha__col-nums-do-livro-de-registo span:first-child {
-    background-color: var(--fullblack);
+    background-color: var(--black);
 }
 .ficha__col-de-indicadores {
     display: grid;
