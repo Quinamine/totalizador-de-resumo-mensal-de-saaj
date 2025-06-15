@@ -1045,6 +1045,9 @@ details[open] .details__summary {
 .--border-l {
     border-left: 1px solid var(--cor-de-borda);
 }
+.--borda-de-destaque {
+    border: 2px solid var(--red);
+}
 .--fw-700 {
     font-weight: bold;
 }
