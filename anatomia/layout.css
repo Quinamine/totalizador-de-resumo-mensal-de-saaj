@@ -6,8 +6,8 @@
     --cor-de-realce: #dce4f4;
     --cor-do-rodape: #c0c5da;
     --cor-de-risco: #dd0000;
-    --red: #ff0000;
     --cor-de-realce-de-totais: #ffff71;
+    --red: #ff0000;
     --black: #000000;
     --black-a5: rgba(0, 0, 0, .5);
     --black-a8: rgba(0, 0, 0, .8);
@@ -1068,6 +1068,9 @@ details[open] .details__summary {
         display: none;
     }
 }
+.ficha__url-pub {
+    display: none;
+}
 @media print {
     @page {
         margin: .5cm;
@@ -1075,5 +1078,13 @@ details[open] .details__summary {
     }
     .--no-print {
         display: none;
+    }
+    .ficha__url-pub {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .ficha__url-pub__link {
+        color: var(--cor-de-link);
     }
 }
