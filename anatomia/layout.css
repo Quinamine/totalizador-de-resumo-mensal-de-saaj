@@ -1081,8 +1081,9 @@ details[open] .details__summary {
     }
     .ficha__url-pub {
         display: block;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 400;
+        color: #555555;
     }
     .ficha__url-pub__link {
         color: var(--blue);
